@@ -1,4 +1,4 @@
-package br.com.aw.entidade;
+package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 import java.util.Date;

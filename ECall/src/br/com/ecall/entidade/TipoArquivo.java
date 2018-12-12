@@ -1,8 +1,8 @@
-package br.com.aw.entidade;
+package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 
-public class TipoTelefone {
+public class TipoArquivo {
 
     private Integer id;
     private String nome;
@@ -31,5 +31,6 @@ public class TipoTelefone {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+    
 
 }

@@ -1,8 +1,8 @@
-package br.com.aw.entidade;
+package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 
-public class TipoEndereco {
+public class TipoAtendimento {
 
     private Integer id;
     private String nome;
@@ -31,7 +31,5 @@ public class TipoEndereco {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
-    
-    
 
 }

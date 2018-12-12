@@ -1,11 +1,12 @@
-package br.com.aw.entidade;
+package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 
-public class TipoEmail {
+public class Email {
 
     private Integer id;
-    private String nome;
+    private String endereco;
+    private TipoEmail tipoEmail;
     private Timestamp atualizado;
 
     public Integer getId() {
@@ -16,12 +17,20 @@ public class TipoEmail {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public TipoEmail getTipoEmail() {
+        return tipoEmail;
+    }
+
+    public void setTipoEmail(TipoEmail tipoEmail) {
+        this.tipoEmail = tipoEmail;
     }
 
     public Timestamp getAtualizado() {

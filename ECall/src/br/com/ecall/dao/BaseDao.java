@@ -1,4 +1,4 @@
-package br.com.aw.dao;
+package br.com.ecall.dao;
 
 import java.util.List;
 

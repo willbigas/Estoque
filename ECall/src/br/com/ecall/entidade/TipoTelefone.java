@@ -1,17 +1,11 @@
-package br.com.aw.entidade;
+package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 
-/**
- *
- * @author William
- */
-public class Arquivo {
+public class TipoTelefone {
 
     private Integer id;
     private String nome;
-    private TipoArquivo tipoArquivo;
-    private Byte[] conteudo;
     private Timestamp atualizado;
 
     public Integer getId() {
@@ -28,22 +22,6 @@ public class Arquivo {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public TipoArquivo getTipoArquivo() {
-        return tipoArquivo;
-    }
-
-    public void setTipoArquivo(TipoArquivo tipoArquivo) {
-        this.tipoArquivo = tipoArquivo;
-    }
-
-    public Byte[] getConteudo() {
-        return conteudo;
-    }
-
-    public void setConteudo(Byte[] conteudo) {
-        this.conteudo = conteudo;
     }
 
     public Timestamp getAtualizado() {
