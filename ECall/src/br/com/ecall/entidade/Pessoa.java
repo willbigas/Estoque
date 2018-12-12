@@ -69,4 +69,11 @@ public class Pessoa {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", codigoPessoa=" + codigoPessoa + ", endere\u00e7os=" + endereços + ", telefones=" + telefones + ", enderecos=" + enderecos + ", ativo=" + ativo + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

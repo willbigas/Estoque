@@ -50,4 +50,9 @@ public class Telefone {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Telefone{" + "id=" + id + ", ddd=" + ddd + ", numero=" + numero + ", tipoTelefone=" + tipoTelefone + ", atualizado=" + atualizado + '}';
+    }
+
 }

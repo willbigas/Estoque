@@ -54,4 +54,11 @@ public class Arquivo {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Arquivo{" + "id=" + id + ", nome=" + nome + ", tipoArquivo=" + tipoArquivo + ", conteudo=" + conteudo + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

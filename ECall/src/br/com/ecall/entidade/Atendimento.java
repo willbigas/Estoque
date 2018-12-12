@@ -68,6 +68,12 @@ public class Atendimento {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+
+    @Override
+    public String toString() {
+        return "Atendimento{" + "id=" + id + ", criador=" + criador + ", meioContato=" + meioContato + ", tipoAtendimento=" + tipoAtendimento + ", dataInicio=" + dataInicio + ", dataFim=" + dataFim + ", atualizado=" + atualizado + '}';
+    }
+    
     
     
 }

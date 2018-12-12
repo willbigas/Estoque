@@ -59,4 +59,11 @@ public class Ocorrencia {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Ocorrencia{" + "id=" + id + ", atendente=" + atendente + ", descricao=" + descricao + ", resposta=" + resposta + ", arquivo=" + arquivo + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

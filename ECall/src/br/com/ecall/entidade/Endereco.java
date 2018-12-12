@@ -86,4 +86,11 @@ public class Endereco {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Endereco{" + "id=" + id + ", cep=" + cep + ", numero=" + numero + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", tipoEndere\u00e7o=" + tipoEndereço + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

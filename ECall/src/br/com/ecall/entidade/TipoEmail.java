@@ -31,6 +31,11 @@ public class TipoEmail {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+
+    @Override
+    public String toString() {
+        return "TipoEmail{" + "id=" + id + ", nome=" + nome + ", atualizado=" + atualizado + '}';
+    }
     
     
 

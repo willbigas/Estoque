@@ -32,4 +32,11 @@ public class TipoTelefone {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "TipoTelefone{" + "id=" + id + ", nome=" + nome + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

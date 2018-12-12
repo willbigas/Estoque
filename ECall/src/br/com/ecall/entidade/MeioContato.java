@@ -32,4 +32,11 @@ public class MeioContato {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "MeioContato{" + "id=" + id + ", nome=" + nome + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

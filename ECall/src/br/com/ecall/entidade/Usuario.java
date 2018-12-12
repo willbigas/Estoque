@@ -50,4 +50,11 @@ public class Usuario extends Pessoa {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" + "login=" + login + ", senha=" + senha + ", ativo=" + ativo + ", primeiroLogin=" + primeiroLogin + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

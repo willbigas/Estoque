@@ -31,6 +31,11 @@ public class TipoEndereco {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+
+    @Override
+    public String toString() {
+        return "TipoEndereco{" + "id=" + id + ", nome=" + nome + ", atualizado=" + atualizado + '}';
+    }
     
     
 

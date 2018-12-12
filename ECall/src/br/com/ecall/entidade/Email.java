@@ -40,6 +40,13 @@ public class Email {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+
+    @Override
+    public String toString() {
+        return "Email{" + "id=" + id + ", endereco=" + endereco + ", tipoEmail=" + tipoEmail + ", atualizado=" + atualizado + '}';
+    }
+    
+    
     
     
 

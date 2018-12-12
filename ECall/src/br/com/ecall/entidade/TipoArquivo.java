@@ -31,6 +31,13 @@ public class TipoArquivo {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
+
+    @Override
+    public String toString() {
+        return "TipoArquivo{" + "id=" + id + ", nome=" + nome + ", atualizado=" + atualizado + '}';
+    }
+    
+    
     
 
 }
