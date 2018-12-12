@@ -1,27 +1,19 @@
 package br.com.ecall;
 
-import br.com.ecall.dao.TipoArquivoDao;
-import br.com.ecall.daoimpl.TipoArquivoDaoImpl;
-import br.com.ecall.entidade.TipoArquivo;
-import java.util.List;
+import br.com.ecall.dao.TipoEmailDao;
+import br.com.ecall.daoimpl.TipoEmailDaoImpl;
+import br.com.ecall.entidade.TipoEmail;
 
 public class TestandoPersistenciaBanco {
     
     public static void main(String[] args) throws Exception{
-        TipoArquivoDao tipoArquivoDao = new TipoArquivoDaoImpl();
-        TipoArquivo ta = new TipoArquivo();
-        
-//        ta.setId(2);
-//        ta.setNome("Tipo Teste 2");
-//        
-//        tipoArquivoDao.inserir(ta);
-        
-        List<TipoArquivo>  teste = (List<TipoArquivo>) (Object) tipoArquivoDao.pesquisarTodos();
-        for (int i = 0; i < teste.size(); i++) {
-            TipoArquivo get = teste.get(i);
-            System.out.println(get);
-        }
+             TipoEmailDao tipoEmailDao = new TipoEmailDaoImpl();
              
+             TipoEmail te = new TipoEmail();
+             
+             te.setId(1);
+             te.setNome("Pessoal");
+             tipoEmailDao.update(te);
          
     }
 }
