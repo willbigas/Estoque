@@ -1,21 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.ecall;
 
-/**
- *
- * @author William
- */
-public class eCall {
+import br.com.ecall.view.PainelLogin;
+import br.com.ecall.view.PainelPrincipal;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class ECall {
+
+    public static void main(String[] args) throws Exception{
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        JanelaLogin();
+        
     }
     
+    public static void JanelaLogin() {
+        PainelLogin painelLogin = new PainelLogin();
+        painelLogin.setTitle("Acesso do Sistema");
+        painelLogin.setSize(400, 400);
+        painelLogin.setLocationRelativeTo(null);
+        painelLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        painelLogin.setVisible(true);
+    }
+    
+     public static void JanelaPrincipal() {
+        PainelPrincipal painelPrincipal = new PainelPrincipal();
+        painelPrincipal.setTitle("E-CALL - Gerenciador de Atendimentos");
+        painelPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        painelPrincipal.setLocationRelativeTo(null);
+        painelPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        painelPrincipal.setVisible(true);
+    }
+
 }
