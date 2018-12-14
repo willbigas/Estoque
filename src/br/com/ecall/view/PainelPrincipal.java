@@ -17,15 +17,18 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        panelAtendimento = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        panelAtendimento1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        panelAtendimento2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        panelAtendimento3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -40,121 +43,172 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelAtendimento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel4MouseEntered(evt);
+                panelAtendimentoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel4MouseExited(evt);
+                panelAtendimentoMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
+                panelAtendimentoMousePressed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(45, 118, 232));
-        jLabel3.setText("Home");
+        jLabel3.setText("Atendimento");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/home_48px.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/atendimento_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(56, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelAtendimentoLayout = new javax.swing.GroupLayout(panelAtendimento);
+        panelAtendimento.setLayout(panelAtendimentoLayout);
+        panelAtendimentoLayout.setHorizontalGroup(
+            panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtendimentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(40, 40, 40))
+            .addGroup(panelAtendimentoLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel3)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        panelAtendimentoLayout.setVerticalGroup(
+            panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelAtendimento1.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelAtendimento1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel5MouseEntered(evt);
+                panelAtendimento1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel5MouseExited(evt);
+                panelAtendimento1MouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel5MousePressed(evt);
+                panelAtendimento1MousePressed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(45, 118, 232));
-        jLabel5.setText("Home");
+        jLabel5.setText("Ocorrencia");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/home_48px.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/ocorrencia_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addContainerGap(52, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelAtendimento1Layout = new javax.swing.GroupLayout(panelAtendimento1);
+        panelAtendimento1.setLayout(panelAtendimento1Layout);
+        panelAtendimento1Layout.setHorizontalGroup(
+            panelAtendimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento1Layout.createSequentialGroup()
+                .addGroup(panelAtendimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAtendimento1Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel6))
+                    .addGroup(panelAtendimento1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel5)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        panelAtendimento1Layout.setVerticalGroup(
+            panelAtendimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
-        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelAtendimento2.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelAtendimento2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel6MouseEntered(evt);
+                panelAtendimento2MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel6MouseExited(evt);
+                panelAtendimento2MouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel6MousePressed(evt);
+                panelAtendimento2MousePressed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(45, 118, 232));
-        jLabel7.setText("Home");
+        jLabel7.setText("Telefone");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/home_48px.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/telefone_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+        javax.swing.GroupLayout panelAtendimento2Layout = new javax.swing.GroupLayout(panelAtendimento2);
+        panelAtendimento2.setLayout(panelAtendimento2Layout);
+        panelAtendimento2Layout.setHorizontalGroup(
+            panelAtendimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento2Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(panelAtendimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        panelAtendimento2Layout.setVerticalGroup(
+            panelAtendimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento2Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
+        );
+
+        panelAtendimento3.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelAtendimento3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelAtendimento3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panelAtendimento3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelAtendimento3MousePressed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(45, 118, 232));
+        jLabel9.setText("E-Mail");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(45, 118, 232));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/email_48x48.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelAtendimento3Layout = new javax.swing.GroupLayout(panelAtendimento3);
+        panelAtendimento3.setLayout(panelAtendimento3Layout);
+        panelAtendimento3Layout.setHorizontalGroup(
+            panelAtendimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento3Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(panelAtendimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addGroup(panelAtendimento3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel9)))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        panelAtendimento3Layout.setVerticalGroup(
+            panelAtendimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtendimento3Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
@@ -162,23 +216,27 @@ public class PainelPrincipal extends javax.swing.JFrame {
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123)
+                .addComponent(panelAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addComponent(panelAtendimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelAtendimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelAtendimento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(232, Short.MAX_VALUE))
+                    .addComponent(panelAtendimento3, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                    .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(panelAtendimento2, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                        .addComponent(panelAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelAtendimento1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -235,7 +293,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 272, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,41 +324,53 @@ public class PainelPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
+    private void panelAtendimentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel4MouseEntered
+    }//GEN-LAST:event_panelAtendimentoMouseEntered
 
-    private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
+    private void panelAtendimentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel4MouseExited
+    }//GEN-LAST:event_panelAtendimentoMouseExited
 
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+    private void panelAtendimentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel4MousePressed
+    }//GEN-LAST:event_panelAtendimentoMousePressed
 
-    private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
+    private void panelAtendimento1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento1MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel5MouseEntered
+    }//GEN-LAST:event_panelAtendimento1MouseEntered
 
-    private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
+    private void panelAtendimento1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento1MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel5MouseExited
+    }//GEN-LAST:event_panelAtendimento1MouseExited
 
-    private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MousePressed
+    private void panelAtendimento1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento1MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel5MousePressed
+    }//GEN-LAST:event_panelAtendimento1MousePressed
 
-    private void jPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseEntered
+    private void panelAtendimento2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento2MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseEntered
+    }//GEN-LAST:event_panelAtendimento2MouseEntered
 
-    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
+    private void panelAtendimento2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento2MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseExited
+    }//GEN-LAST:event_panelAtendimento2MouseExited
 
-    private void jPanel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MousePressed
+    private void panelAtendimento2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento2MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MousePressed
+    }//GEN-LAST:event_panelAtendimento2MousePressed
+
+    private void panelAtendimento3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelAtendimento3MouseEntered
+
+    private void panelAtendimento3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelAtendimento3MouseExited
+
+    private void panelAtendimento3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimento3MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelAtendimento3MousePressed
 
     /**
      * @param args the command line arguments
@@ -343,19 +413,22 @@ public class PainelPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imagemLogo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
+    private javax.swing.JPanel panelAtendimento;
+    private javax.swing.JPanel panelAtendimento1;
+    private javax.swing.JPanel panelAtendimento2;
+    private javax.swing.JPanel panelAtendimento3;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     // End of variables declaration//GEN-END:variables
