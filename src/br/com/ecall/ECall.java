@@ -5,7 +5,7 @@ import br.com.ecall.view.PainelPrincipal;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-public class ECall {
+public class Ecall {
 
     public static void main(String[] args) throws Exception{
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

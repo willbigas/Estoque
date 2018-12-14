@@ -1,6 +1,6 @@
 package br.com.ecall.view;
 
-import br.com.ecall.ECall;
+import br.com.ecall.Ecall;
 
 public class PainelLogin extends javax.swing.JFrame {
 
@@ -194,7 +194,7 @@ public class PainelLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ECall.JanelaPrincipal();
+        Ecall.JanelaPrincipal();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
