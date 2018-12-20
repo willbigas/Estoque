@@ -96,7 +96,7 @@ foreign key(id_pessoa) references pessoa(id));
 
 CREATE TABLE usuario(
 id INT(11) NOT NULL auto_increment,
-id_pessoa int NOT NULL,
+id_pessoa int,
 login varchar(30) NOT NULL,
 senha varchar(30) NOT NULL,
 ativo boolean NOT NULL,

@@ -1,5 +1,7 @@
 package br.com.ecall.view;
 
+import br.com.ecall.Ecall;
+
 public class PainelUsuario extends javax.swing.JFrame {
 
     public PainelUsuario() {
@@ -20,15 +22,14 @@ public class PainelUsuario extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         formBrancoInferior = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaUsuario = new javax.swing.JTable();
         formMenu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        textoPesquisar = new javax.swing.JLabel();
+        campoPesquisar = new javax.swing.JTextField();
+        buttonPesquisar = new javax.swing.JButton();
+        buttonNovo = new javax.swing.JButton();
+        buttonExcluir = new javax.swing.JButton();
+        buttonEditar = new javax.swing.JButton();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -55,8 +56,8 @@ public class PainelUsuario extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,7 +68,7 @@ public class PainelUsuario extends javax.swing.JFrame {
                 "Pessoa", "Usuario", "Ativo", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabelaUsuario);
 
         javax.swing.GroupLayout formBrancoInferiorLayout = new javax.swing.GroupLayout(formBrancoInferior);
         formBrancoInferior.setLayout(formBrancoInferiorLayout);
@@ -77,7 +78,7 @@ public class PainelUsuario extends javax.swing.JFrame {
         );
         formBrancoInferiorLayout.setVerticalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -94,56 +95,54 @@ public class PainelUsuario extends javax.swing.JFrame {
         });
         formMenu.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Pesquisar");
+        textoPesquisar.setForeground(new java.awt.Color(0, 0, 0));
+        textoPesquisar.setText("Pesquisar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        formMenu.add(jLabel1, gridBagConstraints);
+        formMenu.add(textoPesquisar, gridBagConstraints);
 
-        jTextField1.setColumns(15);
+        campoPesquisar.setColumns(15);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        formMenu.add(jTextField1, gridBagConstraints);
+        formMenu.add(campoPesquisar, gridBagConstraints);
 
-        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/search_20px_1.png"))); // NOI18N
+        buttonPesquisar.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
+        buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/search_20px_1.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        formMenu.add(jButton1, gridBagConstraints);
+        formMenu.add(buttonPesquisar, gridBagConstraints);
 
-        jButton2.setText("Novo");
+        buttonNovo.setText("Novo");
+        buttonNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNovoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(1, 46, 1, 1);
-        formMenu.add(jButton2, gridBagConstraints);
+        formMenu.add(buttonNovo, gridBagConstraints);
 
-        jButton3.setText("Excluir");
+        buttonExcluir.setText("Excluir");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(1, 3, 1, 1);
-        formMenu.add(jButton3, gridBagConstraints);
+        formMenu.add(buttonExcluir, gridBagConstraints);
 
-        jButton4.setText("Editar");
+        buttonEditar.setText("Editar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(1, 3, 1, 1);
-        formMenu.add(jButton4, gridBagConstraints);
-
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Version 1.0.0 - Alfa Teste");
+        formMenu.add(buttonEditar, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(formBrancoInferior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(15, 15, 15))
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,8 +155,7 @@ public class PainelUsuario extends javax.swing.JFrame {
                 .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(formBrancoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(2, 2, 2)
-                .addComponent(jLabel2))
+                .addGap(18, 18, 18))
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -264,6 +262,10 @@ public class PainelUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMenuMousePressed
 
+    private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
+        Ecall.JanelaUsuarioEdicao();
+    }//GEN-LAST:event_buttonNovoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,23 +317,22 @@ public class PainelUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonEditar;
+    private javax.swing.JButton buttonExcluir;
+    private javax.swing.JButton buttonNovo;
+    private javax.swing.JButton buttonPesquisar;
+    private javax.swing.JTextField campoPesquisar;
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
     private javax.swing.JLabel imagemLogo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
+    private javax.swing.JTable tabelaUsuario;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa1;
+    private javax.swing.JLabel textoPesquisar;
     // End of variables declaration//GEN-END:variables
 }

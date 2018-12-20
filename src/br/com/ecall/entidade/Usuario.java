@@ -2,7 +2,7 @@ package br.com.ecall.entidade;
 
 import java.sql.Timestamp;
 
-public class Usuario extends Pessoa {
+public class Usuario {
 
     private String login;
     private String senha;
@@ -54,7 +54,5 @@ public class Usuario extends Pessoa {
     public String toString() {
         return "Usuario{" + "login=" + login + ", senha=" + senha + ", ativo=" + ativo + ", primeiroLogin=" + primeiroLogin + ", atualizado=" + atualizado + '}';
     }
-    
-    
 
 }
