@@ -40,7 +40,8 @@ public class PainelUsuarioEdicao extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        Usuario1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(0, 51, 255))); // NOI18N
+        Usuario1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
+        Usuario1.setForeground(new java.awt.Color(153, 153, 153));
         Usuario1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Usuario1MouseEntered(evt);

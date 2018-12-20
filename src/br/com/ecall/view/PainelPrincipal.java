@@ -133,6 +133,9 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         panelTelefone.setPreferredSize(new java.awt.Dimension(133, 103));
         panelTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelTelefoneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 panelTelefoneMouseEntered(evt);
             }
@@ -146,7 +149,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoTelefone.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         textoTelefone.setForeground(new java.awt.Color(45, 118, 232));
-        textoTelefone.setText("Telefone");
+        textoTelefone.setText("Telefones");
 
         iconTelefone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/telefone_48x48.png"))); // NOI18N
 
@@ -159,16 +162,16 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 .addGroup(panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textoTelefone)
                     .addComponent(iconTelefone))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         panelTelefoneLayout.setVerticalGroup(
             panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTelefoneLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iconTelefone)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoTelefone)
-                .addGap(18, 18, 18))
+                .addGap(24, 24, 24))
         );
 
         panelEmail.setPreferredSize(new java.awt.Dimension(133, 103));
@@ -422,6 +425,11 @@ public class PainelPrincipal extends javax.swing.JFrame {
     private void panelUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelUsuarioMouseClicked
         Ecall.JanelaUsuario();
     }//GEN-LAST:event_panelUsuarioMouseClicked
+
+    private void panelTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseClicked
+        // TODO add your handling code here:
+        Ecall.JanelaTelefone();
+    }//GEN-LAST:event_panelTelefoneMouseClicked
 
     /**
      * @param args the command line arguments
