@@ -21,6 +21,11 @@ qtdEstoque INT(13),
 precoUnitario decimal(10,2),
 id_estoqueMovimento int,
 dataCadastro Date,
+ativo boolean,
 atualizado timestamp NOT NULL,
 foreign key(id_estoqueMovimento) references estoqueMovimento(id),
 PRIMARY KEY (id));
+
+select * from estoqueMovimento;
+
+select * from produto

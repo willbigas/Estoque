@@ -26,7 +26,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
         try {
             conexao = SessionFactory.getConnection();
             PreparedStatement statement = conexao.prepareStatement("INSERT INTO PRODUTO (SKU , NOME , EAN13 , QTDESTOQUE , PRECOUNITARIO , "
-                    + "ID_ESTOQUEMOVIMENTO , DATACADASTRO , ATUALIZADO) VALUES (? , ? , ? , ? , ? , ? , ? , ?)", Statement.RETURN_GENERATED_KEYS);
+                    + "ID_ESTOQUEMOVIMENTO , DATACADASTRO  , ATIVO , ATUALIZADO) VALUES (? , ? , ? , ? , ? , ? , ? , ? , ?)", Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, produto.getSku());
             statement.setString(2, produto.getNome());
             statement.setInt(3, produto.getEan13());
@@ -34,7 +34,8 @@ public class ProdutoDaoImpl implements ProdutoDao {
             statement.setDouble(5, produto.getPrecoUnitario());
             statement.setInt(6, produto.getMovEstoque().getId());
             statement.setDate(7, new Date(produto.getDataCadastro().getTime()));
-            statement.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
+            statement.setBoolean(8, true);
+            statement.setTimestamp(9, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
             if (rs.next()) {
@@ -57,15 +58,16 @@ public class ProdutoDaoImpl implements ProdutoDao {
             conexao = SessionFactory.getConnection();
             PreparedStatement statement = conexao.prepareStatement(
                     "UPDATE PRODUTO SET SKU = ? , NOME = ? , EAN13 = ? , "
-                    + "QTDESTOQUE = ? , ID_ESTOQUEMOVIMENTO = ? , DATACADASTRO = ? , ATUALIZADO = ?  WHERE ID = ? ");
+                    + "QTDESTOQUE = ? , ID_ESTOQUEMOVIMENTO = ? , DATACADASTRO = ?  , ATIVO = ? , ATUALIZADO = ?  WHERE ID = ? ");
             statement.setString(1, produto.getSku());
             statement.setString(2, produto.getNome());
             statement.setInt(3, produto.getEan13());
             statement.setInt(4, produto.getQtdEstoque());
             statement.setInt(5, produto.getMovEstoque().getId());
             statement.setDate(6, new Date(produto.getDataCadastro().getTime()));
-            statement.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
-            statement.setInt(8, produto.getId());
+            statement.setBoolean(7, true);
+            statement.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
+            statement.setInt(9, produto.getId());
             int linhasAtualizadas = statement.executeUpdate();
             return linhasAtualizadas > 0;
         } catch (Exception e) {
@@ -90,6 +92,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 Integer ean13 = rs.getInt("ean13");
                 Integer qtdEstoque = rs.getInt("qtdEstoque");
                 Integer estoqueMovimentoId = rs.getInt("id_EstoqueMovimento");
+                Boolean ativo = rs.getBoolean("ativo");
                 Date dataCadastro = rs.getDate("dataCadastro");
                 Timestamp ts = rs.getTimestamp("atualizado");
                 Produto p = new Produto();
@@ -101,6 +104,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 EstoqueMovimento em = (EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(estoqueMovimentoId);
                 p.setMovEstoque(em); 
                 p.setDataCadastro(dataCadastro);
+                p.setAtivo(ativo);
                 p.setAtualizado(ts);
                 return p;
             }
