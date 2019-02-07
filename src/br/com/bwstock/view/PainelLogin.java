@@ -1,6 +1,6 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.Ecall;
+import br.com.bwstock.BwStock;
 
 public class PainelLogin extends javax.swing.JFrame {
 
@@ -194,7 +194,7 @@ public class PainelLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_campoLoginActionPerformed
 
     private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
-        Ecall.JanelaPrincipal();
+        BwStock.JanelaPrincipal();
     }//GEN-LAST:event_buttonEntrarActionPerformed
 
     /**

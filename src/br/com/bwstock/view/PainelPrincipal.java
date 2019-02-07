@@ -1,6 +1,6 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.Ecall;
+import br.com.bwstock.BwStock;
 
 public class PainelPrincipal extends javax.swing.JFrame {
 
@@ -397,7 +397,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_panelUsuarioMousePressed
 
     private void panelUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelUsuarioMouseClicked
-        Ecall.JanelaUsuario();
+        BwStock.JanelaUsuario();
     }//GEN-LAST:event_panelUsuarioMouseClicked
 
     private void panelTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseClicked

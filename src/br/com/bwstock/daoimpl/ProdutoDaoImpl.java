@@ -25,15 +25,16 @@ public class ProdutoDaoImpl implements ProdutoDao {
         Produto produto = (Produto) obj;
         try {
             conexao = SessionFactory.getConnection();
-            PreparedStatement statement = conexao.prepareStatement("INSERT INTO PRODUTO (SKU , NOME , EAN13 , QTDESTOQUE , "
-                    + "ID_ESTOQUEMOVIMENTO , DATACADASTRO , ATUALIZADO) VALUES (? , ? , ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement = conexao.prepareStatement("INSERT INTO PRODUTO (SKU , NOME , EAN13 , QTDESTOQUE , PRECOUNITARIO , "
+                    + "ID_ESTOQUEMOVIMENTO , DATACADASTRO , ATUALIZADO) VALUES (? , ? , ? , ? , ? , ? , ? , ?)", Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, produto.getSku());
             statement.setString(2, produto.getNome());
             statement.setInt(3, produto.getEan13());
             statement.setInt(4, produto.getQtdEstoque());
-            statement.setInt(5, produto.getMovEstoque().getId());
-            statement.setDate(6, new Date(produto.getDataCadastro().getTime()));
-            statement.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
+            statement.setDouble(5, produto.getPrecoUnitario());
+            statement.setInt(6, produto.getMovEstoque().getId());
+            statement.setDate(7, new Date(produto.getDataCadastro().getTime()));
+            statement.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
             if (rs.next()) {
@@ -55,8 +56,8 @@ public class ProdutoDaoImpl implements ProdutoDao {
         try {
             conexao = SessionFactory.getConnection();
             PreparedStatement statement = conexao.prepareStatement(
-                    "UPDATE TIPOARQUIVO SET SKU = ? , NOME = ? , EAN13 = ? , "
-                    + "QTESTOQUE = ? , ID_ESTOQUEMOVIMENTO = ? , DATACADASTRO = ? , ATUALIZADO = ?  WHERE ID = ? ");
+                    "UPDATE PRODUTO SET SKU = ? , NOME = ? , EAN13 = ? , "
+                    + "QTDESTOQUE = ? , ID_ESTOQUEMOVIMENTO = ? , DATACADASTRO = ? , ATUALIZADO = ?  WHERE ID = ? ");
             statement.setString(1, produto.getSku());
             statement.setString(2, produto.getNome());
             statement.setInt(3, produto.getEan13());

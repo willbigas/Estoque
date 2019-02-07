@@ -1,6 +1,6 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.Ecall;
+import br.com.bwstock.BwStock;
 
 public class PainelUsuarioBusca extends javax.swing.JFrame {
 
@@ -242,7 +242,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     }//GEN-LAST:event_formMenuMousePressed
 
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
-        Ecall.JanelaUsuarioEdicao();
+        BwStock.JanelaUsuarioEdicao();
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed

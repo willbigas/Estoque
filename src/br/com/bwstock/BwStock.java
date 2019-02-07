@@ -8,7 +8,7 @@ import br.com.bwstock.view.PainelUsuarioCadastro;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-public class Ecall {
+public class BwStock {
     
     public static void main(String[] args) throws Exception {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
