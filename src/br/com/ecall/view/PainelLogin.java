@@ -21,7 +21,6 @@ public class PainelLogin extends javax.swing.JFrame {
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
-        imagemLogo = new javax.swing.JLabel();
         painelLogin = new javax.swing.JPanel();
         iconUsuario = new javax.swing.JLabel();
         iconSenha = new javax.swing.JLabel();
@@ -39,13 +38,11 @@ public class PainelLogin extends javax.swing.JFrame {
 
         textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("E-Call");
+        textoLogoEmpresa.setText("BWCINE");
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("Gerenciador de Atendimentos");
-
-        imagemLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/navigation.png"))); // NOI18N
+        textoDescricaoEmpresa.setText("BW-STOCK - Gerenciador de Estoque");
 
         painelLogin.setBackground(new java.awt.Color(255, 255, 255));
         painelLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
@@ -128,34 +125,28 @@ public class PainelLogin extends javax.swing.JFrame {
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(textoLogoEmpresa)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                        .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelLogoLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(textoLogoEmpresa)))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addComponent(textoLogoEmpresa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textoDescricaoEmpresa)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoLogoEmpresa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textoDescricaoEmpresa)
+                .addGap(18, 18, 18)
                 .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
@@ -170,7 +161,7 @@ public class PainelLogin extends javax.swing.JFrame {
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -245,7 +236,6 @@ public class PainelLogin extends javax.swing.JFrame {
     private javax.swing.JTextField campoSenha;
     private javax.swing.JLabel iconSenha;
     private javax.swing.JLabel iconUsuario;
-    private javax.swing.JLabel imagemLogo;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelLogin;
     private javax.swing.JPanel painelLogo;

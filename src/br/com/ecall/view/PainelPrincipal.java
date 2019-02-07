@@ -21,16 +21,12 @@ public class PainelPrincipal extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         panelAtendimento = new javax.swing.JPanel();
         textoAtendimento = new javax.swing.JLabel();
-        iconAtendimento = new javax.swing.JLabel();
         panelOcorrencia = new javax.swing.JPanel();
         textoOcorrencia = new javax.swing.JLabel();
-        iconOcorrencia = new javax.swing.JLabel();
         panelTelefone = new javax.swing.JPanel();
         textoTelefone = new javax.swing.JLabel();
-        iconTelefone = new javax.swing.JLabel();
         panelEmail = new javax.swing.JPanel();
         textoEmail = new javax.swing.JLabel();
-        iconEmail = new javax.swing.JLabel();
         panelUsuario = new javax.swing.JPanel();
         textoUsuario = new javax.swing.JLabel();
         iconUsuario = new javax.swing.JLabel();
@@ -38,6 +34,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
         imagemLogo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -61,29 +58,21 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoAtendimento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         textoAtendimento.setForeground(new java.awt.Color(45, 118, 232));
-        textoAtendimento.setText("Atendimento");
-
-        iconAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/atendimento_48x48.png"))); // NOI18N
+        textoAtendimento.setText("Produto");
 
         javax.swing.GroupLayout panelAtendimentoLayout = new javax.swing.GroupLayout(panelAtendimento);
         panelAtendimento.setLayout(panelAtendimentoLayout);
         panelAtendimentoLayout.setHorizontalGroup(
             panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAtendimentoLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addComponent(textoAtendimento)
-                .addGap(30, 30, 30))
-            .addGroup(panelAtendimentoLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(iconAtendimento)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         panelAtendimentoLayout.setVerticalGroup(
             panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAtendimentoLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(iconAtendimento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textoAtendimento)
                 .addGap(18, 18, 18))
         );
@@ -103,32 +92,23 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoOcorrencia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         textoOcorrencia.setForeground(new java.awt.Color(45, 118, 232));
-        textoOcorrencia.setText("Ocorrencia");
-
-        iconOcorrencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/ocorrencia_48x48.png"))); // NOI18N
+        textoOcorrencia.setText("Entrada");
 
         javax.swing.GroupLayout panelOcorrenciaLayout = new javax.swing.GroupLayout(panelOcorrencia);
         panelOcorrencia.setLayout(panelOcorrenciaLayout);
         panelOcorrenciaLayout.setHorizontalGroup(
             panelOcorrenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOcorrenciaLayout.createSequentialGroup()
-                .addGroup(panelOcorrenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelOcorrenciaLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(iconOcorrencia))
-                    .addGroup(panelOcorrenciaLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(textoOcorrencia)))
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOcorrenciaLayout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addComponent(textoOcorrencia)
+                .addGap(39, 39, 39))
         );
         panelOcorrenciaLayout.setVerticalGroup(
             panelOcorrenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOcorrenciaLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOcorrenciaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconOcorrencia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoOcorrencia)
-                .addGap(18, 18, 18))
+                .addGap(19, 19, 19))
         );
 
         panelTelefone.setPreferredSize(new java.awt.Dimension(133, 103));
@@ -149,29 +129,23 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoTelefone.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         textoTelefone.setForeground(new java.awt.Color(45, 118, 232));
-        textoTelefone.setText("Telefones");
-
-        iconTelefone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/telefone_48x48.png"))); // NOI18N
+        textoTelefone.setText("Saida");
 
         javax.swing.GroupLayout panelTelefoneLayout = new javax.swing.GroupLayout(panelTelefone);
         panelTelefone.setLayout(panelTelefoneLayout);
         panelTelefoneLayout.setHorizontalGroup(
             panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTelefoneLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoTelefone)
-                    .addComponent(iconTelefone))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(textoTelefone)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         panelTelefoneLayout.setVerticalGroup(
             panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTelefoneLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTelefoneLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconTelefone)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoTelefone)
-                .addGap(24, 24, 24))
+                .addGap(19, 19, 19))
         );
 
         panelEmail.setPreferredSize(new java.awt.Dimension(133, 103));
@@ -189,33 +163,23 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         textoEmail.setForeground(new java.awt.Color(45, 118, 232));
-        textoEmail.setText("E-Mail");
-
-        iconEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        iconEmail.setForeground(new java.awt.Color(45, 118, 232));
-        iconEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/email_48x48.png"))); // NOI18N
+        textoEmail.setText("Inventario");
 
         javax.swing.GroupLayout panelEmailLayout = new javax.swing.GroupLayout(panelEmail);
         panelEmail.setLayout(panelEmailLayout);
         panelEmailLayout.setHorizontalGroup(
             panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEmailLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconEmail)
-                    .addGroup(panelEmailLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(textoEmail)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(textoEmail)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         panelEmailLayout.setVerticalGroup(
             panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEmailLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(iconEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmailLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(textoEmail)
-                .addGap(18, 18, 18))
+                .addGap(22, 22, 22))
         );
 
         panelUsuario.setPreferredSize(new java.awt.Dimension(133, 103));
@@ -296,11 +260,11 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("E-Call");
+        textoLogoEmpresa.setText("BW-STOCK");
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("Gerenciamento de Atendimentos");
+        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
 
         imagemLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/navigation.png"))); // NOI18N
 
@@ -331,6 +295,10 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Acesso Principal");
+
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
@@ -338,12 +306,18 @@ public class PainelPrincipal extends javax.swing.JFrame {
             .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -470,12 +444,9 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel iconAtendimento;
-    private javax.swing.JLabel iconEmail;
-    private javax.swing.JLabel iconOcorrencia;
-    private javax.swing.JLabel iconTelefone;
     private javax.swing.JLabel iconUsuario;
     private javax.swing.JLabel imagemLogo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel panelAtendimento;
