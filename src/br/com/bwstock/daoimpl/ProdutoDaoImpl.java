@@ -9,7 +9,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.bwstock.dao.ProdutoDao;
-import br.com.bwstock.entidade.EstoqueMovimento;
 import br.com.bwstock.entidade.Produto;
 import java.sql.Date;
 

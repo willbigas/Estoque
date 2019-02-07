@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Will/Documents/NetBeansProjects/BWSTOCK/src/br/com/bwstock/entidade/EstoqueMovimento.java</file>
-            <file>file:/C:/Users/Will/Documents/NetBeansProjects/BWSTOCK/src/br/com/bwstock/entidade/Produto.java</file>
-            <file>file:/C:/Users/Will/Documents/NetBeansProjects/BWSTOCK/src/br/com/bwstock/dao/ProdutoDao.java</file>
-            <file>file:/C:/Users/Will/Documents/NetBeansProjects/BWSTOCK/src/br/com/bwstock/daoimpl/ProdutoDaoImpl.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelProdutoCadastro.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelProdutoBusca.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelUsuarioCadastro.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelLogin.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelUsuarioBusca.java</file>
+            <file>file:/C:/Users/William/Documents/GitHub/BWSTOCK/src/br/com/bwstock/view/PainelPrincipal.java</file>
         </group>
     </open-files>
 </project-private>

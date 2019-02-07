@@ -14,6 +14,7 @@ public class Produto {
     private String nome;
     private Integer ean13;
     private Integer qtdEstoque;
+    private Double precoUnitario;
     private EstoqueMovimento movEstoque;
     private Date dataCadastro;
     private Timestamp atualizado;
@@ -49,6 +50,16 @@ public class Produto {
     public void setQtdEstoque(Integer qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
     }
+
+    public Double getPrecoUnitario() {
+        return precoUnitario;
+    }
+
+    public void setPrecoUnitario(Double precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
+    
+    
 
     public EstoqueMovimento getMovEstoque() {
         return movEstoque;

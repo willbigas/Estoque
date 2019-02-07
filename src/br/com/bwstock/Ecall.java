@@ -2,9 +2,9 @@ package br.com.bwstock;
 
 import br.com.bwstock.view.PainelLogin;
 import br.com.bwstock.view.PainelPrincipal;
-import br.com.bwstock.view.PainelProduto;
-import br.com.bwstock.view.PainelUsuario;
-import br.com.bwstock.view.PainelUsuarioEdicao;
+import br.com.bwstock.view.PainelProdutoBusca;
+import br.com.bwstock.view.PainelUsuarioBusca;
+import br.com.bwstock.view.PainelUsuarioCadastro;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -27,7 +27,7 @@ public class Ecall {
     
     public static void JanelaPrincipal() {
         PainelPrincipal painelPrincipal = new PainelPrincipal();
-        painelPrincipal.setTitle("E-CALL - GERENCIADOR DE ATENDIMENTOS");
+        painelPrincipal.setTitle("BW-STOCK - GERENCIADOR DE ESTOQUE");
         painelPrincipal.setSize(800, 600);
         painelPrincipal.setLocationRelativeTo(null);
         painelPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -35,8 +35,8 @@ public class Ecall {
     }
     
     public static void JanelaUsuario() {
-        PainelUsuario painelUsuario = new PainelUsuario();
-        painelUsuario.setTitle("E-CALL - USUARIO");
+        PainelUsuarioBusca painelUsuario = new PainelUsuarioBusca();
+        painelUsuario.setTitle("BW-STOCK - USUARIO");
         painelUsuario.setSize(800, 600);
         painelUsuario.setLocationRelativeTo(null);
         painelUsuario.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -44,8 +44,8 @@ public class Ecall {
     }
     
     public static void JanelaUsuarioEdicao() {
-        PainelUsuarioEdicao painelUsuarioEdicao = new PainelUsuarioEdicao();
-        painelUsuarioEdicao.setTitle("E-CALL - EDICAO DE USUARIO");
+        PainelUsuarioCadastro painelUsuarioEdicao = new PainelUsuarioCadastro();
+        painelUsuarioEdicao.setTitle("BW-STOCK - EDICAO DE USUARIO");
         painelUsuarioEdicao.setSize(546, 500);
         painelUsuarioEdicao.setLocationRelativeTo(null);
         painelUsuarioEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -54,8 +54,8 @@ public class Ecall {
     
     
     public static void JanelaTelefone() {
-        PainelProduto painelTelefone = new PainelProduto();
-        painelTelefone.setTitle("E-CALL - TELEFONES DE CONTATO");
+        PainelProdutoBusca painelTelefone = new PainelProdutoBusca();
+        painelTelefone.setTitle("BW-STOCK - TELEFONES DE CONTATO");
         painelTelefone.setSize(800, 600);
         painelTelefone.setLocationRelativeTo(null);
         painelTelefone.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

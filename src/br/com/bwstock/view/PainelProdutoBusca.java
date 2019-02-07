@@ -2,9 +2,9 @@ package br.com.bwstock.view;
 
 import br.com.bwstock.Ecall;
 
-public class PainelUsuario extends javax.swing.JFrame {
+public class PainelProdutoBusca extends javax.swing.JFrame {
 
-    public PainelUsuario() {
+    public PainelProdutoBusca() {
         initComponents();
     }
 
@@ -33,7 +33,6 @@ public class PainelUsuario extends javax.swing.JFrame {
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
-        imagemLogo = new javax.swing.JLabel();
         textoTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,13 +58,13 @@ public class PainelUsuario extends javax.swing.JFrame {
         tabelaUsuario.setBackground(new java.awt.Color(204, 204, 204));
         tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Pessoa", "Usuario", "Ativo", "Title 4"
+                "Nome", "Categoria", "Estoque", "Preco UN", "EAN13", "Ativo"
             }
         ));
         jScrollPane1.setViewportView(tabelaUsuario);
@@ -78,7 +77,7 @@ public class PainelUsuario extends javax.swing.JFrame {
         );
         formBrancoInferiorLayout.setVerticalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -106,7 +105,7 @@ public class PainelUsuario extends javax.swing.JFrame {
         formMenu.add(campoPesquisar, gridBagConstraints);
 
         buttonPesquisar.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
-        buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/search_20px_1.png"))); // NOI18N
+        buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/search_20px_1.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         formMenu.add(buttonPesquisar, gridBagConstraints);
@@ -161,44 +160,43 @@ public class PainelUsuario extends javax.swing.JFrame {
 
         textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("E-Call");
+        textoLogoEmpresa.setText("BWSTOCK");
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         textoDescricaoEmpresa.setText("Gerenciamento de Atendimentos");
 
-        imagemLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ecall/img/navigation.png"))); // NOI18N
+        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        textoTitulo.setText("Busca de Produtos");
 
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoLogoEmpresa)
-                    .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(textoTitulo))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(textoLogoEmpresa)))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(textoLogoEmpresa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textoDescricaoEmpresa)
-                .addGap(36, 36, 36))
-            .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(imagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textoDescricaoEmpresa)
+                    .addComponent(textoTitulo))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
-
-        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        textoTitulo.setText("Usuario");
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -207,18 +205,12 @@ public class PainelUsuario extends javax.swing.JFrame {
             .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(textoTitulo)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(textoTitulo)))
+                .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -237,18 +229,6 @@ public class PainelUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formBrancoInferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseEntered
-
-    private void formBrancoInferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseExited
-
-    private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMousePressed
-
     private void formMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_formMenuMouseEntered
@@ -264,6 +244,18 @@ public class PainelUsuario extends javax.swing.JFrame {
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
         Ecall.JanelaUsuarioEdicao();
     }//GEN-LAST:event_buttonNovoActionPerformed
+
+    private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formBrancoInferiorMousePressed
+
+    private void formBrancoInferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formBrancoInferiorMouseExited
+
+    private void formBrancoInferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formBrancoInferiorMouseEntered
 
     /**
      * @param args the command line arguments
@@ -282,14 +274,62 @@ public class PainelUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelProdutoBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelProdutoBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelProdutoBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelProdutoBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -310,7 +350,7 @@ public class PainelUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PainelUsuario().setVisible(true);
+                new PainelProdutoBusca().setVisible(true);
             }
         });
     }
@@ -323,7 +363,6 @@ public class PainelUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField campoPesquisar;
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
-    private javax.swing.JLabel imagemLogo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
