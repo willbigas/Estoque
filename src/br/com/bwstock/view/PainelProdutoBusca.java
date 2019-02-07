@@ -242,7 +242,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     }//GEN-LAST:event_formMenuMousePressed
 
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
-        BwStock.JanelaUsuarioEdicao();
+        BwStock.JanelaProdutoEdicao();
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed
