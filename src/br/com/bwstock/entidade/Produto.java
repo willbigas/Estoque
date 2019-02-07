@@ -58,8 +58,6 @@ public class Produto {
     public void setPrecoUnitario(Double precoUnitario) {
         this.precoUnitario = precoUnitario;
     }
-    
-    
 
     public EstoqueMovimento getMovEstoque() {
         return movEstoque;
@@ -91,6 +89,11 @@ public class Produto {
 
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "id=" + id + ", sku=" + sku + ", nome=" + nome + ", ean13=" + ean13 + ", qtdEstoque=" + qtdEstoque + ", precoUnitario=" + precoUnitario + ", movEstoque=" + movEstoque + ", dataCadastro=" + dataCadastro + ", atualizado=" + atualizado + '}';
     }
 
 }

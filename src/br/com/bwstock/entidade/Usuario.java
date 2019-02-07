@@ -54,5 +54,7 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "login=" + login + ", senha=" + senha + ", ativo=" + ativo + ", primeiroLogin=" + primeiroLogin + ", atualizado=" + atualizado + '}';
     }
+    
+    
 
 }

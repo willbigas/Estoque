@@ -12,7 +12,7 @@ public class EstoqueMovimento {
     private Integer id;
     private Date dataEntrada;
     private Date dataSaida;
-    private Timestamp atualizado; 
+    private Timestamp atualizado;
 
     public Integer getId() {
         return id;
@@ -45,7 +45,10 @@ public class EstoqueMovimento {
     public void setAtualizado(Timestamp atualizado) {
         this.atualizado = atualizado;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "EstoqueMovimento{" + "id=" + id + ", dataEntrada=" + dataEntrada + ", dataSaida=" + dataSaida + ", atualizado=" + atualizado + '}';
+    }
 
 }

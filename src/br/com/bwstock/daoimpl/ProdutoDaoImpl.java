@@ -1,6 +1,7 @@
 package br.com.bwstock.daoimpl;
 
 import br.com.bwstock.SessionFactory;
+import br.com.bwstock.dao.EstoqueMovimentoDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,11 +10,14 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.bwstock.dao.ProdutoDao;
+import br.com.bwstock.entidade.EstoqueMovimento;
 import br.com.bwstock.entidade.Produto;
 import java.sql.Date;
 
 public class ProdutoDaoImpl implements ProdutoDao {
 
+    EstoqueMovimentoDao ESTOQUE_MOVIMENTO_DAO = new EstoqueMovimentoDaoImpl();
+    
     private Connection conexao;
 
     @Override
@@ -93,7 +97,8 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 p.setNome(nome);
                 p.setEan13(ean13);
                 p.setQtdEstoque(qtdEstoque);
-//                p.setMovEstoque(estoqueMovimentoId); // pesquisar estoque movimento , arrumar.
+                EstoqueMovimento em = (EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(estoqueMovimentoId);
+                p.setMovEstoque(em); 
                 p.setDataCadastro(dataCadastro);
                 p.setAtualizado(ts);
                 return p;
@@ -121,7 +126,8 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 p.setNome(rs.getString("nome"));
                 p.setEan13(rs.getInt("ean13"));
                 p.setQtdEstoque(rs.getInt("qtdEstoque"));
-//                p.setMovEstoque(rs.getInt("id_MovimentoEstoque")); // verificar , acho que tem buscar via pesquisa do estoque movimento\
+                Integer idEstoqueMovimento = (rs.getInt("id_EstoqueMovimento"));
+                p.setMovEstoque((EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(idEstoqueMovimento));
                 p.setDataCadastro(rs.getDate("dataCadastro"));
                 p.setAtualizado(rs.getTimestamp("atualizado"));
                 p.setId(rs.getInt("id"));

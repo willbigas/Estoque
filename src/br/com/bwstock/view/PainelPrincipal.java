@@ -402,7 +402,6 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
     private void panelTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseClicked
         // TODO add your handling code here:
-        Ecall.JanelaTelefone();
     }//GEN-LAST:event_panelTelefoneMouseClicked
 
     /**

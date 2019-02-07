@@ -53,13 +53,13 @@ public class Ecall {
     }
     
     
-    public static void JanelaTelefone() {
-        PainelProdutoBusca painelTelefone = new PainelProdutoBusca();
-        painelTelefone.setTitle("BW-STOCK - TELEFONES DE CONTATO");
-        painelTelefone.setSize(800, 600);
-        painelTelefone.setLocationRelativeTo(null);
-        painelTelefone.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        painelTelefone.setVisible(true);
+    public static void JanelaProduto() {
+        PainelProdutoBusca painelProduto = new PainelProdutoBusca();
+        painelProduto.setTitle("BW-STOCK - PRODUTOS");
+        painelProduto.setSize(800, 600);
+        painelProduto.setLocationRelativeTo(null);
+        painelProduto.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        painelProduto.setVisible(true);
     }
     
 }
