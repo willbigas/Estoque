@@ -4,6 +4,16 @@ use bwstock;
 
 /** Criando Tabelas **/
 
+CREATE TABLE usuario(
+id INT(11) not null auto_increment,
+login varchar(25),
+senha varchar(25),
+ativo boolean,
+primeirologin boolean,
+atualizado timestamp NOT NULL,
+PRIMARY KEY (id));
+
+
 CREATE TABLE categoriaProduto(
 id INT(11) not null auto_increment,
 nome varchar(25),
@@ -38,4 +48,8 @@ PRIMARY KEY (id));
 
 select * from estoqueMovimento;
 
-select * from produto
+select * from produto;
+
+select * from categoriaproduto;
+
+select * from usuario
