@@ -22,7 +22,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         formBrancoInferior = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaUsuario = new javax.swing.JTable();
+        tabelaProduto = new javax.swing.JTable();
         formMenu = new javax.swing.JPanel();
         textoPesquisar = new javax.swing.JLabel();
         campoPesquisar = new javax.swing.JTextField();
@@ -55,8 +55,8 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
             }
         });
 
-        tabelaUsuario.setBackground(new java.awt.Color(204, 204, 204));
-        tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaProduto.setBackground(new java.awt.Color(204, 204, 204));
+        tabelaProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -67,7 +67,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
                 "Nome", "Categoria", "Estoque", "Preco UN", "EAN13", "Ativo"
             }
         ));
-        jScrollPane1.setViewportView(tabelaUsuario);
+        jScrollPane1.setViewportView(tabelaProduto);
 
         javax.swing.GroupLayout formBrancoInferiorLayout = new javax.swing.GroupLayout(formBrancoInferior);
         formBrancoInferior.setLayout(formBrancoInferiorLayout);
@@ -367,7 +367,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
-    private javax.swing.JTable tabelaUsuario;
+    private javax.swing.JTable tabelaProduto;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoPesquisar;

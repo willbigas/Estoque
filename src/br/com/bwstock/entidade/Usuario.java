@@ -4,11 +4,20 @@ import java.sql.Timestamp;
 
 public class Usuario {
 
+    private Integer id;
     private String login;
     private String senha;
     private Boolean ativo;
     private Boolean primeiroLogin;
     private Timestamp atualizado;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getLogin() {
         return login;
@@ -54,7 +63,5 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "login=" + login + ", senha=" + senha + ", ativo=" + ativo + ", primeiroLogin=" + primeiroLogin + ", atualizado=" + atualizado + '}';
     }
-    
-    
 
 }

@@ -19,19 +19,19 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
         Usuario1 = new javax.swing.JPanel();
-        textoLogin = new javax.swing.JLabel();
-        campoLogin = new javax.swing.JTextField();
-        textoSenha = new javax.swing.JLabel();
-        campoSenha = new javax.swing.JTextField();
+        textoSku = new javax.swing.JLabel();
+        campoSku = new javax.swing.JTextField();
+        textoPrecoUnitario = new javax.swing.JLabel();
+        campoPrecoUnitario = new javax.swing.JTextField();
         checkAtivo = new javax.swing.JCheckBox();
+        buttonLimpar = new javax.swing.JButton();
+        comboCategoria = new javax.swing.JComboBox<>();
+        textoVinculoCategoria = new javax.swing.JLabel();
+        textoNomeProduto = new javax.swing.JLabel();
+        campoNomeProduto = new javax.swing.JTextField();
         buttonGravar = new javax.swing.JButton();
-        comboPessoa = new javax.swing.JComboBox<>();
-        textoVinculoPessoa = new javax.swing.JLabel();
-        textoSenha2 = new javax.swing.JLabel();
-        campoSenha2 = new javax.swing.JTextField();
-        buttonGravar1 = new javax.swing.JButton();
         textoSenha3 = new javax.swing.JLabel();
-        campoSenha1 = new javax.swing.JTextField();
+        campoEan13 = new javax.swing.JTextField();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -59,39 +59,39 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         });
         Usuario1.setLayout(new java.awt.GridBagLayout());
 
-        textoLogin.setForeground(new java.awt.Color(51, 51, 51));
-        textoLogin.setText("SKU");
+        textoSku.setForeground(new java.awt.Color(51, 51, 51));
+        textoSku.setText("SKU");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoLogin, gridBagConstraints);
+        Usuario1.add(textoSku, gridBagConstraints);
 
-        campoLogin.setColumns(8);
+        campoSku.setColumns(8);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoLogin, gridBagConstraints);
+        Usuario1.add(campoSku, gridBagConstraints);
 
-        textoSenha.setForeground(new java.awt.Color(51, 51, 51));
-        textoSenha.setText("Preco Unitario");
+        textoPrecoUnitario.setForeground(new java.awt.Color(51, 51, 51));
+        textoPrecoUnitario.setText("Preco Unitario");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoSenha, gridBagConstraints);
+        Usuario1.add(textoPrecoUnitario, gridBagConstraints);
 
-        campoSenha.setColumns(5);
+        campoPrecoUnitario.setColumns(5);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSenha, gridBagConstraints);
+        Usuario1.add(campoPrecoUnitario, gridBagConstraints);
 
         checkAtivo.setText("Ativo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -101,55 +101,55 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         Usuario1.add(checkAtivo, gridBagConstraints);
 
-        buttonGravar.setText("Limpar");
+        buttonLimpar.setText("Limpar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(buttonGravar, gridBagConstraints);
+        Usuario1.add(buttonLimpar, gridBagConstraints);
 
-        comboPessoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria1", "Categoria2", "Categoria3", " " }));
+        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria1", "Categoria2", "Categoria3", " " }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 17, 2);
-        Usuario1.add(comboPessoa, gridBagConstraints);
+        Usuario1.add(comboCategoria, gridBagConstraints);
 
-        textoVinculoPessoa.setForeground(new java.awt.Color(51, 51, 51));
-        textoVinculoPessoa.setText("Categoria");
+        textoVinculoCategoria.setForeground(new java.awt.Color(51, 51, 51));
+        textoVinculoCategoria.setText("Categoria");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(18, 3, 18, 3);
-        Usuario1.add(textoVinculoPessoa, gridBagConstraints);
+        Usuario1.add(textoVinculoCategoria, gridBagConstraints);
 
-        textoSenha2.setForeground(new java.awt.Color(51, 51, 51));
-        textoSenha2.setText("NomeProduto");
+        textoNomeProduto.setForeground(new java.awt.Color(51, 51, 51));
+        textoNomeProduto.setText("NomeProduto");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoSenha2, gridBagConstraints);
+        Usuario1.add(textoNomeProduto, gridBagConstraints);
 
-        campoSenha2.setColumns(15);
+        campoNomeProduto.setColumns(15);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSenha2, gridBagConstraints);
+        Usuario1.add(campoNomeProduto, gridBagConstraints);
 
-        buttonGravar1.setText("Gravar");
+        buttonGravar.setText("Gravar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(6, 7, 6, 7);
-        Usuario1.add(buttonGravar1, gridBagConstraints);
+        Usuario1.add(buttonGravar, gridBagConstraints);
 
         textoSenha3.setForeground(new java.awt.Color(51, 51, 51));
         textoSenha3.setText("EAN13");
@@ -160,13 +160,13 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         Usuario1.add(textoSenha3, gridBagConstraints);
 
-        campoSenha1.setColumns(10);
+        campoEan13.setColumns(10);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSenha1, gridBagConstraints);
+        Usuario1.add(campoEan13, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
@@ -829,23 +829,23 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Usuario1;
     private javax.swing.JButton buttonGravar;
-    private javax.swing.JButton buttonGravar1;
-    private javax.swing.JTextField campoLogin;
-    private javax.swing.JTextField campoSenha;
-    private javax.swing.JTextField campoSenha1;
-    private javax.swing.JTextField campoSenha2;
+    private javax.swing.JButton buttonLimpar;
+    private javax.swing.JTextField campoEan13;
+    private javax.swing.JTextField campoNomeProduto;
+    private javax.swing.JTextField campoPrecoUnitario;
+    private javax.swing.JTextField campoSku;
     private javax.swing.JCheckBox checkAtivo;
-    private javax.swing.JComboBox<String> comboPessoa;
+    private javax.swing.JComboBox<String> comboCategoria;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
     private javax.swing.JLabel textoDescricaoEmpresa;
-    private javax.swing.JLabel textoLogin;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa1;
-    private javax.swing.JLabel textoSenha;
-    private javax.swing.JLabel textoSenha2;
+    private javax.swing.JLabel textoNomeProduto;
+    private javax.swing.JLabel textoPrecoUnitario;
     private javax.swing.JLabel textoSenha3;
-    private javax.swing.JLabel textoVinculoPessoa;
+    private javax.swing.JLabel textoSku;
+    private javax.swing.JLabel textoVinculoCategoria;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,21 +19,21 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
-        panelAtendimento = new javax.swing.JPanel();
-        textoAtendimento = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        panelOcorrencia = new javax.swing.JPanel();
-        textoOcorrencia = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        panelTelefone = new javax.swing.JPanel();
-        textoTelefone = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        panelEmail = new javax.swing.JPanel();
-        textoEmail = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        panelProduto = new javax.swing.JPanel();
+        textoProduto = new javax.swing.JLabel();
+        iconProduto = new javax.swing.JLabel();
+        panelEntrada = new javax.swing.JPanel();
+        textoEntrada = new javax.swing.JLabel();
+        iconEntrada = new javax.swing.JLabel();
+        panelSaida = new javax.swing.JPanel();
+        textoSaida = new javax.swing.JLabel();
+        iconSaida = new javax.swing.JLabel();
+        panelInventario = new javax.swing.JPanel();
+        textoInventario = new javax.swing.JLabel();
+        iconInventario = new javax.swing.JLabel();
         panelUsuario = new javax.swing.JPanel();
         textoUsuario = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        iconUsuario = new javax.swing.JLabel();
         panelLogoEmpresa = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -46,176 +46,176 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        panelAtendimento.setPreferredSize(new java.awt.Dimension(133, 103));
-        panelAtendimento.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelProduto.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelProduto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelAtendimentoMouseClicked(evt);
+                panelProdutoMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelAtendimentoMouseEntered(evt);
+                panelProdutoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelAtendimentoMouseExited(evt);
+                panelProdutoMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                panelAtendimentoMousePressed(evt);
+                panelProdutoMousePressed(evt);
             }
         });
 
-        textoAtendimento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        textoAtendimento.setForeground(new java.awt.Color(45, 118, 232));
-        textoAtendimento.setText("PRODUTO");
+        textoProduto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        textoProduto.setForeground(new java.awt.Color(45, 118, 232));
+        textoProduto.setText("PRODUTO");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/product_48x48.png"))); // NOI18N
+        iconProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/product_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout panelAtendimentoLayout = new javax.swing.GroupLayout(panelAtendimento);
-        panelAtendimento.setLayout(panelAtendimentoLayout);
-        panelAtendimentoLayout.setHorizontalGroup(
-            panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAtendimentoLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelProdutoLayout = new javax.swing.GroupLayout(panelProduto);
+        panelProduto.setLayout(panelProdutoLayout);
+        panelProdutoLayout.setHorizontalGroup(
+            panelProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProdutoLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoAtendimento)
-                    .addGroup(panelAtendimentoLayout.createSequentialGroup()
+                .addGroup(panelProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textoProduto)
+                    .addGroup(panelProdutoLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel2)))
+                        .addComponent(iconProduto)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
-        panelAtendimentoLayout.setVerticalGroup(
-            panelAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAtendimentoLayout.createSequentialGroup()
+        panelProdutoLayout.setVerticalGroup(
+            panelProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(iconProduto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textoAtendimento)
+                .addComponent(textoProduto)
                 .addGap(18, 18, 18))
         );
 
-        panelOcorrencia.setPreferredSize(new java.awt.Dimension(133, 103));
-        panelOcorrencia.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelEntrada.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelEntrada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelOcorrenciaMouseEntered(evt);
+                panelEntradaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelOcorrenciaMouseExited(evt);
+                panelEntradaMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                panelOcorrenciaMousePressed(evt);
+                panelEntradaMousePressed(evt);
             }
         });
 
-        textoOcorrencia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        textoOcorrencia.setForeground(new java.awt.Color(45, 118, 232));
-        textoOcorrencia.setText("ENTRADA");
+        textoEntrada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        textoEntrada.setForeground(new java.awt.Color(45, 118, 232));
+        textoEntrada.setText("ENTRADA");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/entrada_48x48.png"))); // NOI18N
+        iconEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/entrada_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout panelOcorrenciaLayout = new javax.swing.GroupLayout(panelOcorrencia);
-        panelOcorrencia.setLayout(panelOcorrenciaLayout);
-        panelOcorrenciaLayout.setHorizontalGroup(
-            panelOcorrenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOcorrenciaLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelEntradaLayout = new javax.swing.GroupLayout(panelEntrada);
+        panelEntrada.setLayout(panelEntradaLayout);
+        panelEntradaLayout.setHorizontalGroup(
+            panelEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEntradaLayout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(textoOcorrencia)
+                .addComponent(textoEntrada)
                 .addGap(31, 31, 31))
-            .addGroup(panelOcorrenciaLayout.createSequentialGroup()
+            .addGroup(panelEntradaLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel3)
+                .addComponent(iconEntrada)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelOcorrenciaLayout.setVerticalGroup(
-            panelOcorrenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOcorrenciaLayout.createSequentialGroup()
+        panelEntradaLayout.setVerticalGroup(
+            panelEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEntradaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(iconEntrada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textoOcorrencia)
+                .addComponent(textoEntrada)
                 .addGap(18, 18, 18))
         );
 
-        panelTelefone.setPreferredSize(new java.awt.Dimension(133, 103));
-        panelTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelSaida.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelSaida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelTelefoneMouseClicked(evt);
+                panelSaidaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelTelefoneMouseEntered(evt);
+                panelSaidaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelTelefoneMouseExited(evt);
+                panelSaidaMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                panelTelefoneMousePressed(evt);
+                panelSaidaMousePressed(evt);
             }
         });
 
-        textoTelefone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        textoTelefone.setForeground(new java.awt.Color(45, 118, 232));
-        textoTelefone.setText("SAIDA");
+        textoSaida.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        textoSaida.setForeground(new java.awt.Color(45, 118, 232));
+        textoSaida.setText("SAIDA");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/saida_48x48.png"))); // NOI18N
+        iconSaida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/saida_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout panelTelefoneLayout = new javax.swing.GroupLayout(panelTelefone);
-        panelTelefone.setLayout(panelTelefoneLayout);
-        panelTelefoneLayout.setHorizontalGroup(
-            panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTelefoneLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelSaidaLayout = new javax.swing.GroupLayout(panelSaida);
+        panelSaida.setLayout(panelSaidaLayout);
+        panelSaidaLayout.setHorizontalGroup(
+            panelSaidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSaidaLayout.createSequentialGroup()
                 .addContainerGap(44, Short.MAX_VALUE)
-                .addGroup(panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(textoTelefone))
+                .addGroup(panelSaidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(iconSaida)
+                    .addComponent(textoSaida))
                 .addGap(41, 41, 41))
         );
-        panelTelefoneLayout.setVerticalGroup(
-            panelTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTelefoneLayout.createSequentialGroup()
+        panelSaidaLayout.setVerticalGroup(
+            panelSaidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSaidaLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel4)
+                .addComponent(iconSaida)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(textoTelefone)
+                .addComponent(textoSaida)
                 .addGap(17, 17, 17))
         );
 
-        panelEmail.setPreferredSize(new java.awt.Dimension(133, 103));
-        panelEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelInventario.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelEmailMouseEntered(evt);
+                panelInventarioMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelEmailMouseExited(evt);
+                panelInventarioMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                panelEmailMousePressed(evt);
+                panelInventarioMousePressed(evt);
             }
         });
 
-        textoEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        textoEmail.setForeground(new java.awt.Color(45, 118, 232));
-        textoEmail.setText("INVENTARIO");
+        textoInventario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        textoInventario.setForeground(new java.awt.Color(45, 118, 232));
+        textoInventario.setText("INVENTARIO");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/inventario_48x48.png"))); // NOI18N
+        iconInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/inventario_48x48.png"))); // NOI18N
 
-        javax.swing.GroupLayout panelEmailLayout = new javax.swing.GroupLayout(panelEmail);
-        panelEmail.setLayout(panelEmailLayout);
-        panelEmailLayout.setHorizontalGroup(
-            panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEmailLayout.createSequentialGroup()
-                .addGroup(panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelEmailLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelInventarioLayout = new javax.swing.GroupLayout(panelInventario);
+        panelInventario.setLayout(panelInventarioLayout);
+        panelInventarioLayout.setHorizontalGroup(
+            panelInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInventarioLayout.createSequentialGroup()
+                .addGroup(panelInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelInventarioLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(textoEmail))
-                    .addGroup(panelEmailLayout.createSequentialGroup()
+                        .addComponent(textoInventario))
+                    .addGroup(panelInventarioLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel5)))
+                        .addComponent(iconInventario)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        panelEmailLayout.setVerticalGroup(
-            panelEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmailLayout.createSequentialGroup()
+        panelInventarioLayout.setVerticalGroup(
+            panelInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInventarioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(iconInventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textoEmail)
+                .addComponent(textoInventario)
                 .addGap(18, 18, 18))
         );
 
@@ -239,7 +239,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoUsuario.setForeground(new java.awt.Color(45, 118, 232));
         textoUsuario.setText("USUARIO");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/usuario_48x48.png"))); // NOI18N
+        iconUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/usuario_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelUsuarioLayout = new javax.swing.GroupLayout(panelUsuario);
         panelUsuario.setLayout(panelUsuarioLayout);
@@ -251,14 +251,14 @@ public class PainelPrincipal extends javax.swing.JFrame {
                     .addComponent(textoUsuario)
                     .addGroup(panelUsuarioLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(jLabel1)))
+                        .addComponent(iconUsuario)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelUsuarioLayout.setVerticalGroup(
             panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuarioLayout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(iconUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoUsuario)
                 .addGap(13, 13, 13))
@@ -272,13 +272,13 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(panelAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
+                    .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(panelOcorrencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(panelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(panelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(115, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
@@ -286,10 +286,10 @@ public class PainelPrincipal extends javax.swing.JFrame {
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelOcorrencia, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                    .addComponent(panelInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(panelSaida, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(panelEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(panelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(142, Short.MAX_VALUE))
@@ -369,53 +369,53 @@ public class PainelPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void panelAtendimentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMouseEntered
+    private void panelProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelAtendimentoMouseEntered
+    }//GEN-LAST:event_panelProdutoMouseEntered
 
-    private void panelAtendimentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMouseExited
+    private void panelProdutoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelAtendimentoMouseExited
+    }//GEN-LAST:event_panelProdutoMouseExited
 
-    private void panelAtendimentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMousePressed
+    private void panelProdutoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelAtendimentoMousePressed
+    }//GEN-LAST:event_panelProdutoMousePressed
 
-    private void panelOcorrenciaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelOcorrenciaMouseEntered
+    private void panelEntradaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEntradaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelOcorrenciaMouseEntered
+    }//GEN-LAST:event_panelEntradaMouseEntered
 
-    private void panelOcorrenciaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelOcorrenciaMouseExited
+    private void panelEntradaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEntradaMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelOcorrenciaMouseExited
+    }//GEN-LAST:event_panelEntradaMouseExited
 
-    private void panelOcorrenciaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelOcorrenciaMousePressed
+    private void panelEntradaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEntradaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelOcorrenciaMousePressed
+    }//GEN-LAST:event_panelEntradaMousePressed
 
-    private void panelTelefoneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseEntered
+    private void panelSaidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSaidaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelTelefoneMouseEntered
+    }//GEN-LAST:event_panelSaidaMouseEntered
 
-    private void panelTelefoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseExited
+    private void panelSaidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSaidaMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelTelefoneMouseExited
+    }//GEN-LAST:event_panelSaidaMouseExited
 
-    private void panelTelefoneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMousePressed
+    private void panelSaidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSaidaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelTelefoneMousePressed
+    }//GEN-LAST:event_panelSaidaMousePressed
 
-    private void panelEmailMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEmailMouseEntered
+    private void panelInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInventarioMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelEmailMouseEntered
+    }//GEN-LAST:event_panelInventarioMouseEntered
 
-    private void panelEmailMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEmailMouseExited
+    private void panelInventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInventarioMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelEmailMouseExited
+    }//GEN-LAST:event_panelInventarioMouseExited
 
-    private void panelEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEmailMousePressed
+    private void panelInventarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInventarioMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelEmailMousePressed
+    }//GEN-LAST:event_panelInventarioMousePressed
 
     private void panelUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelUsuarioMouseEntered
         // TODO add your handling code here:
@@ -433,13 +433,13 @@ public class PainelPrincipal extends javax.swing.JFrame {
         BwStock.JanelaUsuario();
     }//GEN-LAST:event_panelUsuarioMouseClicked
 
-    private void panelTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelTelefoneMouseClicked
+    private void panelSaidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSaidaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_panelTelefoneMouseClicked
+    }//GEN-LAST:event_panelSaidaMouseClicked
 
-    private void panelAtendimentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAtendimentoMouseClicked
+    private void panelProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMouseClicked
         BwStock.JanelaProduto();
-    }//GEN-LAST:event_panelAtendimentoMouseClicked
+    }//GEN-LAST:event_panelProdutoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -480,25 +480,25 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel iconEntrada;
+    private javax.swing.JLabel iconInventario;
+    private javax.swing.JLabel iconProduto;
+    private javax.swing.JLabel iconSaida;
+    private javax.swing.JLabel iconUsuario;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
-    private javax.swing.JPanel panelAtendimento;
-    private javax.swing.JPanel panelEmail;
+    private javax.swing.JPanel panelEntrada;
+    private javax.swing.JPanel panelInventario;
     private javax.swing.JPanel panelLogoEmpresa;
-    private javax.swing.JPanel panelOcorrencia;
-    private javax.swing.JPanel panelTelefone;
+    private javax.swing.JPanel panelProduto;
+    private javax.swing.JPanel panelSaida;
     private javax.swing.JPanel panelUsuario;
-    private javax.swing.JLabel textoAtendimento;
     private javax.swing.JLabel textoDescricaoEmpresa;
-    private javax.swing.JLabel textoEmail;
+    private javax.swing.JLabel textoEntrada;
+    private javax.swing.JLabel textoInventario;
     private javax.swing.JLabel textoLogoEmpresa;
-    private javax.swing.JLabel textoOcorrencia;
-    private javax.swing.JLabel textoTelefone;
+    private javax.swing.JLabel textoProduto;
+    private javax.swing.JLabel textoSaida;
     private javax.swing.JLabel textoTitulo;
     private javax.swing.JLabel textoUsuario;
     // End of variables declaration//GEN-END:variables

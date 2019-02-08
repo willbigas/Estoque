@@ -26,8 +26,6 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         checkAtivo = new javax.swing.JCheckBox();
         buttonGravar = new javax.swing.JButton();
         checkTrocarSenha = new javax.swing.JCheckBox();
-        comboPessoa = new javax.swing.JComboBox<>();
-        textoVinculoPessoa = new javax.swing.JLabel();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -110,22 +108,6 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         Usuario1.add(checkTrocarSenha, gridBagConstraints);
-
-        comboPessoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pessoa1", "Pessoa2", "Pessoa3", "Pessoa4" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(17, 2, 17, 2);
-        Usuario1.add(comboPessoa, gridBagConstraints);
-
-        textoVinculoPessoa.setText("Vincular Pessoa");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(18, 3, 18, 3);
-        Usuario1.add(textoVinculoPessoa, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
@@ -531,7 +513,6 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoSenha;
     private javax.swing.JCheckBox checkAtivo;
     private javax.swing.JCheckBox checkTrocarSenha;
-    private javax.swing.JComboBox<String> comboPessoa;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
@@ -540,6 +521,5 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa1;
     private javax.swing.JLabel textoSenha;
-    private javax.swing.JLabel textoVinculoPessoa;
     // End of variables declaration//GEN-END:variables
 }
