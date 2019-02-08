@@ -11,6 +11,7 @@ descricao varchar(150),
 atualizado timestamp NOT NULL,
 PRIMARY KEY (id));
 
+
 CREATE TABLE estoqueMovimento(
 id INT(11) not null auto_increment,
 dataEntrada date,
@@ -23,11 +24,11 @@ CREATE TABLE produto(
 id INT(11) not null auto_increment,
 sku varchar(11) NOT NULL,
 nome varchar(50) NOT NULL,
+id_categoriaProduto int,
 ean13 INT(13),
 qtdEstoque INT(13),
 precoUnitario decimal(10,2),
 id_estoqueMovimento int,
-id_categoriaProduto int,
 dataCadastro Date,
 ativo boolean,
 atualizado timestamp NOT NULL,

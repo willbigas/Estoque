@@ -45,4 +45,11 @@ public class CategoriaProduto {
         this.atualizado = atualizado;
     }
 
+    @Override
+    public String toString() {
+        return "CategoriaProduto{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", atualizado=" + atualizado + '}';
+    }
+    
+    
+
 }

@@ -1,6 +1,7 @@
 package br.com.bwstock.daoimpl;
 
 import br.com.bwstock.SessionFactory;
+import br.com.bwstock.dao.CategoriaDao;
 import br.com.bwstock.dao.EstoqueMovimentoDao;
 import br.com.bwstock.entidade.CategoriaProduto;
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import java.util.List;
 import br.com.bwstock.entidade.EstoqueMovimento;
 import java.sql.Date;
 
-public class CategoriaDaoImpl implements EstoqueMovimentoDao {
+public class CategoriaDaoImpl implements CategoriaDao {
 
     private Connection conexao;
 
@@ -96,7 +97,7 @@ public class CategoriaDaoImpl implements EstoqueMovimentoDao {
         try {
             conexao = SessionFactory.getConnection();
             PreparedStatement statement = conexao.prepareStatement(
-                    "SELECT * FROM ESTOQUEMOVIMENTO");
+                    "SELECT * FROM CATEGORIAPRODUTO");
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 CategoriaProduto cp = new CategoriaProduto();

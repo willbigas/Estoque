@@ -12,6 +12,7 @@ public class Produto {
     private Integer id;
     private String sku;
     private String nome;
+    private CategoriaProduto categoria;
     private Integer ean13;
     private Integer qtdEstoque;
     private Double precoUnitario;
@@ -42,6 +43,14 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public CategoriaProduto getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaProduto categoria) {
+        this.categoria = categoria;
     }
 
     public Integer getQtdEstoque() {
