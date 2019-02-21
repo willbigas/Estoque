@@ -17,7 +17,7 @@ public class Produto {
     private Integer qtdEstoque;
     private Double precoUnitario;
     private EstoqueMovimento movEstoque;
-    private boolean ativo;
+    private Boolean ativo;
     private Date dataCadastro;
     private Timestamp atualizado;
 
@@ -93,11 +93,11 @@ public class Produto {
         this.dataCadastro = dataCadastro;
     }
 
-    public boolean isAtivo() {
+    public Boolean getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
 

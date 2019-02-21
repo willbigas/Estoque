@@ -4,20 +4,14 @@ import br.com.bwstock.dao.CategoriaDao;
 import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
-import java.awt.HeadlessException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
 
-public class PainelProdutoCadastro extends javax.swing.JFrame {
-
+public class PainelCategoriaCadastro extends javax.swing.JFrame {
+    
     CategoriaDao CATEGORIA_DAO = new CategoriaDaoImpl();
-    private static Produto PRODUTO_ATUAL = new Produto();
-
-    public PainelProdutoCadastro() {
+    
+    public PainelCategoriaCadastro() {
         initComponents();
-        pegandoCategoriaBanco();
-
+        
     }
 
     /**
@@ -32,20 +26,14 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
-        Usuario1 = new javax.swing.JPanel();
-        textoSku = new javax.swing.JLabel();
-        campoSku = new javax.swing.JTextField();
-        textoPrecoUnitario = new javax.swing.JLabel();
-        campoPrecoUnitario = new javax.swing.JTextField();
+        painelCategoria = new javax.swing.JPanel();
+        textoCategoria = new javax.swing.JLabel();
+        campoCategoria = new javax.swing.JTextField();
         checkAtivo = new javax.swing.JCheckBox();
         buttonLimpar = new javax.swing.JButton();
-        comboCategoria = new javax.swing.JComboBox<>();
-        textoVinculoCategoria = new javax.swing.JLabel();
-        textoNomeProduto = new javax.swing.JLabel();
-        campoNomeProduto = new javax.swing.JTextField();
+        textoDescricao = new javax.swing.JLabel();
         buttonGravar = new javax.swing.JButton();
-        textoSenha3 = new javax.swing.JLabel();
-        campoEan13 = new javax.swing.JTextField();
+        campoDescricao = new javax.swing.JTextField();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -58,54 +46,36 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        Usuario1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
-        Usuario1.setForeground(new java.awt.Color(153, 153, 153));
-        Usuario1.addMouseListener(new java.awt.event.MouseAdapter() {
+        painelCategoria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Categoria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
+        painelCategoria.setForeground(new java.awt.Color(153, 153, 153));
+        painelCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Usuario1MouseEntered(evt);
+                painelCategoriaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Usuario1MouseExited(evt);
+                painelCategoriaMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Usuario1MousePressed(evt);
+                painelCategoriaMousePressed(evt);
             }
         });
-        Usuario1.setLayout(new java.awt.GridBagLayout());
+        painelCategoria.setLayout(new java.awt.GridBagLayout());
 
-        textoSku.setForeground(new java.awt.Color(51, 51, 51));
-        textoSku.setText("SKU");
+        textoCategoria.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        textoCategoria.setForeground(new java.awt.Color(51, 51, 51));
+        textoCategoria.setText("Categoria");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoSku, gridBagConstraints);
+        painelCategoria.add(textoCategoria, gridBagConstraints);
 
-        campoSku.setColumns(8);
+        campoCategoria.setColumns(20);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSku, gridBagConstraints);
-
-        textoPrecoUnitario.setForeground(new java.awt.Color(51, 51, 51));
-        textoPrecoUnitario.setText("Preco Unitario");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoPrecoUnitario, gridBagConstraints);
-
-        campoPrecoUnitario.setColumns(5);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoPrecoUnitario, gridBagConstraints);
+        painelCategoria.add(campoCategoria, gridBagConstraints);
 
         checkAtivo.setText("Ativo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -113,49 +83,23 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        Usuario1.add(checkAtivo, gridBagConstraints);
+        painelCategoria.add(checkAtivo, gridBagConstraints);
 
         buttonLimpar.setText("Limpar");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(buttonLimpar, gridBagConstraints);
+        painelCategoria.add(buttonLimpar, gridBagConstraints);
 
-        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria1", "Categoria2", "Categoria3", " " }));
+        textoDescricao.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        textoDescricao.setForeground(new java.awt.Color(51, 51, 51));
+        textoDescricao.setText("Descricao");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(17, 2, 17, 2);
-        Usuario1.add(comboCategoria, gridBagConstraints);
-
-        textoVinculoCategoria.setForeground(new java.awt.Color(51, 51, 51));
-        textoVinculoCategoria.setText("Categoria");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(18, 3, 18, 3);
-        Usuario1.add(textoVinculoCategoria, gridBagConstraints);
-
-        textoNomeProduto.setForeground(new java.awt.Color(51, 51, 51));
-        textoNomeProduto.setText("NomeProduto");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoNomeProduto, gridBagConstraints);
-
-        campoNomeProduto.setColumns(15);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoNomeProduto, gridBagConstraints);
+        painelCategoria.add(textoDescricao, gridBagConstraints);
 
         buttonGravar.setText("Gravar");
         buttonGravar.addActionListener(new java.awt.event.ActionListener() {
@@ -168,40 +112,29 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(6, 7, 6, 7);
-        Usuario1.add(buttonGravar, gridBagConstraints);
+        painelCategoria.add(buttonGravar, gridBagConstraints);
 
-        textoSenha3.setForeground(new java.awt.Color(51, 51, 51));
-        textoSenha3.setText("EAN13");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        Usuario1.add(textoSenha3, gridBagConstraints);
-
-        campoEan13.setColumns(10);
+        campoDescricao.setPreferredSize(new java.awt.Dimension(300, 100));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoEan13, gridBagConstraints);
+        painelCategoria.add(campoDescricao, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(painelCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(painelCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -216,7 +149,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         textoLogoEmpresa1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoLogoEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa1.setText("Cadastrar Produto");
+        textoLogoEmpresa1.setText("Cadastrar Categoria");
 
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
@@ -280,38 +213,42 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 450, Short.MAX_VALUE)
+                .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Usuario1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseEntered
+    private void painelCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseEntered
+    }//GEN-LAST:event_painelCategoriaMouseEntered
 
-    private void Usuario1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseExited
+    private void painelCategoriaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseExited
+    }//GEN-LAST:event_painelCategoriaMouseExited
 
-    private void Usuario1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MousePressed
+    private void painelCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MousePressed
+    }//GEN-LAST:event_painelCategoriaMousePressed
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        Produto p = new Produto();
-        p.setSku(campoSku.getText());
-        p.setNome(campoNomeProduto.getText());
-        p.setEan13(Integer.valueOf(campoEan13.getText()));
-        p.setPrecoUnitario(Double.valueOf(campoPrecoUnitario.getText()));
+        CategoriaProduto c = new CategoriaProduto();
+        c.setNome(campoCategoria.getText());
+        c.setDescricao(campoDescricao.getText());
         if (checkAtivo.isSelected()) {
-            p.setAtivo(true);
+            c.setAtivo(true);
         } else {
-            p.setAtivo(false);
+            c.setAtivo(false);
         }
-
+        
+        try {
+           boolean inserido = CATEGORIA_DAO.inserir(c);
+        } catch (Exception exception) {
+            System.out.println("Deu ruim viado.");
+        }
+        
 
     }//GEN-LAST:event_buttonGravarActionPerformed
 
@@ -332,14 +269,526 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PainelProdutoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelCategoriaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PainelProdutoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelCategoriaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PainelProdutoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelCategoriaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PainelProdutoCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelCategoriaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -856,44 +1305,26 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PainelProdutoCadastro().setVisible(true);
+                new PainelCategoriaCadastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Usuario1;
     private javax.swing.JButton buttonGravar;
     private javax.swing.JButton buttonLimpar;
-    private javax.swing.JTextField campoEan13;
-    private javax.swing.JTextField campoNomeProduto;
-    private javax.swing.JTextField campoPrecoUnitario;
-    private javax.swing.JTextField campoSku;
+    private javax.swing.JTextField campoCategoria;
+    private javax.swing.JTextField campoDescricao;
     private javax.swing.JCheckBox checkAtivo;
-    private javax.swing.JComboBox<String> comboCategoria;
+    private javax.swing.JPanel painelCategoria;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
+    private javax.swing.JLabel textoCategoria;
+    private javax.swing.JLabel textoDescricao;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa1;
-    private javax.swing.JLabel textoNomeProduto;
-    private javax.swing.JLabel textoPrecoUnitario;
-    private javax.swing.JLabel textoSenha3;
-    private javax.swing.JLabel textoSku;
-    private javax.swing.JLabel textoVinculoCategoria;
     // End of variables declaration//GEN-END:variables
 
-    private void pegandoCategoriaBanco() throws HeadlessException {
-        List<CategoriaProduto> CATEGORIA_PRODUTO = new ArrayList<>();
-        try {
-            List<?> list = CATEGORIA_DAO.pesquisarTodos();
-            CATEGORIA_PRODUTO = (List<CategoriaProduto>) (Object) list;
-            for (CategoriaProduto categoriaProduto : CATEGORIA_PRODUTO) {
-                comboCategoria.addItem(categoriaProduto.getNome());
-            }
-        } catch (Exception exception) {
-            JOptionPane.showMessageDialog(this, "Problemas no Banco" + exception.getStackTrace());
-        }
-    }
 }

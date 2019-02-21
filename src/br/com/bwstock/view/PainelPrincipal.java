@@ -34,6 +34,9 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelUsuario = new javax.swing.JPanel();
         textoUsuario = new javax.swing.JLabel();
         iconUsuario = new javax.swing.JLabel();
+        panelCategoria = new javax.swing.JPanel();
+        textoCategoria = new javax.swing.JLabel();
+        iconCategoria = new javax.swing.JLabel();
         panelLogoEmpresa = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -212,7 +215,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelInventarioLayout.setVerticalGroup(
             panelInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInventarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(iconInventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textoInventario)
@@ -264,6 +267,52 @@ public class PainelPrincipal extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
+        panelCategoria.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelCategoriaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelCategoriaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panelCategoriaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelCategoriaMousePressed(evt);
+            }
+        });
+
+        textoCategoria.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        textoCategoria.setForeground(new java.awt.Color(45, 118, 232));
+        textoCategoria.setText("CATEGORIA");
+
+        iconCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/inventario_48x48.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelCategoriaLayout = new javax.swing.GroupLayout(panelCategoria);
+        panelCategoria.setLayout(panelCategoriaLayout);
+        panelCategoriaLayout.setHorizontalGroup(
+            panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCategoriaLayout.createSequentialGroup()
+                .addGroup(panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(iconCategoria))
+                    .addGroup(panelCategoriaLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(textoCategoria)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        panelCategoriaLayout.setVerticalGroup(
+            panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(iconCategoria)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textoCategoria)
+                .addGap(18, 18, 18))
+        );
+
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
@@ -274,11 +323,14 @@ public class PainelPrincipal extends javax.swing.JFrame {
                     .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(panelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                        .addComponent(panelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(panelSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
@@ -291,7 +343,9 @@ public class PainelPrincipal extends javax.swing.JFrame {
                     .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                     .addComponent(panelEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(panelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
 
@@ -441,6 +495,24 @@ public class PainelPrincipal extends javax.swing.JFrame {
         BwStock.JanelaProduto();
     }//GEN-LAST:event_panelProdutoMouseClicked
 
+    private void panelCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelCategoriaMouseEntered
+
+    private void panelCategoriaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelCategoriaMouseExited
+
+    private void panelCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelCategoriaMousePressed
+
+    private void panelCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMouseClicked
+        // TODO add your handling code here:
+        BwStock.JanelaCategoria();
+        
+    }//GEN-LAST:event_panelCategoriaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -480,6 +552,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iconCategoria;
     private javax.swing.JLabel iconEntrada;
     private javax.swing.JLabel iconInventario;
     private javax.swing.JLabel iconProduto;
@@ -487,12 +560,14 @@ public class PainelPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel iconUsuario;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
+    private javax.swing.JPanel panelCategoria;
     private javax.swing.JPanel panelEntrada;
     private javax.swing.JPanel panelInventario;
     private javax.swing.JPanel panelLogoEmpresa;
     private javax.swing.JPanel panelProduto;
     private javax.swing.JPanel panelSaida;
     private javax.swing.JPanel panelUsuario;
+    private javax.swing.JLabel textoCategoria;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoEntrada;
     private javax.swing.JLabel textoInventario;

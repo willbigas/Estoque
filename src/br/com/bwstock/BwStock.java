@@ -1,5 +1,7 @@
 package br.com.bwstock;
 
+import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.view.PainelCategoriaCadastro;
 import br.com.bwstock.view.PainelLogin;
 import br.com.bwstock.view.PainelPrincipal;
 import br.com.bwstock.view.PainelProdutoBusca;
@@ -75,6 +77,15 @@ public class BwStock {
         painelProdutoEdicao.setLocationRelativeTo(null);
         painelProdutoEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelProdutoEdicao.setVisible(true);
+    }
+    
+    public static void JanelaCategoria() {
+        PainelCategoriaCadastro painelCategoria = new PainelCategoriaCadastro();
+        painelCategoria.setTitle("BW-STOCK - CATEGORIAS");
+        painelCategoria.setSize(800, 600);
+        painelCategoria.setLocationRelativeTo(null);
+        painelCategoria.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        painelCategoria.setVisible(true);
     }
 
 }

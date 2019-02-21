@@ -12,6 +12,7 @@ public class CategoriaProduto {
     private String nome;
     private String descricao;
     private Timestamp atualizado;
+    private Boolean ativo;
 
     public Integer getId() {
         return id;
@@ -37,6 +38,14 @@ public class CategoriaProduto {
         this.descricao = descricao;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
     public Timestamp getAtualizado() {
         return atualizado;
     }
@@ -49,7 +58,5 @@ public class CategoriaProduto {
     public String toString() {
         return "CategoriaProduto{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", atualizado=" + atualizado + '}';
     }
-    
-    
 
 }
