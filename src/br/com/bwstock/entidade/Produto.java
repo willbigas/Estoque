@@ -21,6 +21,25 @@ public class Produto {
     private Date dataCadastro;
     private Timestamp atualizado;
 
+    public Produto() {
+    }
+
+    public Produto(Integer id, String sku, String nome, CategoriaProduto categoria, Integer ean13, Integer qtdEstoque, Double precoUnitario, EstoqueMovimento movEstoque, Boolean ativo, Date dataCadastro, Timestamp atualizado) {
+        this.id = id;
+        this.sku = sku;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.ean13 = ean13;
+        this.qtdEstoque = qtdEstoque;
+        this.precoUnitario = precoUnitario;
+        this.movEstoque = movEstoque;
+        this.ativo = ativo;
+        this.dataCadastro = dataCadastro;
+        this.atualizado = atualizado;
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }
@@ -35,6 +54,9 @@ public class Produto {
 
     public void setEan13(Integer ean13) {
         this.ean13 = ean13;
+    }
+    public void setEan13(String ean13) {
+        setEan13(Integer.valueOf(ean13));
     }
 
     public String getNome() {
@@ -67,6 +89,9 @@ public class Produto {
 
     public void setPrecoUnitario(Double precoUnitario) {
         this.precoUnitario = precoUnitario;
+    }
+    public void setPrecoUnitario(String precoUnitario) {
+        setPrecoUnitario(Double.valueOf(precoUnitario));
     }
 
     public EstoqueMovimento getMovEstoque() {

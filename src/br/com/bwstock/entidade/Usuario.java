@@ -11,6 +11,21 @@ public class Usuario {
     private Boolean primeiroLogin;
     private Timestamp atualizado;
 
+    public Usuario() {
+    }
+    
+
+    public Usuario(Integer id, String login, String senha, Boolean ativo, Boolean primeiroLogin, Timestamp atualizado) {
+        this.id = id;
+        this.login = login;
+        this.senha = senha;
+        this.ativo = ativo;
+        this.primeiroLogin = primeiroLogin;
+        this.atualizado = atualizado;
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }

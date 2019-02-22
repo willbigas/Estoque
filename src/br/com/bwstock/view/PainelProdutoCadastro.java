@@ -19,6 +19,8 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         pegandoCategoriaBanco();
 
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +55,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         painelFundo.setBackground(new java.awt.Color(45, 118, 232));
 
@@ -304,8 +307,8 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         Produto p = new Produto();
         p.setSku(campoSku.getText());
         p.setNome(campoNomeProduto.getText());
-        p.setEan13(Integer.valueOf(campoEan13.getText()));
-        p.setPrecoUnitario(Double.valueOf(campoPrecoUnitario.getText()));
+        p.setEan13(campoEan13.getText());
+        p.setPrecoUnitario(campoPrecoUnitario.getText());
         if (checkAtivo.isSelected()) {
             p.setAtivo(true);
         } else {

@@ -41,6 +41,7 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         painelFundo.setBackground(new java.awt.Color(45, 118, 232));
 

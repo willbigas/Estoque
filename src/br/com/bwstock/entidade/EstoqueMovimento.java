@@ -14,6 +14,16 @@ public class EstoqueMovimento {
     private Date dataSaida;
     private Timestamp atualizado;
 
+    public EstoqueMovimento() {
+    }
+
+    public EstoqueMovimento(Integer id, Date dataEntrada, Date dataSaida, Timestamp atualizado) {
+        this.id = id;
+        this.dataEntrada = dataEntrada;
+        this.dataSaida = dataSaida;
+        this.atualizado = atualizado;
+    }
+
     public Integer getId() {
         return id;
     }
