@@ -1,5 +1,8 @@
 package br.com.bwstock.view;
 
+import br.com.bwstock.negocio.ManterUsuarioNegocio;
+import javax.swing.JOptionPane;
+
 public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
     public PainelUsuarioCadastro() {
@@ -18,7 +21,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
-        Usuario1 = new javax.swing.JPanel();
+        painelUsuario = new javax.swing.JPanel();
         textoLogin = new javax.swing.JLabel();
         campoLogin = new javax.swing.JTextField();
         textoSenha = new javax.swing.JLabel();
@@ -39,20 +42,9 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        Usuario1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
-        Usuario1.setForeground(new java.awt.Color(153, 153, 153));
-        Usuario1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Usuario1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Usuario1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Usuario1MousePressed(evt);
-            }
-        });
-        Usuario1.setLayout(new java.awt.GridBagLayout());
+        painelUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
+        painelUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        painelUsuario.setLayout(new java.awt.GridBagLayout());
 
         textoLogin.setText("Login");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -60,7 +52,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        Usuario1.add(textoLogin, gridBagConstraints);
+        painelUsuario.add(textoLogin, gridBagConstraints);
 
         campoLogin.setColumns(15);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -68,7 +60,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoLogin, gridBagConstraints);
+        painelUsuario.add(campoLogin, gridBagConstraints);
 
         textoSenha.setText("Senha");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -76,7 +68,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        Usuario1.add(textoSenha, gridBagConstraints);
+        painelUsuario.add(textoSenha, gridBagConstraints);
 
         campoSenha.setColumns(15);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -84,7 +76,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSenha, gridBagConstraints);
+        painelUsuario.add(campoSenha, gridBagConstraints);
 
         checkAtivo.setText("Ativo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -92,15 +84,20 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        Usuario1.add(checkAtivo, gridBagConstraints);
+        painelUsuario.add(checkAtivo, gridBagConstraints);
 
         buttonGravar.setText("Gravar");
+        buttonGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGravarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        Usuario1.add(buttonGravar, gridBagConstraints);
+        painelUsuario.add(buttonGravar, gridBagConstraints);
 
         checkTrocarSenha.setText("Trocar senha no Proximo Login");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -108,7 +105,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        Usuario1.add(checkTrocarSenha, gridBagConstraints);
+        painelUsuario.add(checkTrocarSenha, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
@@ -116,14 +113,14 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
                 .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -205,17 +202,14 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Usuario1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseEntered
+    private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseEntered
-
-    private void Usuario1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseExited
-
-    private void Usuario1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MousePressed
+       Boolean inserido =  ManterUsuarioNegocio.adicionar(campoLogin, campoSenha, checkAtivo, checkTrocarSenha);
+       if (inserido) {
+           JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
+       }
+        
+    }//GEN-LAST:event_buttonGravarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -508,7 +502,6 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Usuario1;
     private javax.swing.JButton buttonGravar;
     private javax.swing.JTextField campoLogin;
     private javax.swing.JTextField campoSenha;
@@ -517,6 +510,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
+    private javax.swing.JPanel painelUsuario;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogin;
     private javax.swing.JLabel textoLogoEmpresa;
