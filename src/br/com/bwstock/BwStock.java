@@ -8,13 +8,13 @@ import br.com.bwstock.view.PainelProdutoBusca;
 import br.com.bwstock.view.PainelProdutoCadastro;
 import br.com.bwstock.view.PainelUsuarioBusca;
 import br.com.bwstock.view.PainelUsuarioCadastro;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 public class BwStock {
 
     public static void main(String[] args) throws Exception {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         JanelaLogin();
 
     }
@@ -61,7 +61,7 @@ public class BwStock {
     /**
      * Janelas Referente a Produto
      */
-    public static void JanelaProduto() {
+    public static void JanelaProduto() throws Exception {
         PainelProdutoBusca painelProduto = new PainelProdutoBusca();
         painelProduto.setTitle("BW-STOCK - PRODUTOS");
         painelProduto.setSize(800, 600);
@@ -78,7 +78,7 @@ public class BwStock {
         painelProdutoEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelProdutoEdicao.setVisible(true);
     }
-    
+
     public static void JanelaCategoria() {
         PainelCategoriaCadastro painelCategoria = new PainelCategoriaCadastro();
         painelCategoria.setTitle("BW-STOCK - CATEGORIAS");

@@ -1,4 +1,4 @@
-package utilpacket;
+package br.com.bwstock.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

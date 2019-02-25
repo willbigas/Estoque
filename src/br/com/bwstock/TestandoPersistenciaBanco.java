@@ -7,6 +7,8 @@ import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.daoimpl.EstoqueMovimentoDaoImpl;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
 import br.com.bwstock.entidade.CategoriaProduto;
+import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.negocio.ManterProdutoNegocio;
 import java.util.Date;
 import java.util.List;
 
@@ -15,16 +17,16 @@ import java.util.List;
  * @author William
  */
 public class TestandoPersistenciaBanco {
-    
+
     public static ProdutoDao produtoDao = new ProdutoDaoImpl();
     public static EstoqueMovimentoDao estoqueMovimentoDao = new EstoqueMovimentoDaoImpl();
     public static CategoriaDao categoriaDao = new CategoriaDaoImpl();
-    
+
     public static void main(String[] args) throws Exception {
 //
         String teste = "21/11/1997";
 //        
-        Date teste2 = utilpacket.UtilFormat.data(teste);
+        Date teste2 = br.com.bwstock.util.UtilFormat.data(teste);
 //        
 //        EstoqueMovimento em = new EstoqueMovimento();
 //        em.setAtualizado(null);
@@ -45,16 +47,8 @@ public class TestandoPersistenciaBanco {
 //        p.setPrecoUnitario(2.80);
 //        p.setQtdEstoque(15);
 //        p.setSku("AAAAAA");
-        CategoriaProduto cp = new CategoriaProduto();
-        cp.setNome("2 ALTERADO");
-        cp.setDescricao("TEST2E ALTERADO");
-        cp.setId(1);
-        cp.setAtualizado(null);
-        categoriaDao.excluir(2);
-        
-      List<CategoriaProduto> cprod = (List<CategoriaProduto>) categoriaDao.pesquisarTodos();
-        System.out.println(cprod);
-        
-    }    
-    
+
+        ManterProdutoNegocio.recebendoProdutoDoBanco();
+    }
+
 }

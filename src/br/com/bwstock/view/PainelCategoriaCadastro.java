@@ -1,13 +1,10 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.dao.CategoriaDao;
-import br.com.bwstock.daoimpl.CategoriaDaoImpl;
-import br.com.bwstock.entidade.CategoriaProduto;
-import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.negocio.ManterCategoriaNegocio;
+import javax.swing.JOptionPane;
 
 public class PainelCategoriaCadastro extends javax.swing.JFrame {
     
-    CategoriaDao CATEGORIA_DAO = new CategoriaDaoImpl();
     
     public PainelCategoriaCadastro() {
         initComponents();
@@ -49,17 +46,6 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
 
         painelCategoria.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Categoria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
         painelCategoria.setForeground(new java.awt.Color(153, 153, 153));
-        painelCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                painelCategoriaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                painelCategoriaMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                painelCategoriaMousePressed(evt);
-            }
-        });
         painelCategoria.setLayout(new java.awt.GridBagLayout());
 
         textoCategoria.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -221,33 +207,18 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void painelCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_painelCategoriaMouseEntered
-
-    private void painelCategoriaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_painelCategoriaMouseExited
-
-    private void painelCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCategoriaMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_painelCategoriaMousePressed
-
+    
+    /**
+     * Gravando Categoria no Banco
+     * @param evt 
+     */
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        CategoriaProduto c = new CategoriaProduto();
-        c.setNome(campoCategoria.getText());
-        c.setDescricao(campoDescricao.getText());
-        if (checkAtivo.isSelected()) {
-            c.setAtivo(true);
+       Boolean gravado = ManterCategoriaNegocio.addCategoria(campoCategoria, campoDescricao, checkAtivo);
+        if(gravado) {
+            JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
         } else {
-            c.setAtivo(false);
-        }
-        
-        try {
-           boolean inserido = CATEGORIA_DAO.inserir(c);
-        } catch (Exception exception) {
-            System.out.println("Deu ruim viado.");
+            JOptionPane.showMessageDialog(this, "Não consegui gravar Categoria no Banco");
         }
         
 

@@ -1,11 +1,25 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
+import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.negocio.ManterProdutoNegocio;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 public class PainelProdutoBusca extends javax.swing.JFrame {
 
-    public PainelProdutoBusca() {
+    public PainelProdutoBusca() throws Exception {
         initComponents();
+        try {
+            List<Produto> produtos = ManterProdutoNegocio.pesquisar("");
+            System.out.println(produtos);
+            adicionarListaProdutosTabela(produtos);
+        } catch (Exception exception) {
+            System.out.println("Caiu na Exception " + exception.getMessage());
+        }
+
     }
 
     /**
@@ -44,17 +58,6 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
         formBrancoInferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        formBrancoInferior.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMousePressed(evt);
-            }
-        });
 
         tabelaProduto.setBackground(new java.awt.Color(204, 204, 204));
         tabelaProduto.setModel(new javax.swing.table.DefaultTableModel(
@@ -82,17 +85,6 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        formMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                formMenuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                formMenuMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                formMenuMousePressed(evt);
-            }
-        });
         formMenu.setLayout(new java.awt.GridBagLayout());
 
         textoPesquisar.setText("Pesquisar");
@@ -230,33 +222,12 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMouseEntered
-
-    private void formMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMouseExited
-
-    private void formMenuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMousePressed
-
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
-        BwStock.JanelaProdutoEdicao();
+        try {
+            BwStock.JanelaProdutoEdicao();
+        } catch (Exception exception) {
+        }
     }//GEN-LAST:event_buttonNovoActionPerformed
-
-    private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMousePressed
-
-    private void formBrancoInferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseExited
-
-    private void formBrancoInferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseEntered
 
     /**
      * @param args the command line arguments
@@ -351,7 +322,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PainelProdutoBusca().setVisible(true);
+                try {
+                    new PainelProdutoBusca().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(PainelProdutoBusca.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -374,4 +349,34 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private javax.swing.JLabel textoPesquisar;
     private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
+public void adicionarListaProdutosTabela(List<Produto> produtos) {
+        String[] colunas = {"Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
+        String[][] dados = new String[produtos.size()][colunas.length];
+        for (int i = 0; i < produtos.size(); i++) {
+            Produto p = produtos.get(i);
+            dados[i][0] = p.getNome();
+            if (p.getQtdEstoque() == null) {
+                dados[i][1] = "Não informado";
+            } else {
+                dados[i][1] = String.valueOf(p.getQtdEstoque());
+
+            }
+            if (p.getPrecoUnitario() == null) {
+                dados[i][2] = "Não informado";
+            } else {
+                dados[i][2] = String.valueOf(p.getPrecoUnitario());
+
+            }
+            dados[i][3] = String.valueOf(p.getEan13());
+            if (p.getAtivo() == true) {
+                dados[i][4] = "Ativo";
+            } else {
+                dados[i][4] = "Desativado";
+            }
+
+        }
+        DefaultTableModel modelo = new DefaultTableModel(dados, colunas);
+        tabelaProduto.setModel(modelo);
+    }
+
 }

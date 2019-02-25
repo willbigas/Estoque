@@ -4,6 +4,7 @@ import br.com.bwstock.dao.CategoriaDao;
 import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.negocio.ManterProdutoNegocio;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         painelFundo = new javax.swing.JPanel();
         painelFundoInferior = new javax.swing.JPanel();
-        Usuario1 = new javax.swing.JPanel();
+        PainelCadastroProduto = new javax.swing.JPanel();
         textoSku = new javax.swing.JLabel();
         campoSku = new javax.swing.JTextField();
         textoPrecoUnitario = new javax.swing.JLabel();
@@ -61,20 +62,9 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
-        Usuario1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
-        Usuario1.setForeground(new java.awt.Color(153, 153, 153));
-        Usuario1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Usuario1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Usuario1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Usuario1MousePressed(evt);
-            }
-        });
-        Usuario1.setLayout(new java.awt.GridBagLayout());
+        PainelCadastroProduto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Produto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(51, 51, 51))); // NOI18N
+        PainelCadastroProduto.setForeground(new java.awt.Color(153, 153, 153));
+        PainelCadastroProduto.setLayout(new java.awt.GridBagLayout());
 
         textoSku.setForeground(new java.awt.Color(51, 51, 51));
         textoSku.setText("SKU");
@@ -83,7 +73,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoSku, gridBagConstraints);
+        PainelCadastroProduto.add(textoSku, gridBagConstraints);
 
         campoSku.setColumns(8);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -91,7 +81,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoSku, gridBagConstraints);
+        PainelCadastroProduto.add(campoSku, gridBagConstraints);
 
         textoPrecoUnitario.setForeground(new java.awt.Color(51, 51, 51));
         textoPrecoUnitario.setText("Preco Unitario");
@@ -100,7 +90,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoPrecoUnitario, gridBagConstraints);
+        PainelCadastroProduto.add(textoPrecoUnitario, gridBagConstraints);
 
         campoPrecoUnitario.setColumns(5);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -108,7 +98,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoPrecoUnitario, gridBagConstraints);
+        PainelCadastroProduto.add(campoPrecoUnitario, gridBagConstraints);
 
         checkAtivo.setText("Ativo");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -116,7 +106,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        Usuario1.add(checkAtivo, gridBagConstraints);
+        PainelCadastroProduto.add(checkAtivo, gridBagConstraints);
 
         buttonLimpar.setText("Limpar");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -124,15 +114,14 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(buttonLimpar, gridBagConstraints);
+        PainelCadastroProduto.add(buttonLimpar, gridBagConstraints);
 
-        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria1", "Categoria2", "Categoria3", " " }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 17, 2);
-        Usuario1.add(comboCategoria, gridBagConstraints);
+        PainelCadastroProduto.add(comboCategoria, gridBagConstraints);
 
         textoVinculoCategoria.setForeground(new java.awt.Color(51, 51, 51));
         textoVinculoCategoria.setText("Categoria");
@@ -141,7 +130,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(18, 3, 18, 3);
-        Usuario1.add(textoVinculoCategoria, gridBagConstraints);
+        PainelCadastroProduto.add(textoVinculoCategoria, gridBagConstraints);
 
         textoNomeProduto.setForeground(new java.awt.Color(51, 51, 51));
         textoNomeProduto.setText("NomeProduto");
@@ -150,7 +139,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        Usuario1.add(textoNomeProduto, gridBagConstraints);
+        PainelCadastroProduto.add(textoNomeProduto, gridBagConstraints);
 
         campoNomeProduto.setColumns(15);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -158,7 +147,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoNomeProduto, gridBagConstraints);
+        PainelCadastroProduto.add(campoNomeProduto, gridBagConstraints);
 
         buttonGravar.setText("Gravar");
         buttonGravar.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +160,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(6, 7, 6, 7);
-        Usuario1.add(buttonGravar, gridBagConstraints);
+        PainelCadastroProduto.add(buttonGravar, gridBagConstraints);
 
         textoSenha3.setForeground(new java.awt.Color(51, 51, 51));
         textoSenha3.setText("EAN13");
@@ -180,7 +169,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        Usuario1.add(textoSenha3, gridBagConstraints);
+        PainelCadastroProduto.add(textoSenha3, gridBagConstraints);
 
         campoEan13.setColumns(10);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -188,7 +177,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        Usuario1.add(campoEan13, gridBagConstraints);
+        PainelCadastroProduto.add(campoEan13, gridBagConstraints);
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
@@ -196,14 +185,14 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
                 .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -290,30 +279,10 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Usuario1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseEntered
-
-    private void Usuario1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MouseExited
-
-    private void Usuario1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Usuario1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1MousePressed
-
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        Produto p = new Produto();
-        p.setSku(campoSku.getText());
-        p.setNome(campoNomeProduto.getText());
-        p.setEan13(campoEan13.getText());
-        p.setPrecoUnitario(campoPrecoUnitario.getText());
-        if (checkAtivo.isSelected()) {
-            p.setAtivo(true);
-        } else {
-            p.setAtivo(false);
-        }
+        ManterProdutoNegocio.adicionar(campoEan13, campoNomeProduto, campoPrecoUnitario, campoSku, checkAtivo, comboCategoria);
+        
 
 
     }//GEN-LAST:event_buttonGravarActionPerformed
@@ -865,7 +834,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Usuario1;
+    private javax.swing.JPanel PainelCadastroProduto;
     private javax.swing.JButton buttonGravar;
     private javax.swing.JButton buttonLimpar;
     private javax.swing.JTextField campoEan13;

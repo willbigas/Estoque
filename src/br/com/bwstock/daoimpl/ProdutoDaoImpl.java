@@ -13,11 +13,12 @@ import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.entidade.EstoqueMovimento;
 import br.com.bwstock.entidade.Produto;
 import java.sql.Date;
+import java.sql.Types;
 
 public class ProdutoDaoImpl implements ProdutoDao {
 
     EstoqueMovimentoDao ESTOQUE_MOVIMENTO_DAO = new EstoqueMovimentoDaoImpl();
-    
+
     private Connection conexao;
 
     @Override
@@ -30,11 +31,19 @@ public class ProdutoDaoImpl implements ProdutoDao {
             statement.setString(1, produto.getSku());
             statement.setString(2, produto.getNome());
             statement.setInt(3, produto.getEan13());
-            statement.setInt(4, produto.getQtdEstoque());
+            if (produto.getQtdEstoque() == null) { // se for nulo
+                statement.setNull(4, Types.INTEGER);
+            } else {
+                statement.setInt(4, produto.getQtdEstoque());
+            }
             statement.setDouble(5, produto.getPrecoUnitario());
-            statement.setInt(6, produto.getMovEstoque().getId());
-            statement.setDate(7, new Date(produto.getDataCadastro().getTime()));
-            statement.setBoolean(8, true);
+            if (produto.getMovEstoque()== null) { // se for nulo
+                statement.setNull(6, Types.INTEGER);
+            } else {
+                statement.setInt(6, produto.getMovEstoque().getId());
+            }
+            statement.setDate(7, new Date(System.currentTimeMillis()));
+            statement.setBoolean(8, produto.getAtivo());
             statement.setTimestamp(9, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
@@ -64,8 +73,8 @@ public class ProdutoDaoImpl implements ProdutoDao {
             statement.setInt(3, produto.getEan13());
             statement.setInt(4, produto.getQtdEstoque());
             statement.setInt(5, produto.getMovEstoque().getId());
-            statement.setDate(6, new Date(produto.getDataCadastro().getTime()));
-            statement.setBoolean(7, true);
+            statement.setDate(6, new Date(produto.getDataCadastro().getTime())); // essa data não pode ser recriada
+            statement.setBoolean(7, produto.getAtivo());
             statement.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
             statement.setInt(9, produto.getId());
             int linhasAtualizadas = statement.executeUpdate();
@@ -102,7 +111,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 p.setEan13(ean13);
                 p.setQtdEstoque(qtdEstoque);
                 EstoqueMovimento em = (EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(estoqueMovimentoId);
-                p.setMovEstoque(em); 
+                p.setMovEstoque(em);
                 p.setDataCadastro(dataCadastro);
                 p.setAtivo(ativo);
                 p.setAtualizado(ts);
@@ -118,7 +127,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
     }
 
     @Override
-    public List<Object> pesquisarTodos() throws Exception {
+    public List<?> pesquisarTodos() throws Exception {
         List<Object> produtos = new ArrayList<>();
         try {
             conexao = SessionFactory.getConnection();
@@ -132,6 +141,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 p.setEan13(rs.getInt("ean13"));
                 p.setQtdEstoque(rs.getInt("qtdEstoque"));
                 Integer idEstoqueMovimento = (rs.getInt("id_EstoqueMovimento"));
+                p.setAtivo(rs.getBoolean("ativo"));
                 p.setMovEstoque((EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(idEstoqueMovimento));
                 p.setDataCadastro(rs.getDate("dataCadastro"));
                 p.setAtualizado(rs.getTimestamp("atualizado"));

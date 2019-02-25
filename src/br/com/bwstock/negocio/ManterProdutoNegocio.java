@@ -2,9 +2,13 @@ package br.com.bwstock.negocio;
 
 import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
+import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -12,13 +16,57 @@ import java.util.List;
  */
 public class ManterProdutoNegocio {
     
+    public static ProdutoDao PRODUTO_DAO = new ProdutoDaoImpl();
     
-        public static List<Produto> PRODUTOS = new ArrayList<>();
-        public static ProdutoDao PRODUTO_DAO = new ProdutoDaoImpl();
+    public static List<Produto> PRODUTOS_DO_BANCO;
+    
+    private JTextField campoEan13;
+    private JTextField campoNomeProduto;
+    private JTextField campoPrecoUnitario;
+    private JTextField campoSku;
+    private JCheckBox checkAtivo;
+    private JComboBox<String> comboCategoria;
+    
+    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
+        this.campoEan13 = campoEan13;
+        this.campoNomeProduto = campoNomeProduto;
+        this.campoPrecoUnitario = campoPrecoUnitario;
+        this.campoSku = campoSku;
+        this.checkAtivo = checkAtivo;
+        this.comboCategoria = comboCategoria;
+        recebendoProdutoDoBanco();
         
+    }
+
+    public ManterProdutoNegocio() {
+        recebendoProdutoDoBanco();
+    }
     
     
-     public static void adicionar(Produto produto) throws Exception {
+    
+    
+    
+    public static void adicionar(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario,
+            JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
+        Produto p = new Produto();
+        p.setCategoria(ManterCategoriaNegocio.pesquisarCategoriaPorNome((String) comboCategoria.getSelectedItem()));
+        p.setSku(campoSku.getText());
+        p.setNome(campoNomeProduto.getText());
+        p.setEan13(campoEan13.getText());
+        p.setPrecoUnitario(campoPrecoUnitario.getText());
+        if (checkAtivo.isSelected()) {
+            p.setAtivo(true);
+        } else {
+            p.setAtivo(false);
+        }
+        try {
+            PRODUTO_DAO.inserir(p);
+        } catch (Exception exception) {
+        }
+        
+    }
+    
+    public static void atualizar(Produto produto) throws Exception {
         if (produto.getId() != null) {
             Produto produtoEditar = obterId(produto.getId());
             produtoEditar.setNome(produto.getNome());
@@ -30,14 +78,9 @@ public class ManterProdutoNegocio {
             return;
         }
     }
-     
-     
-     
-     
-     
-     
-     public static Produto obterId(Integer id) throws Exception {
-
+    
+    public static Produto obterId(Integer id) throws Exception {
+        
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
         List<Produto> PRODUTOS = (List<Produto>) (Object) objs;
         for (int i = 0; i < PRODUTOS.size(); i++) {
@@ -50,6 +93,29 @@ public class ManterProdutoNegocio {
         }
         return null;
     }
-     
     
+    public static void recebendoProdutoDoBanco() {
+        try {
+            PRODUTOS_DO_BANCO = (List<Produto>) (Object) PRODUTO_DAO.pesquisarTodos();
+            System.out.println(PRODUTOS_DO_BANCO);
+        } catch (Exception exception) {
+        }
+    }
+    
+    
+    public static List<Produto> pesquisar(String termo) throws Exception {
+        List<Produto> retorno = new ArrayList();
+        List<?> objs = PRODUTO_DAO.pesquisarTodos();
+        List<Produto> PRODUTOS = (List<Produto>) (Object) objs;
+
+        for (Produto p : PRODUTOS) {
+            if (p.getNome().toLowerCase().contains(termo.toLowerCase())
+                    || p.getSku().toLowerCase().contains(termo.toLowerCase())
+                    || p.getEan13().equals(Integer.valueOf(termo))) {
+                retorno.add(p);
+            }
+
+        }
+        return retorno;
+    }
 }

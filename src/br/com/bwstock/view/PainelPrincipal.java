@@ -1,9 +1,10 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
+import br.com.bwstock.negocio.ManterProdutoNegocio;
 
 public class PainelPrincipal extends javax.swing.JFrame {
-
+    
     public PainelPrincipal() {
         initComponents();
     }
@@ -492,7 +493,10 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_panelSaidaMouseClicked
 
     private void panelProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMouseClicked
-        BwStock.JanelaProduto();
+        try {
+            BwStock.JanelaProduto();
+        } catch (Exception exception) {
+        }
     }//GEN-LAST:event_panelProdutoMouseClicked
 
     private void panelCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMouseEntered
