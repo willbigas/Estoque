@@ -3,9 +3,11 @@ package br.com.bwstock.view;
 import br.com.bwstock.BwStock;
 import br.com.bwstock.entidade.Produto;
 import br.com.bwstock.negocio.ManterProdutoNegocio;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PainelProdutoBusca extends javax.swing.JFrame {
@@ -99,6 +101,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
 
         buttonPesquisar.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
         buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/search_20px_1.png"))); // NOI18N
+        buttonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         formMenu.add(buttonPesquisar, gridBagConstraints);
@@ -116,6 +123,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         formMenu.add(buttonNovo, gridBagConstraints);
 
         buttonExcluir.setText("Excluir");
+        buttonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExcluirActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -228,6 +240,33 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         } catch (Exception exception) {
         }
     }//GEN-LAST:event_buttonNovoActionPerformed
+
+    private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
+        // TODO add your handling code here:
+        List<Produto> produtos = new ArrayList<>();
+        try {
+            produtos = ManterProdutoNegocio.pesquisar(campoPesquisar.getText());
+
+        } catch (Exception exception) {
+        }
+
+        adicionarListaProdutosTabela(produtos);
+
+    }//GEN-LAST:event_buttonPesquisarActionPerformed
+
+    private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
+        // TODO add your handling code here:
+//        ManterProdutoNegocio.excluirContatoDaTabela(tabelaProduto);
+//        ManterProdutoNegocio.PRODUTO_DAO.pesquisarTodos();
+
+//        try {
+//
+//            List<TipoContato> tipoContatos = (List<TipoContato>) (Object) tipoContatoDao.pesquisarTodos();
+//            adicionarListaTipoContatosTabela(tipoContatos);
+//        } catch (Exception exception) {
+//        }
+//        
+    }//GEN-LAST:event_buttonExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,28 +389,29 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
 public void adicionarListaProdutosTabela(List<Produto> produtos) {
-        String[] colunas = {"Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
+        String[] colunas = {"SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
         String[][] dados = new String[produtos.size()][colunas.length];
         for (int i = 0; i < produtos.size(); i++) {
             Produto p = produtos.get(i);
-            dados[i][0] = p.getNome();
-            if (p.getQtdEstoque() == null) {
-                dados[i][1] = "Não informado";
+            dados[i][0] = p.getSku();
+            dados[i][1] = p.getNome();
+            if (p.getQtdEstoque() == 0) {
+                dados[i][2] = "0";
             } else {
-                dados[i][1] = String.valueOf(p.getQtdEstoque());
+                dados[i][2] = String.valueOf(p.getQtdEstoque());
 
             }
             if (p.getPrecoUnitario() == null) {
-                dados[i][2] = "Não informado";
+                dados[i][3] = "Não informado";
             } else {
-                dados[i][2] = String.valueOf(p.getPrecoUnitario());
+                dados[i][3] = String.valueOf(p.getPrecoUnitario());
 
             }
-            dados[i][3] = String.valueOf(p.getEan13());
+            dados[i][4] = String.valueOf(p.getEan13());
             if (p.getAtivo() == true) {
-                dados[i][4] = "Ativo";
+                dados[i][5] = "Ativo";
             } else {
-                dados[i][4] = "Desativado";
+                dados[i][5] = "Desativado";
             }
 
         }

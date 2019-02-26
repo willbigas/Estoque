@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -15,37 +17,36 @@ import javax.swing.JTextField;
  * @author William
  */
 public class ManterProdutoNegocio {
-    
+
     public static ProdutoDao PRODUTO_DAO = new ProdutoDaoImpl();
-    
+
     public static List<Produto> PRODUTOS_DO_BANCO;
-    
+
     private JTextField campoEan13;
     private JTextField campoNomeProduto;
     private JTextField campoPrecoUnitario;
     private JTextField campoSku;
     private JCheckBox checkAtivo;
     private JComboBox<String> comboCategoria;
-    
-    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
+    private JTable tabelaProduto;
+
+    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo, 
+            JComboBox<String> comboCategoria , JTable tabelaProduto) {
         this.campoEan13 = campoEan13;
         this.campoNomeProduto = campoNomeProduto;
         this.campoPrecoUnitario = campoPrecoUnitario;
         this.campoSku = campoSku;
         this.checkAtivo = checkAtivo;
         this.comboCategoria = comboCategoria;
+        this.tabelaProduto = tabelaProduto;
         recebendoProdutoDoBanco();
-        
+
     }
 
     public ManterProdutoNegocio() {
         recebendoProdutoDoBanco();
     }
-    
-    
-    
-    
-    
+
     public static void adicionar(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario,
             JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
         Produto p = new Produto();
@@ -63,9 +64,9 @@ public class ManterProdutoNegocio {
             PRODUTO_DAO.inserir(p);
         } catch (Exception exception) {
         }
-        
+
     }
-    
+
     public static void atualizar(Produto produto) throws Exception {
         if (produto.getId() != null) {
             Produto produtoEditar = obterId(produto.getId());
@@ -78,9 +79,9 @@ public class ManterProdutoNegocio {
             return;
         }
     }
-    
+
     public static Produto obterId(Integer id) throws Exception {
-        
+
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
         List<Produto> PRODUTOS = (List<Produto>) (Object) objs;
         for (int i = 0; i < PRODUTOS.size(); i++) {
@@ -93,7 +94,7 @@ public class ManterProdutoNegocio {
         }
         return null;
     }
-    
+
     public static void recebendoProdutoDoBanco() {
         try {
             PRODUTOS_DO_BANCO = (List<Produto>) (Object) PRODUTO_DAO.pesquisarTodos();
@@ -101,8 +102,7 @@ public class ManterProdutoNegocio {
         } catch (Exception exception) {
         }
     }
-    
-    
+
     public static List<Produto> pesquisar(String termo) throws Exception {
         List<Produto> retorno = new ArrayList();
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
@@ -117,5 +117,39 @@ public class ManterProdutoNegocio {
 
         }
         return retorno;
+    }
+
+    public static boolean excluir(Integer id) throws Exception {
+
+        List<?> objs = PRODUTO_DAO.pesquisarTodos();
+        List<Produto> produtos = (List<Produto>) (Object) objs;
+        for (int i = 0; i < produtos.size(); i++) {
+            Produto p = produtos.get(i);
+            if (p.getId().equals(id)) {
+                produtos.remove(p);
+                PRODUTO_DAO.excluir(id);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public static void excluirContatoDaTabela(JTable tabelaProduto) {
+                 int linha = tabelaProduto.getSelectedRow();
+        if (linha >= 0) {
+            String campoSelecionado = (String) tabelaProduto.getValueAt(linha, 0);
+            Integer campoIdProdutoSelecionado = Integer.valueOf(campoSelecionado);
+            try {
+
+                Boolean tudoCerto = PRODUTO_DAO.excluir(campoIdProdutoSelecionado);
+                if (tudoCerto) {
+                    JOptionPane.showMessageDialog(null, "Tipo de Contato Excluido");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Existem contatos vinculados a esse tipo de Contato , favor Excluir os Vinculos");
+                }
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(null, "Problemas ao Excluir");
+            }
+        }
     }
 }
