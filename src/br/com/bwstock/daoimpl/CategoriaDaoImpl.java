@@ -2,7 +2,6 @@ package br.com.bwstock.daoimpl;
 
 import br.com.bwstock.SessionFactory;
 import br.com.bwstock.dao.CategoriaDao;
-import br.com.bwstock.dao.EstoqueMovimentoDao;
 import br.com.bwstock.entidade.CategoriaProduto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +10,12 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.bwstock.entidade.EstoqueMovimento;
-import java.sql.Date;
 
+/**
+ * Classe que implementa a Pesitencia de ProdutoCategoria
+ *
+ * @author William
+ */
 public class CategoriaDaoImpl implements CategoriaDao {
 
     private Connection conexao;

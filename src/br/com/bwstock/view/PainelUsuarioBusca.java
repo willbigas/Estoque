@@ -152,7 +152,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("Gerenciamento de Atendimentos");
+        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
 
         textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,15 +163,12 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(textoTitulo))
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(textoLogoEmpresa)))
+                .addGap(14, 14, 14)
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoLogoEmpresa))
+                .addGap(64, 64, 64)
+                .addComponent(textoTitulo)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         painelLogoLayout.setVerticalGroup(

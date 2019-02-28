@@ -3,12 +3,12 @@ package br.com.bwstock.negocio;
 import br.com.bwstock.dao.CategoriaDao;
 import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.entidade.CategoriaProduto;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 /**
+ * Classe de Negocio - ProdutoCategoria - Todas as implementacoes de negocio
  *
  * @author William
  */
@@ -27,7 +27,7 @@ public class ManterCategoriaNegocio {
     }
 
     /**
-     * Adicionando uma Nova Categoria no Banco
+     * Adicionando uma Nova Categoria no BD
      *
      * @param campoCategoria
      * @param campoDescricao
@@ -55,6 +55,12 @@ public class ManterCategoriaNegocio {
         return inserido;
     }
 
+    /**
+     * Pesquisando Categoria por nome no BD.
+     *
+     * @param termo
+     * @return
+     */
     public static CategoriaProduto pesquisarCategoriaPorNome(String termo) {
         try {
             List<CategoriaProduto> categorias = (List<CategoriaProduto>) CATEGORIA_DAO.pesquisarTodos();

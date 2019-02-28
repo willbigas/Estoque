@@ -2,7 +2,6 @@ package br.com.bwstock.negocio;
 
 import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
-import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
+ * Classe de Negocio - Produto - Todas as implementacoes de negocio.
  *
  * @author William
  */
@@ -30,8 +30,8 @@ public class ManterProdutoNegocio {
     private JComboBox<String> comboCategoria;
     private JTable tabelaProduto;
 
-    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo, 
-            JComboBox<String> comboCategoria , JTable tabelaProduto) {
+    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo,
+            JComboBox<String> comboCategoria, JTable tabelaProduto) {
         this.campoEan13 = campoEan13;
         this.campoNomeProduto = campoNomeProduto;
         this.campoPrecoUnitario = campoPrecoUnitario;
@@ -47,6 +47,16 @@ public class ManterProdutoNegocio {
         recebendoProdutoDoBanco();
     }
 
+    /**
+     * Adiciona Produto e Persiste no BD.
+     *
+     * @param campoEan13
+     * @param campoNomeProduto
+     * @param campoPrecoUnitario
+     * @param campoSku
+     * @param checkAtivo
+     * @param comboCategoria
+     */
     public static void adicionar(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario,
             JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
         Produto p = new Produto();
@@ -67,6 +77,13 @@ public class ManterProdutoNegocio {
 
     }
 
+    /**
+     * Atualiza Produto - Necessario Ajustar
+     *
+     * @deprecated - Ainda nao implementei completamente.
+     * @param produto
+     * @throws Exception
+     */
     public static void atualizar(Produto produto) throws Exception {
         if (produto.getId() != null) {
             Produto produtoEditar = obterId(produto.getId());
@@ -80,6 +97,13 @@ public class ManterProdutoNegocio {
         }
     }
 
+    /**
+     * Metodo que Retorna um Produto
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
     public static Produto obterId(Integer id) throws Exception {
 
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
@@ -95,6 +119,9 @@ public class ManterProdutoNegocio {
         return null;
     }
 
+    /**
+     * Metodo que Lista todos os produtos do BD.
+     */
     public static void recebendoProdutoDoBanco() {
         try {
             PRODUTOS_DO_BANCO = (List<Produto>) (Object) PRODUTO_DAO.pesquisarTodos();
@@ -103,6 +130,13 @@ public class ManterProdutoNegocio {
         }
     }
 
+    /**
+     * Metodo que pesquisa o Produto no BD e retorna uma Lista.
+     *
+     * @param termo
+     * @return
+     * @throws Exception
+     */
     public static List<Produto> pesquisar(String termo) throws Exception {
         List<Produto> retorno = new ArrayList();
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
@@ -119,6 +153,13 @@ public class ManterProdutoNegocio {
         return retorno;
     }
 
+    /**
+     * Metodo que Exclui um Produto do BD.
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
     public static boolean excluir(Integer id) throws Exception {
 
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
@@ -133,9 +174,14 @@ public class ManterProdutoNegocio {
         }
         return false;
     }
-    
-    public static void excluirContatoDaTabela(JTable tabelaProduto) {
-                 int linha = tabelaProduto.getSelectedRow();
+
+    /**
+     * Metodo que exclui um Produto da Tabela.
+     *
+     * @param tabelaProduto
+     */
+    public static void excluirProdutoDaTabela(JTable tabelaProduto) {
+        int linha = tabelaProduto.getSelectedRow();
         if (linha >= 0) {
             String campoSelecionado = (String) tabelaProduto.getValueAt(linha, 0);
             Integer campoIdProdutoSelecionado = Integer.valueOf(campoSelecionado);

@@ -255,9 +255,9 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
 
     private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
         // TODO add your handling code here:
-        ManterProdutoNegocio.excluirContatoDaTabela(tabelaProduto);
-        
-       
+        ManterProdutoNegocio.excluirProdutoDaTabela(tabelaProduto);
+
+
     }//GEN-LAST:event_buttonExcluirActionPerformed
 
     /**
