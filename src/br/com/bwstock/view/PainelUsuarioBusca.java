@@ -1,11 +1,15 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
+import br.com.bwstock.entidade.Usuario;
+import br.com.bwstock.negocio.ManterUsuarioNegocio;
 
 public class PainelUsuarioBusca extends javax.swing.JFrame {
-
+    
     public PainelUsuarioBusca() {
         initComponents();
+        ManterUsuarioNegocio.mostrandoUsuariosNaTabela(tabelaUsuario);
+        
     }
 
     /**
@@ -44,17 +48,6 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         painelFundoInferior.setBackground(new java.awt.Color(255, 255, 255));
 
         formBrancoInferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        formBrancoInferior.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                formBrancoInferiorMousePressed(evt);
-            }
-        });
 
         tabelaUsuario.setBackground(new java.awt.Color(204, 204, 204));
         tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
@@ -82,17 +75,6 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        formMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                formMenuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                formMenuMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                formMenuMousePressed(evt);
-            }
-        });
         formMenu.setLayout(new java.awt.GridBagLayout());
 
         textoPesquisar.setText("Pesquisar");
@@ -107,6 +89,11 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
 
         buttonPesquisar.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
         buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/search_20px_1.png"))); // NOI18N
+        buttonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         formMenu.add(buttonPesquisar, gridBagConstraints);
@@ -230,33 +217,15 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMouseEntered
-
-    private void formMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMouseExited
-
-    private void formMenuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMenuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formMenuMousePressed
-
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
         BwStock.JanelaUsuarioEdicao();
     }//GEN-LAST:event_buttonNovoActionPerformed
 
-    private void formBrancoInferiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMousePressed
+    private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
+        ManterUsuarioNegocio.buscandoUsuariosNaTabela(campoPesquisar, tabelaUsuario);
+    }//GEN-LAST:event_buttonPesquisarActionPerformed
 
-    private void formBrancoInferiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseExited
-
-    private void formBrancoInferiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formBrancoInferiorMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formBrancoInferiorMouseEntered
+   
 
     /**
      * @param args the command line arguments
@@ -342,4 +311,5 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     private javax.swing.JLabel textoPesquisar;
     private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
+
 }

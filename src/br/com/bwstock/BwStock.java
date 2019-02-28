@@ -1,6 +1,5 @@
 package br.com.bwstock;
 
-import br.com.bwstock.entidade.Produto;
 import br.com.bwstock.view.PainelCategoriaCadastro;
 import br.com.bwstock.view.PainelLogin;
 import br.com.bwstock.view.PainelPrincipal;
@@ -8,9 +7,7 @@ import br.com.bwstock.view.PainelProdutoBusca;
 import br.com.bwstock.view.PainelProdutoCadastro;
 import br.com.bwstock.view.PainelUsuarioBusca;
 import br.com.bwstock.view.PainelUsuarioCadastro;
-import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.UIManager;
 
 public class BwStock {
 
@@ -43,7 +40,7 @@ public class BwStock {
     public static void JanelaUsuario() {
         PainelUsuarioBusca painelUsuario = new PainelUsuarioBusca();
         painelUsuario.setTitle("BW-STOCK - USUARIOS");
-        painelUsuario.setSize(800, 600);
+        painelUsuario.setSize(650, 500);
         painelUsuario.setLocationRelativeTo(null);
         painelUsuario.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelUsuario.setVisible(true);

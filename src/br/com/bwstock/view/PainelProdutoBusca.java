@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PainelProdutoBusca extends javax.swing.JFrame {
@@ -256,16 +255,9 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
 
     private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
         // TODO add your handling code here:
-//        ManterProdutoNegocio.excluirContatoDaTabela(tabelaProduto);
-//        ManterProdutoNegocio.PRODUTO_DAO.pesquisarTodos();
-
-//        try {
-//
-//            List<TipoContato> tipoContatos = (List<TipoContato>) (Object) tipoContatoDao.pesquisarTodos();
-//            adicionarListaTipoContatosTabela(tipoContatos);
-//        } catch (Exception exception) {
-//        }
-//        
+        ManterProdutoNegocio.excluirContatoDaTabela(tabelaProduto);
+        
+       
     }//GEN-LAST:event_buttonExcluirActionPerformed
 
     /**

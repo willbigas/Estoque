@@ -206,6 +206,10 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
        Boolean inserido =  ManterUsuarioNegocio.adicionar(campoLogin, campoSenha, checkAtivo, checkTrocarSenha);
        if (inserido) {
+           campoLogin.setText(null);
+           campoSenha.setText(null);
+           checkAtivo.setSelected(false);
+           checkTrocarSenha.setSelected(false);
            JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
        }
         

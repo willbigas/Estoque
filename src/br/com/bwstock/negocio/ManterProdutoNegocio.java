@@ -145,7 +145,7 @@ public class ManterProdutoNegocio {
                 if (tudoCerto) {
                     JOptionPane.showMessageDialog(null, "Tipo de Contato Excluido");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Existem contatos vinculados a esse tipo de Contato , favor Excluir os Vinculos");
+                    JOptionPane.showMessageDialog(null, "Existem vinculos, favor Excluir os Vinculos");
                 }
             } catch (Exception exception) {
                 JOptionPane.showMessageDialog(null, "Problemas ao Excluir");
