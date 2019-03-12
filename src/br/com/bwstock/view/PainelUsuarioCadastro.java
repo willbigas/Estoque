@@ -1,6 +1,6 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.negocio.ManterUsuarioNegocio;
+import br.com.bwstock.control.UsuarioControl;
 import javax.swing.JOptionPane;
 
 public class PainelUsuarioCadastro extends javax.swing.JFrame {
@@ -23,12 +23,8 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         painelUsuario = new javax.swing.JPanel();
         textoLogin = new javax.swing.JLabel();
-        campoLogin = new javax.swing.JTextField();
         textoSenha = new javax.swing.JLabel();
-        campoSenha = new javax.swing.JTextField();
-        checkAtivo = new javax.swing.JCheckBox();
         buttonGravar = new javax.swing.JButton();
-        checkTrocarSenha = new javax.swing.JCheckBox();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -204,7 +200,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-       Boolean inserido =  ManterUsuarioNegocio.adicionar(campoLogin, campoSenha, checkAtivo, checkTrocarSenha);
+       Boolean inserido =  UsuarioControl.adicionar(campoLogin, campoSenha, checkAtivo, checkTrocarSenha);
        if (inserido) {
            campoLogin.setText(null);
            campoSenha.setText(null);
@@ -507,10 +503,10 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonGravar;
-    private javax.swing.JTextField campoLogin;
-    private javax.swing.JTextField campoSenha;
-    private javax.swing.JCheckBox checkAtivo;
-    private javax.swing.JCheckBox checkTrocarSenha;
+    public static final javax.swing.JTextField campoLogin = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoSenha = new javax.swing.JTextField();
+    public static final javax.swing.JCheckBox checkAtivo = new javax.swing.JCheckBox();
+    public static final javax.swing.JCheckBox checkTrocarSenha = new javax.swing.JCheckBox();
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;

@@ -1,14 +1,16 @@
 package br.com.bwstock.view;
 
-import br.com.bwstock.negocio.ManterCategoriaNegocio;
+import br.com.bwstock.control.CategoriaControl;
 import javax.swing.JOptionPane;
 
 public class PainelCategoriaCadastro extends javax.swing.JFrame {
-    
-    
+
+    CategoriaControl categoriaControl;
+
     public PainelCategoriaCadastro() {
         initComponents();
-        
+        categoriaControl = new CategoriaControl();
+
     }
 
     /**
@@ -25,12 +27,9 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         painelCategoria = new javax.swing.JPanel();
         textoCategoria = new javax.swing.JLabel();
-        campoCategoria = new javax.swing.JTextField();
-        checkAtivo = new javax.swing.JCheckBox();
         buttonLimpar = new javax.swing.JButton();
         textoDescricao = new javax.swing.JLabel();
         buttonGravar = new javax.swing.JButton();
-        campoDescricao = new javax.swing.JTextField();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -207,20 +206,20 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
     /**
      * Gravando Categoria no Banco
-     * @param evt 
+     *
+     * @param evt
      */
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-       Boolean gravado = ManterCategoriaNegocio.addCategoria(campoCategoria, campoDescricao, checkAtivo);
-        if(gravado) {
+        Boolean gravado = categoriaControl.addCategoria();
+        if (gravado) {
             JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
         } else {
             JOptionPane.showMessageDialog(this, "Não consegui gravar Categoria no Banco");
         }
-        
+
 
     }//GEN-LAST:event_buttonGravarActionPerformed
 
@@ -1285,9 +1284,9 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonGravar;
     private javax.swing.JButton buttonLimpar;
-    private javax.swing.JTextField campoCategoria;
-    private javax.swing.JTextField campoDescricao;
-    private javax.swing.JCheckBox checkAtivo;
+    public static final javax.swing.JTextField campoCategoria = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoDescricao = new javax.swing.JTextField();
+    public static final javax.swing.JCheckBox checkAtivo = new javax.swing.JCheckBox();
     private javax.swing.JPanel painelCategoria;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;

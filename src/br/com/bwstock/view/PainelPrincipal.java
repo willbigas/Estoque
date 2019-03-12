@@ -1,7 +1,7 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
-import br.com.bwstock.negocio.ManterProdutoNegocio;
+import br.com.bwstock.control.ProdutoControl;
 
 public class PainelPrincipal extends javax.swing.JFrame {
     

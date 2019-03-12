@@ -1,71 +1,45 @@
-package br.com.bwstock.negocio;
+package br.com.bwstock.control;
 
 import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
 import br.com.bwstock.entidade.Produto;
+import br.com.bwstock.view.PainelProdutoCadastro;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 
 /**
  * Classe de Negocio - Produto - Todas as implementacoes de negocio.
  *
  * @author William
  */
-public class ManterProdutoNegocio {
+public class ProdutoControl {
 
-    public static ProdutoDao PRODUTO_DAO = new ProdutoDaoImpl();
+    private CategoriaControl CATEGORIA_CONTROL;
+    private ProdutoControl PRODUTO_CONTROL;
+    private ProdutoDao PRODUTO_DAO = new ProdutoDaoImpl();
 
-    public static List<Produto> PRODUTOS_DO_BANCO;
+    private List<Produto> PRODUTOS_DO_BANCO;
 
-    private JTextField campoEan13;
-    private JTextField campoNomeProduto;
-    private JTextField campoPrecoUnitario;
-    private JTextField campoSku;
-    private JCheckBox checkAtivo;
-    private JComboBox<String> comboCategoria;
-    private JTable tabelaProduto;
-
-    public ManterProdutoNegocio(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario, JTextField campoSku, JCheckBox checkAtivo,
-            JComboBox<String> comboCategoria, JTable tabelaProduto) {
-        this.campoEan13 = campoEan13;
-        this.campoNomeProduto = campoNomeProduto;
-        this.campoPrecoUnitario = campoPrecoUnitario;
-        this.campoSku = campoSku;
-        this.checkAtivo = checkAtivo;
-        this.comboCategoria = comboCategoria;
-        this.tabelaProduto = tabelaProduto;
-        recebendoProdutoDoBanco();
-
-    }
-
-    public ManterProdutoNegocio() {
+    public ProdutoControl() {
         recebendoProdutoDoBanco();
     }
 
     /**
      * Adiciona Produto e Persiste no BD.
      *
-     * @param campoEan13
-     * @param campoNomeProduto
-     * @param campoPrecoUnitario
-     * @param campoSku
-     * @param checkAtivo
-     * @param comboCategoria
      */
-    public static void adicionar(JTextField campoEan13, JTextField campoNomeProduto, JTextField campoPrecoUnitario,
-            JTextField campoSku, JCheckBox checkAtivo, JComboBox<String> comboCategoria) {
+    public void adicionar() {
         Produto p = new Produto();
-        p.setCategoria(ManterCategoriaNegocio.pesquisarCategoriaPorNome((String) comboCategoria.getSelectedItem()));
-        p.setSku(campoSku.getText());
-        p.setNome(campoNomeProduto.getText());
-        p.setEan13(campoEan13.getText());
-        p.setPrecoUnitario(campoPrecoUnitario.getText());
-        if (checkAtivo.isSelected()) {
+        String resultado = (String) PainelProdutoCadastro.comboCategoria.getSelectedItem();
+        System.out.println("Resultado :" + resultado);
+        p.setCategoria(CATEGORIA_CONTROL.pesquisarCategoriaPorNome(resultado));
+        p.setSku(PainelProdutoCadastro.campoSku.getText());
+        p.setNome(PainelProdutoCadastro.campoNomeProduto.getText());
+        p.setEan13(PainelProdutoCadastro.campoEan13.getText());
+        p.setPrecoUnitario(PainelProdutoCadastro.campoPrecoUnitario.getText());
+        if (PainelProdutoCadastro.checkAtivo.isSelected()) {
             p.setAtivo(true);
         } else {
             p.setAtivo(false);
@@ -84,9 +58,10 @@ public class ManterProdutoNegocio {
      * @param produto
      * @throws Exception
      */
-    public static void atualizar(Produto produto) throws Exception {
+    public void atualizar(Produto produto) throws Exception {
         if (produto.getId() != null) {
-            Produto produtoEditar = obterId(produto.getId());
+            Produto produtoEditar = new Produto();
+            produtoEditar = obterId(produto.getId());
             produtoEditar.setNome(produto.getNome());
             produtoEditar.setSku(produto.getSku());
             produtoEditar.setCategoria(produto.getCategoria()); // Implementar pesquisa de Categoria
@@ -104,7 +79,7 @@ public class ManterProdutoNegocio {
      * @return
      * @throws Exception
      */
-    public static Produto obterId(Integer id) throws Exception {
+    public Produto obterId(Integer id) throws Exception {
 
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
         List<Produto> PRODUTOS = (List<Produto>) (Object) objs;
@@ -122,7 +97,7 @@ public class ManterProdutoNegocio {
     /**
      * Metodo que Lista todos os produtos do BD.
      */
-    public static void recebendoProdutoDoBanco() {
+    public void recebendoProdutoDoBanco() {
         try {
             PRODUTOS_DO_BANCO = (List<Produto>) (Object) PRODUTO_DAO.pesquisarTodos();
             System.out.println(PRODUTOS_DO_BANCO);
@@ -137,7 +112,7 @@ public class ManterProdutoNegocio {
      * @return
      * @throws Exception
      */
-    public static List<Produto> pesquisar(String termo) throws Exception {
+    public List<Produto> pesquisar(String termo) throws Exception {
         List<Produto> retorno = new ArrayList();
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
         List<Produto> PRODUTOS = (List<Produto>) (Object) objs;
@@ -160,7 +135,7 @@ public class ManterProdutoNegocio {
      * @return
      * @throws Exception
      */
-    public static boolean excluir(Integer id) throws Exception {
+    public boolean excluir(Integer id) throws Exception {
 
         List<?> objs = PRODUTO_DAO.pesquisarTodos();
         List<Produto> produtos = (List<Produto>) (Object) objs;
@@ -180,7 +155,7 @@ public class ManterProdutoNegocio {
      *
      * @param tabelaProduto
      */
-    public static void excluirProdutoDaTabela(JTable tabelaProduto) {
+    public void excluirProdutoDaTabela(JTable tabelaProduto) {
         int linha = tabelaProduto.getSelectedRow();
         if (linha >= 0) {
             String campoSelecionado = (String) tabelaProduto.getValueAt(linha, 0);

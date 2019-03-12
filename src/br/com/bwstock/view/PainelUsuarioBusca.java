@@ -1,14 +1,13 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
-import br.com.bwstock.entidade.Usuario;
-import br.com.bwstock.negocio.ManterUsuarioNegocio;
+import br.com.bwstock.control.UsuarioControl;
 
 public class PainelUsuarioBusca extends javax.swing.JFrame {
     
     public PainelUsuarioBusca() {
         initComponents();
-        ManterUsuarioNegocio.mostrandoUsuariosNaTabela(tabelaUsuario);
+        UsuarioControl.mostrandoUsuariosNaTabela(tabelaUsuario);
         
     }
 
@@ -29,7 +28,6 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         tabelaUsuario = new javax.swing.JTable();
         formMenu = new javax.swing.JPanel();
         textoPesquisar = new javax.swing.JLabel();
-        campoPesquisar = new javax.swing.JTextField();
         buttonPesquisar = new javax.swing.JButton();
         buttonNovo = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
@@ -219,7 +217,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
-        ManterUsuarioNegocio.buscandoUsuariosNaTabela(campoPesquisar, tabelaUsuario);
+        UsuarioControl.buscandoUsuariosNaTabela(campoPesquisar, tabelaUsuario);
     }//GEN-LAST:event_buttonPesquisarActionPerformed
 
    
@@ -295,7 +293,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     private javax.swing.JButton buttonExcluir;
     private javax.swing.JButton buttonNovo;
     private javax.swing.JButton buttonPesquisar;
-    private javax.swing.JTextField campoPesquisar;
+    public static final javax.swing.JTextField campoPesquisar = new javax.swing.JTextField();
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
     private javax.swing.JScrollPane jScrollPane1;

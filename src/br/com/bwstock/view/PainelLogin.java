@@ -21,8 +21,6 @@ public class PainelLogin extends javax.swing.JFrame {
         painelLogo = new javax.swing.JPanel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
         painelLogin = new javax.swing.JPanel();
-        campoLogin = new javax.swing.JTextField();
-        campoSenha = new javax.swing.JTextField();
         buttonEntrar = new javax.swing.JButton();
         textoEsqueciSenha = new javax.swing.JLabel();
         iconUsuario = new javax.swing.JLabel();
@@ -225,8 +223,8 @@ public class PainelLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonEntrar;
-    private javax.swing.JTextField campoLogin;
-    private javax.swing.JTextField campoSenha;
+    public static final javax.swing.JTextField campoLogin = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoSenha = new javax.swing.JTextField();
     private javax.swing.JLabel iconSenha;
     private javax.swing.JLabel iconUsuario;
     private javax.swing.JPanel painelFundo;

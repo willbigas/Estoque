@@ -4,19 +4,22 @@ import br.com.bwstock.dao.CategoriaDao;
 import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
-import br.com.bwstock.negocio.ManterProdutoNegocio;
+import br.com.bwstock.control.ProdutoControl;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 public class PainelProdutoCadastro extends javax.swing.JFrame {
+    
+    ProdutoControl PRODUTO_CONTROL;
 
     CategoriaDao CATEGORIA_DAO = new CategoriaDaoImpl();
     private static Produto PRODUTO_ATUAL = new Produto();
 
     public PainelProdutoCadastro() {
         initComponents();
+        PRODUTO_CONTROL = new ProdutoControl();
         pegandoCategoriaBanco();
 
     }
@@ -37,18 +40,12 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         PainelCadastroProduto = new javax.swing.JPanel();
         textoSku = new javax.swing.JLabel();
-        campoSku = new javax.swing.JTextField();
         textoPrecoUnitario = new javax.swing.JLabel();
-        campoPrecoUnitario = new javax.swing.JTextField();
-        checkAtivo = new javax.swing.JCheckBox();
         buttonLimpar = new javax.swing.JButton();
-        comboCategoria = new javax.swing.JComboBox<>();
         textoVinculoCategoria = new javax.swing.JLabel();
         textoNomeProduto = new javax.swing.JLabel();
-        campoNomeProduto = new javax.swing.JTextField();
         buttonGravar = new javax.swing.JButton();
         textoSenha3 = new javax.swing.JLabel();
-        campoEan13 = new javax.swing.JTextField();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -281,7 +278,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        ManterProdutoNegocio.adicionar(campoEan13, campoNomeProduto, campoPrecoUnitario, campoSku, checkAtivo, comboCategoria);
+        PRODUTO_CONTROL.adicionar();
         
 
 
@@ -837,12 +834,12 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel PainelCadastroProduto;
     private javax.swing.JButton buttonGravar;
     private javax.swing.JButton buttonLimpar;
-    private javax.swing.JTextField campoEan13;
-    private javax.swing.JTextField campoNomeProduto;
-    private javax.swing.JTextField campoPrecoUnitario;
-    private javax.swing.JTextField campoSku;
-    private javax.swing.JCheckBox checkAtivo;
-    private javax.swing.JComboBox<String> comboCategoria;
+    public static final javax.swing.JTextField campoEan13 = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoNomeProduto = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoPrecoUnitario = new javax.swing.JTextField();
+    public static final javax.swing.JTextField campoSku = new javax.swing.JTextField();
+    public static final javax.swing.JCheckBox checkAtivo = new javax.swing.JCheckBox();
+    public static final javax.swing.JComboBox<String> comboCategoria = new javax.swing.JComboBox<>();
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;

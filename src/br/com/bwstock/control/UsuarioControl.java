@@ -1,4 +1,4 @@
-package br.com.bwstock.negocio;
+package br.com.bwstock.control;
 
 import br.com.bwstock.dao.UsuarioDao;
 import br.com.bwstock.daoimpl.UsuarioDaoImpl;
@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Alunos
  */
-public class ManterUsuarioNegocio {
+public class UsuarioControl {
 
     public static UsuarioDao USUARIO_DAO = new UsuarioDaoImpl();
 
@@ -26,7 +26,7 @@ public class ManterUsuarioNegocio {
     private JTable tabelaUsuario;
     
 
-    public ManterUsuarioNegocio(JTextField campoLogin, JTextField campoSenha, JCheckBox checkAtivo, 
+    public UsuarioControl(JTextField campoLogin, JTextField campoSenha, JCheckBox checkAtivo, 
             JCheckBox checkTrocarSenha, JTable tabelaUsuario) {
         this.campoLogin = campoLogin;
         this.campoSenha = campoSenha;
@@ -84,7 +84,7 @@ public class ManterUsuarioNegocio {
     }
     
     public static void mostrandoUsuariosNaTabela(JTable tabelaUsuario) {
-        List<Usuario> usuarios = ManterUsuarioNegocio.pesquisar("");
+        List<Usuario> usuarios = UsuarioControl.pesquisar("");
         adicionarListaUsuariosTabela(usuarios, tabelaUsuario);
         
     }
@@ -113,7 +113,7 @@ public class ManterUsuarioNegocio {
         
         List<Usuario> usuarios = null;
         try {
-            usuarios = ManterUsuarioNegocio.pesquisar(campoPesquisar.getText());
+            usuarios = UsuarioControl.pesquisar(campoPesquisar.getText());
         } catch (Exception exception) {
         }
         adicionarListaUsuariosTabela(usuarios , tabelaUsuario);

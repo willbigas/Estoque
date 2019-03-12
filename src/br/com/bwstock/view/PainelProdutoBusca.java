@@ -2,7 +2,7 @@ package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
 import br.com.bwstock.entidade.Produto;
-import br.com.bwstock.negocio.ManterProdutoNegocio;
+import br.com.bwstock.control.ProdutoControl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -10,11 +10,14 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class PainelProdutoBusca extends javax.swing.JFrame {
+    
+    ProdutoControl PRODUTO_CONTROL;
 
     public PainelProdutoBusca() throws Exception {
         initComponents();
+        PRODUTO_CONTROL = new ProdutoControl();
         try {
-            List<Produto> produtos = ManterProdutoNegocio.pesquisar("");
+            List<Produto> produtos = PRODUTO_CONTROL.pesquisar("");
             System.out.println(produtos);
             adicionarListaProdutosTabela(produtos);
         } catch (Exception exception) {
@@ -37,10 +40,8 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         formBrancoInferior = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaProduto = new javax.swing.JTable();
         formMenu = new javax.swing.JPanel();
         textoPesquisar = new javax.swing.JLabel();
-        campoPesquisar = new javax.swing.JTextField();
         buttonPesquisar = new javax.swing.JButton();
         buttonNovo = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
@@ -244,7 +245,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         // TODO add your handling code here:
         List<Produto> produtos = new ArrayList<>();
         try {
-            produtos = ManterProdutoNegocio.pesquisar(campoPesquisar.getText());
+            produtos = PRODUTO_CONTROL.pesquisar(campoPesquisar.getText());
 
         } catch (Exception exception) {
         }
@@ -255,7 +256,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
 
     private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
         // TODO add your handling code here:
-        ManterProdutoNegocio.excluirProdutoDaTabela(tabelaProduto);
+        PRODUTO_CONTROL.excluirProdutoDaTabela(tabelaProduto);
 
 
     }//GEN-LAST:event_buttonExcluirActionPerformed
@@ -367,14 +368,14 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private javax.swing.JButton buttonExcluir;
     private javax.swing.JButton buttonNovo;
     private javax.swing.JButton buttonPesquisar;
-    private javax.swing.JTextField campoPesquisar;
+    public static final javax.swing.JTextField campoPesquisar = new javax.swing.JTextField();
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
-    private javax.swing.JTable tabelaProduto;
+    public static final javax.swing.JTable tabelaProduto = new javax.swing.JTable();
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoPesquisar;

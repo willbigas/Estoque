@@ -6,11 +6,8 @@ import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.daoimpl.CategoriaDaoImpl;
 import br.com.bwstock.daoimpl.EstoqueMovimentoDaoImpl;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
-import br.com.bwstock.entidade.CategoriaProduto;
-import br.com.bwstock.entidade.Produto;
-import br.com.bwstock.negocio.ManterProdutoNegocio;
+import br.com.bwstock.control.ProdutoControl;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -18,6 +15,7 @@ import java.util.List;
  */
 public class TestandoPersistenciaBanco {
 
+    ProdutoControl produtoControl;
     public static ProdutoDao produtoDao = new ProdutoDaoImpl();
     public static EstoqueMovimentoDao estoqueMovimentoDao = new EstoqueMovimentoDaoImpl();
     public static CategoriaDao categoriaDao = new CategoriaDaoImpl();
@@ -47,8 +45,6 @@ public class TestandoPersistenciaBanco {
 //        p.setPrecoUnitario(2.80);
 //        p.setQtdEstoque(15);
 //        p.setSku("AAAAAA");
-
-        ManterProdutoNegocio.recebendoProdutoDoBanco();
     }
 
 }
