@@ -3,6 +3,7 @@ package br.com.bwstock.control;
 import br.com.bwstock.dao.UsuarioDao;
 import br.com.bwstock.daoimpl.UsuarioDaoImpl;
 import br.com.bwstock.entidade.Usuario;
+import br.com.bwstock.view.PainelLogin;
 import br.com.bwstock.view.PainelUsuarioBusca;
 import br.com.bwstock.view.PainelUsuarioCadastro;
 import java.util.ArrayList;
@@ -102,6 +103,50 @@ public class UsuarioControl {
         } catch (Exception exception) {
         }
         adicionarListaUsuariosTabela(usuarios);
+    }
+
+    public Boolean pesquisarLogin(String termo) {
+        List<Usuario> retorno = new ArrayList<>();
+
+        try {
+            List<?> objs = USUARIO_DAO.pesquisarTodos();
+            List<Usuario> USUARIOS = (List<Usuario>) (Object) objs;
+            for (Usuario u : USUARIOS) {
+                if (u.getLogin().toLowerCase().equals(termo.toLowerCase())) {
+                    return true;
+                }
+            }
+
+        } catch (Exception exception) {
+        }
+        return false;
+    }
+
+    public Boolean pesquisarSenha(String termo) {
+        List<Usuario> retorno = new ArrayList<>();
+
+        try {
+            List<?> objs = USUARIO_DAO.pesquisarTodos();
+            List<Usuario> USUARIOS = (List<Usuario>) (Object) objs;
+            for (Usuario u : USUARIOS) {
+                if (u.getSenha().toLowerCase().equals(termo.toLowerCase())) {
+                    return true;
+                }
+            }
+
+        } catch (Exception exception) {
+        }
+        return false;
+    }
+
+    public Boolean verificandoLoginAction() {
+        Boolean loginOk = pesquisarLogin(PainelLogin.campoLogin.getText());
+        Boolean senhaOk = pesquisarSenha(PainelLogin.campoSenha.getText());
+        if (loginOk && senhaOk) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

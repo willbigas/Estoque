@@ -1,11 +1,16 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
+import br.com.bwstock.control.UsuarioControl;
+import javax.swing.JOptionPane;
 
 public class PainelLogin extends javax.swing.JFrame {
 
+    UsuarioControl USUARIO_CONTROL;
+
     public PainelLogin() {
         initComponents();
+        USUARIO_CONTROL = new UsuarioControl();
     }
 
     /**
@@ -183,7 +188,12 @@ public class PainelLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_campoLoginActionPerformed
 
     private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
-        BwStock.JanelaPrincipal();
+        if (USUARIO_CONTROL.verificandoLoginAction()) {
+            BwStock.JanelaPrincipal();
+        } else {
+            JOptionPane.showMessageDialog(this, "Login ou Senha Incorretos");
+        }
+
     }//GEN-LAST:event_buttonEntrarActionPerformed
 
     /**

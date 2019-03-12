@@ -46,10 +46,16 @@ foreign key(id_estoqueMovimento) references estoqueMovimento(id),
 foreign key(id_categoriaProduto) references categoriaProduto(id),
 PRIMARY KEY (id));
 
+
+/** Criando Usuario Padrao [ADMIN] - [ADMIN] **/
+
+INSERT INTO usuario (id, login, senha, ativo , primeirologin , atualizado)
+VALUES (1, 'admin', 'admin', true, true, null);
+
 select * from estoqueMovimento;
 
 select * from produto;
 
 select * from categoriaproduto;
 
-select * from usuario
+select * from usuario;
