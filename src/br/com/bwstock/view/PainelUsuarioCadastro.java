@@ -5,8 +5,11 @@ import javax.swing.JOptionPane;
 
 public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
+    UsuarioControl USUARIO_CONTROL;
+
     public PainelUsuarioCadastro() {
         initComponents();
+        USUARIO_CONTROL = new UsuarioControl();
     }
 
     /**
@@ -28,7 +31,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
-        textoLogoEmpresa1 = new javax.swing.JLabel();
+        textoTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -107,71 +110,69 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
 
         textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("E-Call");
+        textoLogoEmpresa.setText("STOCK");
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("Gerenciamento de Atendimentos");
+        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
 
-        textoLogoEmpresa1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        textoLogoEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa1.setText("Cadastrar Usuario");
+        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        textoTitulo.setText("Cadastrar Usuario");
 
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLogoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(textoTitulo)
+                .addGap(88, 88, 88))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(textoLogoEmpresa))
-                    .addGroup(painelLogoLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textoLogoEmpresa1)
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                        .addComponent(textoLogoEmpresa)
+                        .addGap(162, 162, 162))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                        .addComponent(textoDescricaoEmpresa)
+                        .addGap(154, 154, 154))))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textoLogoEmpresa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoDescricaoEmpresa)
-                .addGap(36, 36, 36))
-            .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(textoLogoEmpresa1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textoTitulo))
         );
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(painelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
-                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
@@ -186,30 +187,34 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 450, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
-        // TODO add your handling code here:
-       Boolean inserido =  UsuarioControl.adicionar(campoLogin, campoSenha, checkAtivo, checkTrocarSenha);
-       if (inserido) {
-           campoLogin.setText(null);
-           campoSenha.setText(null);
-           checkAtivo.setSelected(false);
-           checkTrocarSenha.setSelected(false);
-           JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
-       }
-        
+        if (USUARIO_CONTROL.adicionar()) {
+            limpandoCampos();
+            JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Não consegui adicionar , Verifique!");
+        }
+
     }//GEN-LAST:event_buttonGravarActionPerformed
+
+    public void limpandoCampos() {
+        campoLogin.setText(null);
+        campoSenha.setText(null);
+        checkAtivo.setSelected(false);
+        checkTrocarSenha.setSelected(false);
+    }
 
     /**
      * @param args the command line arguments
@@ -514,7 +519,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogin;
     private javax.swing.JLabel textoLogoEmpresa;
-    private javax.swing.JLabel textoLogoEmpresa1;
     private javax.swing.JLabel textoSenha;
+    private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
 }

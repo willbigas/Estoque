@@ -4,11 +4,14 @@ import br.com.bwstock.BwStock;
 import br.com.bwstock.control.UsuarioControl;
 
 public class PainelUsuarioBusca extends javax.swing.JFrame {
-    
+
+    UsuarioControl USUARIO_CONTROL;
+
     public PainelUsuarioBusca() {
         initComponents();
-        UsuarioControl.mostrandoUsuariosNaTabela(tabelaUsuario);
-        
+        USUARIO_CONTROL = new UsuarioControl();
+        USUARIO_CONTROL.mostrandoUsuariosNaTabelaAction();
+
     }
 
     /**
@@ -25,7 +28,6 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         painelFundoInferior = new javax.swing.JPanel();
         formBrancoInferior = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaUsuario = new javax.swing.JTable();
         formMenu = new javax.swing.JPanel();
         textoPesquisar = new javax.swing.JLabel();
         buttonPesquisar = new javax.swing.JButton();
@@ -217,10 +219,8 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
-        UsuarioControl.buscandoUsuariosNaTabela(campoPesquisar, tabelaUsuario);
+        USUARIO_CONTROL.buscandoUsuariosNaTabelaAction();
     }//GEN-LAST:event_buttonPesquisarActionPerformed
-
-   
 
     /**
      * @param args the command line arguments
@@ -300,7 +300,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
-    private javax.swing.JTable tabelaUsuario;
+    public static final javax.swing.JTable tabelaUsuario = new javax.swing.JTable();
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoPesquisar;
