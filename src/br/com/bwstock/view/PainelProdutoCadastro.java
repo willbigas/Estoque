@@ -20,7 +20,6 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     public PainelProdutoCadastro() {
         initComponents();
         PRODUTO_CONTROL = new ProdutoControl();
-
         pegandoCategoriaBanco();
 
     }
@@ -277,10 +276,24 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        PRODUTO_CONTROL.adicionar();
+        if(PRODUTO_CONTROL.adicionar()) {
+            limpandoCampos();
+            
+            JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
+        } else {
+            JOptionPane.showMessageDialog(this, "Não consegui gravar!");
+        }
 
 
     }//GEN-LAST:event_buttonGravarActionPerformed
+
+    public void limpandoCampos() {
+        campoEan13.setText(null);
+        campoNomeProduto.setText(null);
+        campoPrecoUnitario.setText(null);
+        campoSku.setText(null);
+        checkAtivo.setSelected(false);
+    }
 
     /**
      * @param args the command line arguments

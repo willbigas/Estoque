@@ -25,10 +25,12 @@ public class PainelLogin extends javax.swing.JFrame {
         textoEsqueciSenha = new javax.swing.JLabel();
         iconUsuario = new javax.swing.JLabel();
         iconSenha = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         textoLogoEmpresa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         painelFundo.setBackground(new java.awt.Color(45, 118, 232));
 
@@ -36,13 +38,14 @@ public class PainelLogin extends javax.swing.JFrame {
 
         textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("BW-STOCK - Gerenciador de Estoque");
+        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
 
         painelLogin.setBackground(new java.awt.Color(255, 255, 255));
         painelLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
 
         campoLogin.setBackground(new java.awt.Color(204, 204, 204));
         campoLogin.setColumns(15);
+        campoLogin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         campoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoLoginActionPerformed(evt);
@@ -51,6 +54,7 @@ public class PainelLogin extends javax.swing.JFrame {
 
         campoSenha.setBackground(new java.awt.Color(204, 204, 204));
         campoSenha.setColumns(15);
+        campoSenha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         buttonEntrar.setText("Entrar");
         buttonEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -79,24 +83,24 @@ public class PainelLogin extends javax.swing.JFrame {
                     .addGroup(painelLoginLayout.createSequentialGroup()
                         .addComponent(textoEsqueciSenha)
                         .addGap(33, 33, 33)
-                        .addComponent(buttonEntrar)
-                        .addContainerGap(15, Short.MAX_VALUE))
-                    .addGroup(painelLoginLayout.createSequentialGroup()
-                        .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(buttonEntrar))
+                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
         );
         painelLoginLayout.setVerticalGroup(
             painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLoginLayout.createSequentialGroup()
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelLoginLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(iconUsuario)))
+                        .addGap(4, 4, 4)
+                        .addComponent(iconUsuario))
+                    .addGroup(painelLoginLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(3, 3, 3)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelLoginLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -111,30 +115,37 @@ public class PainelLogin extends javax.swing.JFrame {
                 .addGap(0, 24, Short.MAX_VALUE))
         );
 
+        textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+        textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        textoLogoEmpresa.setText("STOCK");
+
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(textoLogoEmpresa))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addComponent(textoLogoEmpresa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoDescricaoEmpresa)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
-
-        textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("BWCINE");
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -142,19 +153,15 @@ public class PainelLogin extends javax.swing.JFrame {
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(painelFundoLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(textoLogoEmpresa))
+                .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textoLogoEmpresa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,6 +234,7 @@ public class PainelLogin extends javax.swing.JFrame {
     public static final javax.swing.JTextField campoSenha = new javax.swing.JTextField();
     private javax.swing.JLabel iconSenha;
     private javax.swing.JLabel iconUsuario;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelLogin;
     private javax.swing.JPanel painelLogo;

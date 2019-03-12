@@ -1,7 +1,6 @@
 package br.com.bwstock.view;
 
 import br.com.bwstock.BwStock;
-import br.com.bwstock.control.ProdutoControl;
 
 public class PainelPrincipal extends javax.swing.JFrame {
     
@@ -38,13 +37,22 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelCategoria = new javax.swing.JPanel();
         textoCategoria = new javax.swing.JLabel();
         iconCategoria = new javax.swing.JLabel();
+        separadorTopo = new javax.swing.JSeparator();
+        separadoEsquerda = new javax.swing.JSeparator();
+        separadorInferior = new javax.swing.JSeparator();
+        separadorDireita = new javax.swing.JSeparator();
         panelLogoEmpresa = new javax.swing.JPanel();
-        textoLogoEmpresa = new javax.swing.JLabel();
-        textoDescricaoEmpresa = new javax.swing.JLabel();
         textoTitulo = new javax.swing.JLabel();
+        textoDescricaoEmpresa = new javax.swing.JLabel();
+        textoLogoEmpresa = new javax.swing.JLabel();
+        panelProduto1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(800, 650));
+        setResizable(false);
 
         painelFundo.setBackground(new java.awt.Color(45, 118, 232));
 
@@ -216,7 +224,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelInventarioLayout.setVerticalGroup(
             panelInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInventarioLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iconInventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textoInventario)
@@ -261,7 +269,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelUsuarioLayout.setVerticalGroup(
             panelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelUsuarioLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iconUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoUsuario)
@@ -307,60 +315,92 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelCategoriaLayout.setVerticalGroup(
             panelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCategoriaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addComponent(iconCategoria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textoCategoria)
                 .addGap(18, 18, 18))
         );
 
+        separadorTopo.setBackground(new java.awt.Color(0, 126, 182));
+        separadorTopo.setForeground(new java.awt.Color(0, 126, 182));
+
+        separadoEsquerda.setBackground(new java.awt.Color(0, 126, 182));
+        separadoEsquerda.setForeground(new java.awt.Color(0, 126, 182));
+        separadoEsquerda.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        separadoEsquerda.setToolTipText("");
+
+        separadorInferior.setBackground(new java.awt.Color(0, 126, 182));
+        separadorInferior.setForeground(new java.awt.Color(0, 126, 182));
+
+        separadorDireita.setBackground(new java.awt.Color(0, 126, 182));
+        separadorDireita.setForeground(new java.awt.Color(0, 126, 182));
+        separadorDireita.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                        .addComponent(panelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(panelSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panelCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addComponent(separadorInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                        .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                                .addComponent(separadoEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                                    .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                                        .addComponent(panelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(panelSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(panelCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(separadorTopo, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5)))
+                        .addComponent(separadorDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelSaida, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(panelEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(separadorTopo, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(panelInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(panelSaida, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(panelProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(panelEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(panelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separadorDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(separadoEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(separadorInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelLogoEmpresa.setBackground(new java.awt.Color(45, 118, 232));
 
-        textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoLogoEmpresa.setText("BW-STOCK");
-
-        textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
-        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
-
-        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
         textoTitulo.setText("Acesso Principal");
 
@@ -368,29 +408,55 @@ public class PainelPrincipal extends javax.swing.JFrame {
         panelLogoEmpresa.setLayout(panelLogoEmpresaLayout);
         panelLogoEmpresaLayout.setHorizontalGroup(
             panelLogoEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLogoEmpresaLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(panelLogoEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLogoEmpresaLayout.createSequentialGroup()
-                        .addComponent(textoLogoEmpresa)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelLogoEmpresaLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addComponent(textoTitulo)))
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLogoEmpresaLayout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(textoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelLogoEmpresaLayout.setVerticalGroup(
             panelLogoEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLogoEmpresaLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(textoLogoEmpresa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelLogoEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoDescricaoEmpresa)
-                    .addComponent(textoTitulo))
-                .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLogoEmpresaLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(textoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+        );
+
+        textoDescricaoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        textoDescricaoEmpresa.setText("Gerenciador de Estoque");
+
+        textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        textoLogoEmpresa.setText("STOCK");
+
+        panelProduto1.setPreferredSize(new java.awt.Dimension(133, 103));
+        panelProduto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelProduto1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelProduto1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panelProduto1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelProduto1MousePressed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/home_48px.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelProduto1Layout = new javax.swing.GroupLayout(panelProduto1);
+        panelProduto1.setLayout(panelProduto1Layout);
+        panelProduto1Layout.setHorizontalGroup(
+            panelProduto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelProduto1Layout.setVerticalGroup(
+            panelProduto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProduto1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
@@ -399,15 +465,34 @@ public class PainelPrincipal extends javax.swing.JFrame {
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(panelProduto1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
                 .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                        .addComponent(textoDescricaoEmpresa)
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                        .addComponent(textoLogoEmpresa)
+                        .addGap(44, 44, 44))))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(textoLogoEmpresa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoDescricaoEmpresa))
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(panelProduto1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -517,6 +602,22 @@ public class PainelPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_panelCategoriaMouseClicked
 
+    private void panelProduto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProduto1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelProduto1MouseClicked
+
+    private void panelProduto1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProduto1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelProduto1MouseEntered
+
+    private void panelProduto1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProduto1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelProduto1MouseExited
+
+    private void panelProduto1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProduto1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelProduto1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -562,6 +663,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel iconProduto;
     private javax.swing.JLabel iconSaida;
     private javax.swing.JLabel iconUsuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel panelCategoria;
@@ -569,8 +671,13 @@ public class PainelPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelInventario;
     private javax.swing.JPanel panelLogoEmpresa;
     private javax.swing.JPanel panelProduto;
+    private javax.swing.JPanel panelProduto1;
     private javax.swing.JPanel panelSaida;
     private javax.swing.JPanel panelUsuario;
+    private javax.swing.JSeparator separadoEsquerda;
+    private javax.swing.JSeparator separadorDireita;
+    private javax.swing.JSeparator separadorInferior;
+    private javax.swing.JSeparator separadorTopo;
     private javax.swing.JLabel textoCategoria;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoEntrada;

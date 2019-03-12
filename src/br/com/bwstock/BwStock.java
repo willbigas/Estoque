@@ -19,7 +19,7 @@ public class BwStock {
     public static void JanelaLogin() {
         PainelLogin painelLogin = new PainelLogin();
         painelLogin.setTitle("Acesso do Sistema");
-        painelLogin.setSize(400, 400);
+        painelLogin.setSize(360, 340);
         painelLogin.setLocationRelativeTo(null);
         painelLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelLogin.setVisible(true);
@@ -28,7 +28,7 @@ public class BwStock {
     public static void JanelaPrincipal() {
         PainelPrincipal painelPrincipal = new PainelPrincipal();
         painelPrincipal.setTitle("BW-STOCK - GERENCIADOR DE ESTOQUE");
-        painelPrincipal.setSize(800, 600);
+//        painelPrincipal.setSize(800, 650);
         painelPrincipal.setLocationRelativeTo(null);
         painelPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelPrincipal.setVisible(true);

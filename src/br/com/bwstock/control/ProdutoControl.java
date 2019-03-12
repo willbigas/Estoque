@@ -31,8 +31,9 @@ public class ProdutoControl {
     /**
      * Adiciona Produto e Persiste no BD.
      *
+     * @return Retorna um Boolean dizendo se houve Sucesso ou não.
      */
-    public void adicionar() {
+    public Boolean adicionar() {
         Produto p = new Produto();
         String resultado = (String) PainelProdutoCadastro.comboCategoria.getSelectedItem();
         System.out.println("Resultado :" + resultado);
@@ -49,10 +50,10 @@ public class ProdutoControl {
             p.setAtivo(false);
         }
         try {
-            PRODUTO_DAO.inserir(p);
+           return PRODUTO_DAO.inserir(p);
         } catch (Exception exception) {
         }
-
+        return null;
     }
 
     /**
