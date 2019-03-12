@@ -1,12 +1,12 @@
 package br.com.stock;
 
-import br.com.stock.view.PainelCategoriaCadastro;
+import br.com.stock.view.categoria.PainelCategoriaCadastro;
 import br.com.stock.view.PainelLogin;
 import br.com.stock.view.PainelPrincipal;
-import br.com.stock.view.PainelProdutoBusca;
-import br.com.stock.view.PainelProdutoCadastro;
-import br.com.stock.view.PainelUsuarioBusca;
-import br.com.stock.view.PainelUsuarioCadastro;
+import br.com.stock.view.produto.PainelProdutoBusca;
+import br.com.stock.view.produto.PainelProdutoCadastro;
+import br.com.stock.view.usuario.PainelUsuarioBusca;
+import br.com.stock.view.usuario.PainelUsuarioCadastro;
 import javax.swing.JFrame;
 
 public class BwStock {

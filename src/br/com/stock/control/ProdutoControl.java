@@ -4,7 +4,7 @@ import br.com.stock.dao.ProdutoDao;
 import br.com.stock.daoimpl.ProdutoDaoImpl;
 import br.com.stock.model.CategoriaProduto;
 import br.com.stock.model.Produto;
-import br.com.stock.view.PainelProdutoCadastro;
+import br.com.stock.view.produto.PainelProdutoCadastro;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;

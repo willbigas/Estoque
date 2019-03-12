@@ -3,7 +3,7 @@ package br.com.stock.control;
 import br.com.stock.dao.CategoriaDao;
 import br.com.stock.daoimpl.CategoriaDaoImpl;
 import br.com.stock.model.CategoriaProduto;
-import br.com.stock.view.PainelCategoriaCadastro;
+import br.com.stock.view.categoria.PainelCategoriaCadastro;
 import java.util.List;
 
 /**

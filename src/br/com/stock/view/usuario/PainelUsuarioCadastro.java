@@ -1,4 +1,4 @@
-package br.com.stock.view;
+package br.com.stock.view.usuario;
 
 import br.com.stock.control.UsuarioControl;
 import javax.swing.JOptionPane;

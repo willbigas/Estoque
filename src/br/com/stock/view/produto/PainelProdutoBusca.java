@@ -1,4 +1,4 @@
-package br.com.stock.view;
+package br.com.stock.view.produto;
 
 import br.com.stock.BwStock;
 import br.com.stock.model.Produto;
