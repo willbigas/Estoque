@@ -2,6 +2,7 @@ package br.com.bwstock.control;
 
 import br.com.bwstock.dao.ProdutoDao;
 import br.com.bwstock.daoimpl.ProdutoDaoImpl;
+import br.com.bwstock.entidade.CategoriaProduto;
 import br.com.bwstock.entidade.Produto;
 import br.com.bwstock.view.PainelProdutoCadastro;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class ProdutoControl {
 
     public ProdutoControl() {
         recebendoProdutoDoBanco();
+        CATEGORIA_CONTROL = new CategoriaControl();
     }
 
     /**
@@ -34,7 +36,9 @@ public class ProdutoControl {
         Produto p = new Produto();
         String resultado = (String) PainelProdutoCadastro.comboCategoria.getSelectedItem();
         System.out.println("Resultado :" + resultado);
-        p.setCategoria(CATEGORIA_CONTROL.pesquisarCategoriaPorNome(resultado));
+        CategoriaProduto catp;
+        catp = CATEGORIA_CONTROL.pesquisarCategoriaPorNome(resultado);
+        p.setCategoria(catp);
         p.setSku(PainelProdutoCadastro.campoSku.getText());
         p.setNome(PainelProdutoCadastro.campoNomeProduto.getText());
         p.setEan13(PainelProdutoCadastro.campoEan13.getText());

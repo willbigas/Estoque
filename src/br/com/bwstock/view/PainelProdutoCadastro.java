@@ -11,7 +11,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class PainelProdutoCadastro extends javax.swing.JFrame {
-    
+
     ProdutoControl PRODUTO_CONTROL;
 
     CategoriaDao CATEGORIA_DAO = new CategoriaDaoImpl();
@@ -20,11 +20,10 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     public PainelProdutoCadastro() {
         initComponents();
         PRODUTO_CONTROL = new ProdutoControl();
+
         pegandoCategoriaBanco();
 
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -279,7 +278,6 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
         PRODUTO_CONTROL.adicionar();
-        
 
 
     }//GEN-LAST:event_buttonGravarActionPerformed
