@@ -1,6 +1,6 @@
-create database bwstock;
+create database stock;
 
-use bwstock;
+use stock;
 
 /** Criando Tabelas **/
 
