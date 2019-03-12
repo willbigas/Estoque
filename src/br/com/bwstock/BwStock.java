@@ -28,7 +28,6 @@ public class BwStock {
     public static void JanelaPrincipal() {
         PainelPrincipal painelPrincipal = new PainelPrincipal();
         painelPrincipal.setTitle("BW-STOCK - GERENCIADOR DE ESTOQUE");
-//        painelPrincipal.setSize(800, 650);
         painelPrincipal.setLocationRelativeTo(null);
         painelPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelPrincipal.setVisible(true);
