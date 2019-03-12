@@ -76,7 +76,6 @@ public class BwStock {
     public static void JanelaCategoria() {
         PainelCategoriaCadastro painelCategoria = new PainelCategoriaCadastro();
         painelCategoria.setTitle("BW-STOCK - CATEGORIAS");
-        painelCategoria.setSize(800, 600);
         painelCategoria.setLocationRelativeTo(null);
         painelCategoria.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelCategoria.setVisible(true);

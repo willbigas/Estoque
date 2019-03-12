@@ -215,6 +215,7 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
         Boolean gravado = categoriaControl.addCategoria();
         if (gravado) {
+            limpandoCampos();
             JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
         } else {
             JOptionPane.showMessageDialog(this, "Não consegui gravar Categoria no Banco");
@@ -222,6 +223,11 @@ public class PainelCategoriaCadastro extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_buttonGravarActionPerformed
+
+    public void limpandoCampos() {
+        campoCategoria.setText(null);
+        campoDescricao.setText(null);
+    }
 
     /**
      * @param args the command line arguments

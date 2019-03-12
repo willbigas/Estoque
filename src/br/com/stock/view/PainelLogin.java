@@ -188,6 +188,7 @@ public class PainelLogin extends javax.swing.JFrame {
     private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
         if (USUARIO_CONTROL.verificandoLoginAction()) {
             BwStock.JanelaPrincipal();
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Login ou Senha Incorretos");
         }

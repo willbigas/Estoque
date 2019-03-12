@@ -72,7 +72,22 @@ public class UsuarioControl {
         return retorno;
     }
 
-    public void mostrandoUsuariosNaTabelaAction() {
+    public static boolean excluir(Integer id) throws Exception {
+
+        List<?> objs = USUARIO_DAO.pesquisarTodos();
+        List<Usuario> USUARIOS = (List<Usuario>) (Object) objs;
+        for (int i = 0; i < USUARIOS.size(); i++) {
+            Usuario user = USUARIOS.get(i);
+            if (user.getId().equals(id)) {
+                USUARIOS.remove(user); // verificar isso , n faz sentido no projeto
+                USUARIO_DAO.excluir(id);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void ListandoUsuariosNaTabelaAction() {
         List<Usuario> usuarios = pesquisar("");
         adicionarListaUsuariosTabela(usuarios);
 
@@ -96,7 +111,7 @@ public class UsuarioControl {
         PainelUsuarioBusca.tabelaUsuario.setModel(modelo);
     }
 
-    public void buscandoUsuariosNaTabelaAction() {
+    public void pesquisandoUsuarioNaTabelaAction() {
         List<Usuario> usuarios = null;
         try {
             usuarios = pesquisar(PainelUsuarioBusca.campoPesquisar.getText());
@@ -146,6 +161,33 @@ public class UsuarioControl {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void excluirUsuarioAction() {
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int resposta = JOptionPane.showConfirmDialog(null, "Você deseja Realmente excluir Esse contato?\r\nEsta Ação é irreversivel!", "ATENÇÃO!", dialogButton);
+
+        if (resposta == JOptionPane.NO_OPTION) {
+            return;
+        } else {
+            int linha = PainelUsuarioBusca.tabelaUsuario.getSelectedRow();
+            if (linha >= 0) {
+                String idContato = (String) PainelUsuarioBusca.tabelaUsuario.getValueAt(linha, 0);
+                boolean apagou = false;
+                try {
+                    apagou = USUARIO_DAO.excluir(Integer.valueOf(idContato));
+                    System.out.println(idContato);
+                } catch (Exception exception) {
+                }
+                if (apagou) {
+                    JOptionPane.showMessageDialog(null, "Contato excluído com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Não foi possível excluir o contato , Verifique suas Dependencias");
+
+                }
+            }
+
         }
     }
 
