@@ -68,7 +68,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoProduto.setForeground(new java.awt.Color(45, 118, 232));
         textoProduto.setText("PRODUTO");
 
-        iconProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/product_48x48.png"))); // NOI18N
+        iconProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/product_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelProdutoLayout = new javax.swing.GroupLayout(panelProduto);
         panelProduto.setLayout(panelProdutoLayout);
@@ -99,7 +99,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoEntrada.setForeground(new java.awt.Color(45, 118, 232));
         textoEntrada.setText("ENTRADA");
 
-        iconEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/entrada_48x48.png"))); // NOI18N
+        iconEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/entrada_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelEntradaLayout = new javax.swing.GroupLayout(panelEntrada);
         panelEntrada.setLayout(panelEntradaLayout);
@@ -130,7 +130,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoSaida.setForeground(new java.awt.Color(45, 118, 232));
         textoSaida.setText("SAIDA");
 
-        iconSaida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/saida_48x48.png"))); // NOI18N
+        iconSaida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/saida_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelSaidaLayout = new javax.swing.GroupLayout(panelSaida);
         panelSaida.setLayout(panelSaidaLayout);
@@ -159,7 +159,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoInventario.setForeground(new java.awt.Color(45, 118, 232));
         textoInventario.setText("INVENTARIO");
 
-        iconInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/inventario_48x48.png"))); // NOI18N
+        iconInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/inventario_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelInventarioLayout = new javax.swing.GroupLayout(panelInventario);
         panelInventario.setLayout(panelInventarioLayout);
@@ -196,7 +196,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoUsuario.setForeground(new java.awt.Color(45, 118, 232));
         textoUsuario.setText("USUARIO");
 
-        iconUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/usuario_48x48.png"))); // NOI18N
+        iconUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/usuario_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout panelUsuarioLayout = new javax.swing.GroupLayout(panelUsuario);
         panelUsuario.setLayout(panelUsuarioLayout);
@@ -232,7 +232,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
         textoCategoria.setForeground(new java.awt.Color(45, 118, 232));
         textoCategoria.setText("CATEGORIA");
 
-        iconCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/category_32x32.png"))); // NOI18N
+        iconCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/category_32x32.png"))); // NOI18N
 
         javax.swing.GroupLayout panelCategoriaLayout = new javax.swing.GroupLayout(panelCategoria);
         panelCategoria.setLayout(panelCategoriaLayout);
@@ -366,7 +366,7 @@ public class PainelPrincipal extends javax.swing.JFrame {
 
         painelHome.setPreferredSize(new java.awt.Dimension(133, 103));
 
-        iconCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/home_48px.png"))); // NOI18N
+        iconCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/home_48px.png"))); // NOI18N
 
         javax.swing.GroupLayout painelHomeLayout = new javax.swing.GroupLayout(painelHome);
         painelHome.setLayout(painelHomeLayout);

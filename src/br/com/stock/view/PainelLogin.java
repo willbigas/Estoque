@@ -70,9 +70,9 @@ public class PainelLogin extends javax.swing.JFrame {
 
         textoEsqueciSenha.setText("Esqueci minha senha");
 
-        iconUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/user_48x48.png"))); // NOI18N
+        iconUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/user_48x48.png"))); // NOI18N
 
-        iconSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/password_48x48.png"))); // NOI18N
+        iconSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/password_48x48.png"))); // NOI18N
 
         javax.swing.GroupLayout painelLoginLayout = new javax.swing.GroupLayout(painelLogin);
         painelLogin.setLayout(painelLoginLayout);
@@ -91,7 +91,7 @@ public class PainelLogin extends javax.swing.JFrame {
                         .addComponent(buttonEntrar))
                     .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1)
         );
         painelLoginLayout.setVerticalGroup(

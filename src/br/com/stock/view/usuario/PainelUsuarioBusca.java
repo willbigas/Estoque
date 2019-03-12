@@ -71,7 +71,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         );
         formBrancoInferiorLayout.setVerticalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -88,7 +88,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         formMenu.add(campoPesquisar, gridBagConstraints);
 
         buttonPesquisar.setBackground(javax.swing.UIManager.getDefaults().getColor("controlHighlight"));
-        buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/bwstock/img/search_20px_1.png"))); // NOI18N
+        buttonPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/search_20px_1.png"))); // NOI18N
         buttonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPesquisarActionPerformed(evt);
