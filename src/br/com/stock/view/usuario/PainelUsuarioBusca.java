@@ -34,8 +34,8 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         buttonNovo = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
         buttonEditar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        iconAtualizar = new javax.swing.JLabel();
+        textoAtualizar = new javax.swing.JLabel();
         painelLogo = new javax.swing.JPanel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
@@ -52,6 +52,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         formBrancoInferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tabelaUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        tabelaUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -63,23 +64,18 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
                 "Pessoa", "Usuario", "Ativo", "Data de Cadastro"
             }
         ));
+        tabelaUsuario.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(tabelaUsuario);
 
         javax.swing.GroupLayout formBrancoInferiorLayout = new javax.swing.GroupLayout(formBrancoInferior);
         formBrancoInferior.setLayout(formBrancoInferiorLayout);
         formBrancoInferiorLayout.setHorizontalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formBrancoInferiorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         formBrancoInferiorLayout.setVerticalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formBrancoInferiorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(162, 162, 162))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -137,9 +133,14 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(1, 3, 1, 1);
         formMenu.add(buttonEditar, gridBagConstraints);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/update_24x24.png"))); // NOI18N
+        iconAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/update_24x24.png"))); // NOI18N
+        iconAtualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconAtualizarMouseClicked(evt);
+            }
+        });
 
-        jLabel1.setText("Atualizar");
+        textoAtualizar.setText("Atualizar");
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
@@ -152,10 +153,10 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1))
+                        .addComponent(textoAtualizar))
                     .addGroup(painelFundoInferiorLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jLabel2)))
+                        .addComponent(iconAtualizar)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
@@ -164,12 +165,12 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(iconAtualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
+                        .addComponent(textoAtualizar))
                     .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(formBrancoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(formBrancoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -259,6 +260,11 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         USUARIO_CONTROL.ListandoUsuariosNaTabelaAction();
     }//GEN-LAST:event_buttonExcluirActionPerformed
 
+    private void iconAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconAtualizarMouseClicked
+        // TODO add your handling code here:
+        USUARIO_CONTROL.ListandoUsuariosNaTabelaAction();
+    }//GEN-LAST:event_iconAtualizarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -333,13 +339,13 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     public static final javax.swing.JTextField campoPesquisar = new javax.swing.JTextField();
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel iconAtualizar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
     public static final javax.swing.JTable tabelaUsuario = new javax.swing.JTable();
+    private javax.swing.JLabel textoAtualizar;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoPesquisar;
