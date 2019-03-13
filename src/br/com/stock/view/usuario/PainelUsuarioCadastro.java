@@ -13,6 +13,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         if (!campoLogin.getText().isEmpty()) {
             campoLogin.setEditable(false);
         } else {
+            limpandoCampos();
             campoLogin.setEditable(true);
         }
     }
@@ -38,7 +39,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         textoDescricaoEmpresa = new javax.swing.JLabel();
         textoTitulo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
