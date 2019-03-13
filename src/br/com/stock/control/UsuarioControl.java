@@ -226,6 +226,7 @@ public class UsuarioControl {
     }
 
     public void editarUsuarioAction() {
+        
         int linha = PainelUsuarioBusca.tabelaUsuario.getSelectedRow();
         if (linha >= 0) {
             String idUsuario = (String) PainelUsuarioBusca.tabelaUsuario.getValueAt(linha, 0);
