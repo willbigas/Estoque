@@ -200,12 +200,14 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
-        if (USUARIO_CONTROL.adicionar()) {
+        if (USUARIO_CONTROL.adicionarAction()) {
             limpandoCampos();
+            USUARIO_CONTROL.ListUsuariosTabelaAction();
             JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
         } else {
-            JOptionPane.showMessageDialog(this, "Não consegui adicionar , Verifique!");
+            JOptionPane.showMessageDialog(this, "Não consegui gravar");
         }
+
 
     }//GEN-LAST:event_buttonGravarActionPerformed
 
@@ -230,16 +232,24 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PainelUsuarioCadastro.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

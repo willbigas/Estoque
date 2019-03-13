@@ -10,7 +10,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     public PainelUsuarioBusca() {
         initComponents();
         USUARIO_CONTROL = new UsuarioControl();
-        USUARIO_CONTROL.ListandoUsuariosNaTabelaAction();
+        USUARIO_CONTROL.ListUsuariosTabelaAction();
 
     }
 
@@ -127,6 +127,11 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         formMenu.add(buttonExcluir, gridBagConstraints);
 
         buttonEditar.setText("Editar");
+        buttonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEditarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -251,19 +256,24 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
-        USUARIO_CONTROL.pesquisandoUsuarioNaTabelaAction();
+        USUARIO_CONTROL.pesquisarUsuarioAction();
     }//GEN-LAST:event_buttonPesquisarActionPerformed
 
     private void buttonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluirActionPerformed
         // TODO add your handling code here:
         USUARIO_CONTROL.excluirUsuarioAction();
-        USUARIO_CONTROL.ListandoUsuariosNaTabelaAction();
+        USUARIO_CONTROL.ListUsuariosTabelaAction();
     }//GEN-LAST:event_buttonExcluirActionPerformed
 
     private void iconAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconAtualizarMouseClicked
         // TODO add your handling code here:
-        USUARIO_CONTROL.ListandoUsuariosNaTabelaAction();
+        USUARIO_CONTROL.ListUsuariosTabelaAction();
     }//GEN-LAST:event_iconAtualizarMouseClicked
+
+    private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
+        // TODO add your handling code here:
+        USUARIO_CONTROL.editarUsuarioAction();
+    }//GEN-LAST:event_buttonEditarActionPerformed
 
     /**
      * @param args the command line arguments

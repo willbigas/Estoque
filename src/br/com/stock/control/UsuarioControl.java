@@ -1,5 +1,6 @@
 package br.com.stock.control;
 
+import br.com.stock.BwStock;
 import br.com.stock.dao.UsuarioDao;
 import br.com.stock.daoimpl.UsuarioDaoImpl;
 import br.com.stock.model.Usuario;
@@ -8,6 +9,8 @@ import br.com.stock.view.usuario.PainelUsuarioBusca;
 import br.com.stock.view.usuario.PainelUsuarioCadastro;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,41 +21,72 @@ import javax.swing.table.DefaultTableModel;
 public class UsuarioControl {
 
     private UsuarioControl USUARIO_CONTROL;
+    private static Integer ID_SELECIONADO;
 
     public static UsuarioDao USUARIO_DAO = new UsuarioDaoImpl();
 
     public UsuarioControl() {
     }
 
-    public Boolean adicionar() {
-        Usuario user = new Usuario();
-        user.setId(1);
-        user.setAtualizado(null);
-        user.setLogin(PainelUsuarioCadastro.campoLogin.getText());
-        user.setSenha(PainelUsuarioCadastro.campoSenha.getText());
-        if (PainelUsuarioCadastro.checkAtivo.isSelected()) {
-            user.setAtivo(true);
-        } else {
-            user.setAtivo(false);
-        }
-        if (PainelUsuarioCadastro.checkTrocarSenha.isSelected()) {
-            user.setPrimeiroLogin(true);
-        } else {
-            user.setPrimeiroLogin(false);
-        }
-
-        try {
-            Boolean inserido = USUARIO_DAO.inserir(user);
-            if (inserido == true) {
+    public Boolean adicionarAction() {
+        if (seExisteNoBancoAction() == true) {
+            if(atualizarAction()) {
                 return true;
+            }
+        } else {
+            Usuario user = new Usuario();
+            user.setId(1);
+            user.setAtualizado(null);
+            user.setLogin(PainelUsuarioCadastro.campoLogin.getText());
+            user.setSenha(PainelUsuarioCadastro.campoSenha.getText());
+            if (PainelUsuarioCadastro.checkAtivo.isSelected()) {
+                user.setAtivo(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Não consegui gravar.");
+                user.setAtivo(false);
+            }
+            if (PainelUsuarioCadastro.checkTrocarSenha.isSelected()) {
+                user.setPrimeiroLogin(true);
+            } else {
+                user.setPrimeiroLogin(false);
+            }
+
+            try {
+                Boolean inserido = USUARIO_DAO.inserir(user);
+                if (inserido == true) {
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "Não consegui gravar.");
+                    return false;
+                }
+            } catch (Exception exception) {
+                System.out.println("Deu ruim na hora de inserir");
                 return false;
             }
-        } catch (Exception exception) {
-            System.out.println("Deu ruim na hora de inserir");
-            return false;
         }
+        return null;
+
+    }
+
+    public Boolean atualizarAction() {
+        Usuario u = new Usuario();
+        u.setId(ID_SELECIONADO);
+        System.out.println(ID_SELECIONADO);
+        u.setLogin(PainelUsuarioCadastro.campoLogin.getText());
+        u.setSenha(PainelUsuarioCadastro.campoSenha.getText());
+        u.setPrimeiroLogin(PainelUsuarioCadastro.checkTrocarSenha.isSelected());
+        u.setAtivo(PainelUsuarioCadastro.checkAtivo.isSelected());
+        try {
+            if (USUARIO_DAO.update(u)) {
+                JOptionPane.showMessageDialog(null, "Usuario Atualizado com Sucesso");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Não consegui atualizar o usuario");
+                return false;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UsuarioControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     public List<Usuario> pesquisar(String termo) {
@@ -87,7 +121,7 @@ public class UsuarioControl {
         return false;
     }
 
-    public void ListandoUsuariosNaTabelaAction() {
+    public void ListUsuariosTabelaAction() {
         List<Usuario> usuarios = pesquisar("");
         adicionarListaUsuariosTabela(usuarios);
 
@@ -111,7 +145,7 @@ public class UsuarioControl {
         PainelUsuarioBusca.tabelaUsuario.setModel(modelo);
     }
 
-    public void pesquisandoUsuarioNaTabelaAction() {
+    public void pesquisarUsuarioAction() {
         List<Usuario> usuarios = null;
         try {
             usuarios = pesquisar(PainelUsuarioBusca.campoPesquisar.getText());
@@ -189,6 +223,53 @@ public class UsuarioControl {
             }
 
         }
+    }
+
+    public void editarUsuarioAction() {
+        int linha = PainelUsuarioBusca.tabelaUsuario.getSelectedRow();
+        if (linha >= 0) {
+            String idUsuario = (String) PainelUsuarioBusca.tabelaUsuario.getValueAt(linha, 0);
+            ID_SELECIONADO = Integer.valueOf(idUsuario);
+            Usuario u = null;
+            try {
+                u = (Usuario) USUARIO_DAO.pesquisar(ID_SELECIONADO);
+            } catch (Exception exception) {
+            }
+            if (u != null) {
+                try {
+                    mostrandoUsuarioEditado(u);
+                } catch (Exception exception) {
+                }
+            }
+
+        }
+    }
+
+    public void mostrandoUsuarioEditado(Usuario u) {
+        if (u != null) {
+            PainelUsuarioCadastro.campoLogin.setText(u.getLogin());
+            PainelUsuarioCadastro.campoSenha.setText(u.getSenha());
+            PainelUsuarioCadastro.checkAtivo.setSelected(u.getAtivo());
+            PainelUsuarioCadastro.checkTrocarSenha.setSelected(u.getPrimeiroLogin());
+            BwStock.JanelaUsuarioEdicao();
+        }
+
+    }
+
+    public Boolean seExisteNoBancoAction() {
+        List<Usuario> usuariosRecebidos;
+        try {
+            usuariosRecebidos = (List<Usuario>) (Object) USUARIO_DAO.pesquisarTodos();
+
+            for (Usuario usuariosRecebido : usuariosRecebidos) {
+                if (usuariosRecebido.getLogin().toLowerCase().equals(PainelUsuarioCadastro.campoLogin.getText().toLowerCase())) {
+                    return true;
+                } 
+            }
+
+        } catch (Exception exception) {
+        }
+        return null;
     }
 
 }

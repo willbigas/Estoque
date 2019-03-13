@@ -1,10 +1,7 @@
 package br.com.stock.daoimpl;
 
 import br.com.stock.SessionFactory;
-import br.com.stock.dao.CategoriaDao;
-import br.com.stock.dao.EstoqueMovimentoDao;
 import br.com.stock.dao.UsuarioDao;
-import br.com.stock.model.CategoriaProduto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,9 +9,7 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.stock.model.EstoqueMovimento;
 import br.com.stock.model.Usuario;
-import java.sql.Date;
 
 public class UsuarioDaoImpl implements UsuarioDao {
 
@@ -75,7 +70,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
         try {
             conexao = SessionFactory.getConnection();
             PreparedStatement statement = conexao.prepareStatement(
-                    "SELECT * FROM USUARIO WHERE ID = ? ");
+                    "SELECT * FROM USUARIO WHERE ID = ?");
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
