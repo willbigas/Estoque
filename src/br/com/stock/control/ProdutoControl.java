@@ -175,7 +175,7 @@ public class ProdutoControl {
      */
     public void atualizaDadosTabelaAction() {
         recebendoProdutoDoBanco();
-        String[] colunas = {"ID", "SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
+        String[] colunas = {"ID", "SKU", "NOME", "ESTOQUE", "PRECO UNITARIO", "EAN13", "ATIVO"};
         String[][] dados = new String[PRODUTOS_DO_BANCO.size()][colunas.length];
         for (int i = 0; i < PRODUTOS_DO_BANCO.size(); i++) {
             Produto p = PRODUTOS_DO_BANCO.get(i);
@@ -191,7 +191,7 @@ public class ProdutoControl {
             if (p.getPrecoUnitario() == null) {
                 dados[i][4] = "Não informado";
             } else {
-                dados[i][4] = String.valueOf(p.getPrecoUnitario());
+                dados[i][4] = UtilFormat.decimalFormat(p.getPrecoUnitario());
 
             }
             dados[i][5] = String.valueOf(p.getEan13());

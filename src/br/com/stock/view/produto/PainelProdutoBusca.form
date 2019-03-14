@@ -59,7 +59,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <Component id="painelFundoInferior" alignment="0" pref="0" max="32767" attributes="0"/>
+              <Component id="painelFundoInferior" alignment="0" pref="703" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -161,13 +161,50 @@
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="6" rowCount="4">
-                            <Column editable="true" title="Nome" type="java.lang.Object"/>
-                            <Column editable="true" title="Categoria" type="java.lang.Object"/>
-                            <Column editable="true" title="Estoque" type="java.lang.Object"/>
-                            <Column editable="true" title="Preco UN" type="java.lang.Object"/>
-                            <Column editable="true" title="EAN13" type="java.lang.Object"/>
-                            <Column editable="true" title="Ativo" type="java.lang.Object"/>
+                            <Column editable="false" title="NOME" type="java.lang.Object"/>
+                            <Column editable="false" title="CATEGORIA" type="java.lang.Object"/>
+                            <Column editable="false" title="ESTOQUE" type="java.lang.Object"/>
+                            <Column editable="false" title="PRECO UN" type="java.lang.Object"/>
+                            <Column editable="false" title="EAN13" type="java.lang.Object"/>
+                            <Column editable="false" title="ATIVO" type="java.lang.Object"/>
                           </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
                       <AuxValues>

@@ -67,10 +67,27 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Categoria", "Estoque", "Preco UN", "EAN13", "Ativo"
+                "NOME", "CATEGORIA", "ESTOQUE", "PRECO UN", "EAN13", "ATIVO"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelaProduto);
+        if (tabelaProduto.getColumnModel().getColumnCount() > 0) {
+            tabelaProduto.getColumnModel().getColumn(0).setResizable(false);
+            tabelaProduto.getColumnModel().getColumn(1).setResizable(false);
+            tabelaProduto.getColumnModel().getColumn(2).setResizable(false);
+            tabelaProduto.getColumnModel().getColumn(2).setPreferredWidth(15);
+            tabelaProduto.getColumnModel().getColumn(3).setResizable(false);
+            tabelaProduto.getColumnModel().getColumn(4).setResizable(false);
+            tabelaProduto.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout formBrancoInferiorLayout = new javax.swing.GroupLayout(formBrancoInferior);
         formBrancoInferior.setLayout(formBrancoInferiorLayout);
@@ -291,7 +308,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
                     .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textoLogoEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
-            .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 703, Short.MAX_VALUE)
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
