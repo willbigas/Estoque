@@ -3,7 +3,7 @@ package br.com.stock.view;
 import br.com.stock.BwStock;
 
 public class PainelPrincipal extends javax.swing.JFrame {
-    
+
     public PainelPrincipal() {
         initComponents();
     }
@@ -432,10 +432,12 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panelUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelUsuarioMouseClicked
+        this.setVisible(false);
         BwStock.JanelaUsuario();
     }//GEN-LAST:event_panelUsuarioMouseClicked
 
     private void panelProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelProdutoMouseClicked
+        this.setVisible(false);
         try {
             BwStock.JanelaProduto();
         } catch (Exception exception) {
@@ -443,9 +445,9 @@ public class PainelPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_panelProdutoMouseClicked
 
     private void panelCategoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelCategoriaMouseClicked
-        // TODO add your handling code here:
+        this.setVisible(false);
         BwStock.JanelaCategoria();
-        
+
     }//GEN-LAST:event_panelCategoriaMouseClicked
 
     /**

@@ -8,6 +8,7 @@ import br.com.stock.model.Produto;
 import br.com.stock.util.UtilFormat;
 import br.com.stock.view.produto.PainelProdutoBusca;
 import br.com.stock.view.produto.PainelProdutoCadastro;
+import br.com.stock.view.produto.PainelProdutoEdit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -120,22 +121,29 @@ public class ProdutoControl {
      *
      */
     public void excluirProdutoAction() {
-        int linha = PainelProdutoBusca.tabelaProduto.getSelectedRow();
-        if (linha >= 0) {
-            String campoSelecionado = (String) PainelProdutoBusca.tabelaProduto.getValueAt(linha, 0);
-            Integer campoIdProdutoSelecionado = Integer.valueOf(campoSelecionado);
-            try {
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int resposta = JOptionPane.showConfirmDialog(null, "Você deseja Realmente excluir Esse contato?\r\nEsta Ação é irreversivel!", "ATENÇÃO!", dialogButton);
+        if (resposta == JOptionPane.NO_OPTION) {
+            return;
+        } else {
+            int linha = PainelProdutoBusca.tabelaProduto.getSelectedRow();
+            if (linha >= 0) {
+                String campoSelecionado = (String) PainelProdutoBusca.tabelaProduto.getValueAt(linha, 0);
+                Integer campoIdProdutoSelecionado = Integer.valueOf(campoSelecionado);
+                try {
 
-                Boolean tudoCerto = PRODUTO_DAO.excluir(campoIdProdutoSelecionado);
-                if (tudoCerto) {
-                    JOptionPane.showMessageDialog(null, "Tipo de Contato Excluido");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Existem vinculos, favor Excluir os Vinculos");
+                    Boolean tudoCerto = PRODUTO_DAO.excluir(campoIdProdutoSelecionado);
+                    if (tudoCerto) {
+                        JOptionPane.showMessageDialog(null, "Tipo de Contato Excluido");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Existem vinculos, favor Excluir os Vinculos");
+                    }
+                } catch (Exception exception) {
+                    JOptionPane.showMessageDialog(null, "Problemas ao Excluir");
                 }
-            } catch (Exception exception) {
-                JOptionPane.showMessageDialog(null, "Problemas ao Excluir");
             }
         }
+
     }
 
     /**
@@ -147,11 +155,11 @@ public class ProdutoControl {
     public void mostrarProdutoNoPainelEdit(Produto p) {
         if (p != null) {
             try {
-                PainelProdutoCadastro.campoSku.setText(p.getSku());
-                PainelProdutoCadastro.campoNomeProduto.setText(p.getNome());
-                PainelProdutoCadastro.campoEan13.setText(String.valueOf(p.getEan13()));
-                PainelProdutoCadastro.campoPrecoUnitario.setText(UtilFormat.decimalFormat(p.getPrecoUnitario()));
-                PainelProdutoCadastro.checkAtivo.setSelected(p.getAtivo());
+                PainelProdutoEdit.campoSku.setText(p.getSku());
+                PainelProdutoEdit.campoNomeProduto.setText(p.getNome());
+                PainelProdutoEdit.campoEan13.setText(String.valueOf(p.getEan13()));
+                PainelProdutoEdit.campoPrecoUnitario.setText(UtilFormat.decimalFormat(p.getPrecoUnitario()));
+                PainelProdutoEdit.checkAtivo.setSelected(p.getAtivo());
             } catch (Exception exception) {
             }
             BwStock.JanelaProdutoEdicao();
@@ -205,7 +213,7 @@ public class ProdutoControl {
      * @param produtos
      */
     public void atualizaDadosTabelaAction(List<Produto> produtos) {
-        String[] colunas = {"ID","SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
+        String[] colunas = {"ID", "SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
         String[][] dados = new String[produtos.size()][colunas.length];
         for (int i = 0; i < produtos.size(); i++) {
             Produto p = produtos.get(i);

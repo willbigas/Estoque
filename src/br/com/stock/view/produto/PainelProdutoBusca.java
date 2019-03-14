@@ -6,12 +6,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PainelProdutoBusca extends javax.swing.JFrame {
-    
+
     ProdutoControl PRODUTO_CONTROL;
 
     public PainelProdutoBusca() throws Exception {
         initComponents();
         PRODUTO_CONTROL = new ProdutoControl();
+
         PRODUTO_CONTROL.atualizaDadosTabelaAction();
     }
 
@@ -35,8 +36,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         buttonNovo = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
         buttonEditar = new javax.swing.JButton();
+        painelDeIcones = new javax.swing.JPanel();
         iconAtualizar = new javax.swing.JLabel();
         textoAtualizar = new javax.swing.JLabel();
+        iconPincel = new javax.swing.JLabel();
+        textoAtualizar1 = new javax.swing.JLabel();
         painelLogo = new javax.swing.JPanel();
         textoTitulo = new javax.swing.JLabel();
         painelHome = new javax.swing.JPanel();
@@ -72,11 +76,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         formBrancoInferior.setLayout(formBrancoInferiorLayout);
         formBrancoInferiorLayout.setHorizontalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
         );
         formBrancoInferiorLayout.setVerticalGroup(
             formBrancoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
         );
 
         formMenu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -139,6 +143,8 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(1, 3, 1, 1);
         formMenu.add(buttonEditar, gridBagConstraints);
 
+        painelDeIcones.setBackground(new java.awt.Color(255, 255, 255));
+
         iconAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/update_24x24.png"))); // NOI18N
         iconAtualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -146,38 +152,75 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
             }
         });
 
-        textoAtualizar.setText("Atualizar");
+        textoAtualizar.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        textoAtualizar.setText("Limpar");
+
+        iconPincel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/pincel_32x32.png"))); // NOI18N
+        iconPincel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconPincelMouseClicked(evt);
+            }
+        });
+
+        textoAtualizar1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        textoAtualizar1.setText("Atualizar");
+
+        javax.swing.GroupLayout painelDeIconesLayout = new javax.swing.GroupLayout(painelDeIcones);
+        painelDeIcones.setLayout(painelDeIconesLayout);
+        painelDeIconesLayout.setHorizontalGroup(
+            painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelDeIconesLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textoAtualizar)
+                    .addComponent(iconPincel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textoAtualizar1)
+                    .addGroup(painelDeIconesLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(iconAtualizar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        painelDeIconesLayout.setVerticalGroup(
+            painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelDeIconesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(iconAtualizar)
+                    .addComponent(iconPincel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelDeIconesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoAtualizar1)
+                    .addComponent(textoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout painelFundoInferiorLayout = new javax.swing.GroupLayout(painelFundoInferior);
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(formBrancoInferior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                        .addComponent(iconAtualizar)
-                        .addGap(35, 35, 35))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                        .addComponent(textoAtualizar)
-                        .addGap(20, 20, 20))))
+                .addComponent(painelDeIcones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135))
+            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                .addComponent(formBrancoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelDeIcones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                        .addComponent(iconAtualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textoAtualizar))
-                    .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addComponent(formBrancoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addGap(12, 12, 12)
+                        .addComponent(formMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(formBrancoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -189,6 +232,11 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         painelHome.setPreferredSize(new java.awt.Dimension(133, 103));
 
         iconCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/home_48px.png"))); // NOI18N
+        iconCasa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconCasaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelHomeLayout = new javax.swing.GroupLayout(painelHome);
         painelHome.setLayout(painelHomeLayout);
@@ -212,7 +260,7 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
                 .addComponent(painelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(124, 124, 124)
                 .addComponent(textoTitulo)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,18 +284,14 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textoDescricaoEmpresa)
-                        .addGap(45, 45, 45))
-                    .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(textoLogoEmpresa)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoLogoEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
+            .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,10 +299,10 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(textoLogoEmpresa)
+                        .addGap(20, 20, 20)
+                        .addComponent(textoLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textoDescricaoEmpresa)))
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -267,7 +311,9 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,16 +324,13 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoActionPerformed
-        try {
-            BwStock.JanelaProdutoEdicao();
-        } catch (Exception exception) {
-        }
+            BwStock.JanelaProdutoCadastro();
     }//GEN-LAST:event_buttonNovoActionPerformed
 
     private void buttonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisarActionPerformed
         // TODO add your handling code here:
         PRODUTO_CONTROL.pesquisarProdutoAction();
-      
+
 
     }//GEN-LAST:event_buttonPesquisarActionPerformed
 
@@ -302,13 +345,24 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private void iconAtualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconAtualizarMouseClicked
         // TODO add your handling code here:
         PRODUTO_CONTROL.atualizaDadosTabelaAction();
-       
+
     }//GEN-LAST:event_iconAtualizarMouseClicked
 
     private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
         // TODO add your handling code here:
         PRODUTO_CONTROL.editarAction();
     }//GEN-LAST:event_buttonEditarActionPerformed
+
+    private void iconPincelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconPincelMouseClicked
+        // TODO add your handling code here:
+        tabelaProduto.getSelectionModel().clearSelection();
+    }//GEN-LAST:event_iconPincelMouseClicked
+
+    private void iconCasaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconCasaMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        BwStock.JanelaPrincipal();
+    }//GEN-LAST:event_iconCasaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -422,18 +476,20 @@ public class PainelProdutoBusca extends javax.swing.JFrame {
     private javax.swing.JPanel formMenu;
     private javax.swing.JLabel iconAtualizar;
     private javax.swing.JLabel iconCasa;
+    private javax.swing.JLabel iconPincel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel painelDeIcones;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelHome;
     private javax.swing.JPanel painelLogo;
     public static final javax.swing.JTable tabelaProduto = new javax.swing.JTable();
     private javax.swing.JLabel textoAtualizar;
+    private javax.swing.JLabel textoAtualizar1;
     private javax.swing.JLabel textoDescricaoEmpresa;
     private javax.swing.JLabel textoLogoEmpresa;
     private javax.swing.JLabel textoPesquisar;
     private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
-
 
 }

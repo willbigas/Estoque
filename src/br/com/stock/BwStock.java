@@ -5,6 +5,7 @@ import br.com.stock.view.PainelLogin;
 import br.com.stock.view.PainelPrincipal;
 import br.com.stock.view.produto.PainelProdutoBusca;
 import br.com.stock.view.produto.PainelProdutoCadastro;
+import br.com.stock.view.produto.PainelProdutoEdit;
 import br.com.stock.view.usuario.PainelUsuarioBusca;
 import br.com.stock.view.usuario.PainelUsuarioCadastro;
 import javax.swing.JFrame;
@@ -56,14 +57,22 @@ public class BwStock {
     public static void JanelaProduto() throws Exception {
         PainelProdutoBusca painelProduto = new PainelProdutoBusca();
         painelProduto.setTitle("BW-STOCK - PRODUTOS");
-        painelProduto.setSize(800, 600);
         painelProduto.setLocationRelativeTo(null);
         painelProduto.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelProduto.setVisible(true);
     }
+    
+    public static void JanelaProdutoCadastro() {
+        PainelProdutoCadastro painelProdutoEdicao = new PainelProdutoCadastro();
+        painelProdutoEdicao.setTitle("BW-STOCK - EDICAO DE PRODUTOS");
+        painelProdutoEdicao.setSize(546, 500);
+        painelProdutoEdicao.setLocationRelativeTo(null);
+        painelProdutoEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        painelProdutoEdicao.setVisible(true);
+    }
 
     public static void JanelaProdutoEdicao() {
-        PainelProdutoCadastro painelProdutoEdicao = new PainelProdutoCadastro();
+        PainelProdutoEdit painelProdutoEdicao = new PainelProdutoEdit();
         painelProdutoEdicao.setTitle("BW-STOCK - EDICAO DE PRODUTOS");
         painelProdutoEdicao.setSize(546, 500);
         painelProdutoEdicao.setLocationRelativeTo(null);
