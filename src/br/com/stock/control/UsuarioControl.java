@@ -29,41 +29,34 @@ public class UsuarioControl {
     }
 
     public Boolean adicionarAction() {
-        if (seExisteNoBancoAction() == true) {
-            if(atualizarAction()) {
-                return true;
-            }
+        Usuario user = new Usuario();
+        user.setId(Integer.MAX_VALUE);
+        user.setAtualizado(null);
+        user.setLogin(PainelUsuarioCadastro.campoLogin.getText());
+        user.setSenha(PainelUsuarioCadastro.campoSenha.getText());
+        if (PainelUsuarioCadastro.checkAtivo.isSelected()) {
+            user.setAtivo(true);
         } else {
-            Usuario user = new Usuario();
-            user.setId(1);
-            user.setAtualizado(null);
-            user.setLogin(PainelUsuarioCadastro.campoLogin.getText());
-            user.setSenha(PainelUsuarioCadastro.campoSenha.getText());
-            if (PainelUsuarioCadastro.checkAtivo.isSelected()) {
-                user.setAtivo(true);
-            } else {
-                user.setAtivo(false);
-            }
-            if (PainelUsuarioCadastro.checkTrocarSenha.isSelected()) {
-                user.setPrimeiroLogin(true);
-            } else {
-                user.setPrimeiroLogin(false);
-            }
+            user.setAtivo(false);
+        }
+        if (PainelUsuarioCadastro.checkTrocarSenha.isSelected()) {
+            user.setPrimeiroLogin(true);
+        } else {
+            user.setPrimeiroLogin(false);
+        }
 
-            try {
-                Boolean inserido = USUARIO_DAO.inserir(user);
-                if (inserido == true) {
-                    return true;
-                } else {
-                    JOptionPane.showMessageDialog(null, "Não consegui gravar.");
-                    return false;
-                }
-            } catch (Exception exception) {
-                System.out.println("Deu ruim na hora de inserir");
+        try {
+            Boolean inserido = USUARIO_DAO.inserir(user);
+            if (inserido == true) {
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Não consegui gravar.");
                 return false;
             }
+        } catch (Exception exception) {
+            System.out.println("Deu ruim na hora de inserir");
+            return false;
         }
-        return null;
 
     }
 
@@ -226,7 +219,7 @@ public class UsuarioControl {
     }
 
     public void editarUsuarioAction() {
-        
+
         int linha = PainelUsuarioBusca.tabelaUsuario.getSelectedRow();
         if (linha >= 0) {
             String idUsuario = (String) PainelUsuarioBusca.tabelaUsuario.getValueAt(linha, 0);
@@ -265,7 +258,7 @@ public class UsuarioControl {
             for (Usuario usuariosRecebido : usuariosRecebidos) {
                 if (usuariosRecebido.getLogin().toLowerCase().equals(PainelUsuarioCadastro.campoLogin.getText().toLowerCase())) {
                     return true;
-                } 
+                }
             }
 
         } catch (Exception exception) {

@@ -272,6 +272,7 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
 
     private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         USUARIO_CONTROL.editarUsuarioAction();
     }//GEN-LAST:event_buttonEditarActionPerformed
 

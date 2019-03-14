@@ -1,20 +1,24 @@
 package br.com.stock.view.usuario;
 
+import br.com.stock.BwStock;
 import br.com.stock.control.UsuarioControl;
 import javax.swing.JOptionPane;
 
 public class PainelUsuarioCadastro extends javax.swing.JFrame {
 
     UsuarioControl USUARIO_CONTROL;
+    Boolean VEIO_DE_EDIT;
 
     public PainelUsuarioCadastro() {
         initComponents();
         USUARIO_CONTROL = new UsuarioControl();
         if (!campoLogin.getText().isEmpty()) {
             campoLogin.setEditable(false);
+            VEIO_DE_EDIT = true;
         } else {
             limpandoCampos();
             campoLogin.setEditable(true);
+            VEIO_DE_EDIT = false;
         }
     }
 
@@ -38,9 +42,9 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
         textoTitulo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        iconVoltar = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
@@ -117,17 +121,17 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(painelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -144,38 +148,47 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
         textoTitulo.setText("Cadastrar Usuario");
 
-        jLabel1.setText("jLabel1");
+        iconVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/voltar_48x48.png"))); // NOI18N
+        iconVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconVoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
         painelLogoLayout.setHorizontalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(painelLogoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(iconVoltar)
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addGap(18, 93, Short.MAX_VALUE)
+                        .addComponent(textoLogoEmpresa)
+                        .addGap(173, 173, 173))
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(textoDescricaoEmpresa)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(painelLogoLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
                 .addComponent(textoTitulo)
-                .addGap(88, 88, 88))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textoLogoEmpresa)
-                .addGap(162, 162, 162))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textoDescricaoEmpresa)
-                .addGap(154, 154, 154))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textoLogoEmpresa)
+                .addGap(17, 17, 17)
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelLogoLayout.createSequentialGroup()
+                        .addComponent(textoLogoEmpresa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoDescricaoEmpresa))
+                    .addComponent(iconVoltar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoDescricaoEmpresa)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textoTitulo))
+                .addComponent(textoTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
@@ -183,13 +196,12 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         painelFundoLayout.setHorizontalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(painelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(painelFundoLayout.createSequentialGroup()
-                .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -212,16 +224,33 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
-        if (USUARIO_CONTROL.adicionarAction()) {
-            limpandoCampos();
-            USUARIO_CONTROL.ListUsuariosTabelaAction();
-            JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
+        if (VEIO_DE_EDIT == false) {
+            if (USUARIO_CONTROL.adicionarAction()) {
+                limpandoCampos();
+                USUARIO_CONTROL.ListUsuariosTabelaAction();
+                JOptionPane.showMessageDialog(this, "Gravado com Sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Não consegui gravar");
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Não consegui gravar");
+            if (USUARIO_CONTROL.atualizarAction()) {
+                JOptionPane.showMessageDialog(this, "Atualizado com Sucesso");
+                limpandoCampos();
+                USUARIO_CONTROL.ListUsuariosTabelaAction();
+            } else {
+                JOptionPane.showMessageDialog(this, "Não consegui Atualizar");
+            }
+
         }
 
 
     }//GEN-LAST:event_buttonGravarActionPerformed
+
+    private void iconVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconVoltarMouseClicked
+        limpandoCampos();
+        this.setVisible(false);
+        BwStock.JanelaUsuario();
+    }//GEN-LAST:event_iconVoltarMouseClicked
 
     public void limpandoCampos() {
         campoLogin.setText(null);
@@ -534,7 +563,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     public static final javax.swing.JTextField campoSenha = new javax.swing.JTextField();
     public static final javax.swing.JCheckBox checkAtivo = new javax.swing.JCheckBox();
     public static final javax.swing.JCheckBox checkTrocarSenha = new javax.swing.JCheckBox();
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel iconVoltar;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;

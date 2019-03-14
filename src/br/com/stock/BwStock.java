@@ -40,7 +40,6 @@ public class BwStock {
         PainelUsuarioBusca painelUsuario = new PainelUsuarioBusca();
         painelUsuario.setTitle("BW-STOCK - USUARIOS");
         painelUsuario.setLocationRelativeTo(null);
-        painelUsuario.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelUsuario.setVisible(true);
     }
 
@@ -48,7 +47,6 @@ public class BwStock {
         PainelUsuarioCadastro painelCadastroEdicao = new PainelUsuarioCadastro();
         painelCadastroEdicao.setTitle("BW-STOCK - EDICAO DE USUARIO");
         painelCadastroEdicao.setLocationRelativeTo(null);
-        painelCadastroEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelCadastroEdicao.setVisible(true);
     }
 
