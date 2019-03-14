@@ -11,12 +11,12 @@ import br.com.stock.view.usuario.PainelUsuarioCadastro;
 import javax.swing.JFrame;
 
 public class BwStock {
-
+    
     public static void main(String[] args) throws Exception {
         JanelaLogin();
-
+        
     }
-
+    
     public static void JanelaLogin() {
         PainelLogin painelLogin = new PainelLogin();
         painelLogin.setTitle("Acesso do Sistema");
@@ -25,10 +25,11 @@ public class BwStock {
         painelLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelLogin.setVisible(true);
     }
-
+    
     public static void JanelaPrincipal() {
         PainelPrincipal painelPrincipal = new PainelPrincipal();
         painelPrincipal.setTitle("BW-STOCK - GERENCIADOR DE ESTOQUE");
+        painelPrincipal.setSize(800, 700);
         painelPrincipal.setLocationRelativeTo(null);
         painelPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelPrincipal.setVisible(true);
@@ -43,7 +44,7 @@ public class BwStock {
         painelUsuario.setLocationRelativeTo(null);
         painelUsuario.setVisible(true);
     }
-
+    
     public static void JanelaUsuarioEdicao() {
         PainelUsuarioCadastro painelCadastroEdicao = new PainelUsuarioCadastro();
         painelCadastroEdicao.setTitle("BW-STOCK - EDICAO DE USUARIO");
@@ -70,7 +71,7 @@ public class BwStock {
         painelProdutoEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelProdutoEdicao.setVisible(true);
     }
-
+    
     public static void JanelaProdutoEdicao() {
         PainelProdutoEdit painelProdutoEdicao = new PainelProdutoEdit();
         painelProdutoEdicao.setTitle("BW-STOCK - EDICAO DE PRODUTOS");
@@ -79,7 +80,7 @@ public class BwStock {
         painelProdutoEdicao.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelProdutoEdicao.setVisible(true);
     }
-
+    
     public static void JanelaCategoria() {
         PainelCategoriaCadastro painelCategoria = new PainelCategoriaCadastro();
         painelCategoria.setTitle("BW-STOCK - CATEGORIAS");
@@ -87,5 +88,5 @@ public class BwStock {
         painelCategoria.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         painelCategoria.setVisible(true);
     }
-
+    
 }

@@ -50,21 +50,21 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="painelFundoInferior" max="32767" attributes="0"/>
+              <Component id="painelFundoInferior" pref="757" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   <Component id="painelHome" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                   <Component id="panelLogoEmpresa" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="textoDescricaoEmpresa" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="textoLogoEmpresa" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="textoDescricaoEmpresa" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -74,13 +74,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="panelLogoEmpresa" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="textoLogoEmpresa" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="textoDescricaoEmpresa" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="panelLogoEmpresa" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="painelHome" min="-2" pref="48" max="-2" attributes="0"/>
@@ -682,6 +682,9 @@
                   <Image iconType="3" name="/br/com/stock/img/home_48px.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="iconCasaMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

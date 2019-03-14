@@ -367,6 +367,11 @@ public class PainelPrincipal extends javax.swing.JFrame {
         painelHome.setPreferredSize(new java.awt.Dimension(133, 103));
 
         iconCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/home_48px.png"))); // NOI18N
+        iconCasa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconCasaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelHomeLayout = new javax.swing.GroupLayout(painelHome);
         painelHome.setLayout(painelHomeLayout);
@@ -385,31 +390,31 @@ public class PainelPrincipal extends javax.swing.JFrame {
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelFundoInferior, javax.swing.GroupLayout.PREFERRED_SIZE, 757, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(painelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86)
                 .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                        .addComponent(textoDescricaoEmpresa)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
                         .addComponent(textoLogoEmpresa)
-                        .addGap(44, 44, 44))))
+                        .addGap(42, 42, 42))
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(textoDescricaoEmpresa)
+                        .addGap(32, 32, 32))))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addContainerGap()
                         .addComponent(textoLogoEmpresa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textoDescricaoEmpresa))
+                    .addComponent(panelLogoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelFundoLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(painelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -449,6 +454,12 @@ public class PainelPrincipal extends javax.swing.JFrame {
         BwStock.JanelaCategoria();
 
     }//GEN-LAST:event_panelCategoriaMouseClicked
+
+    private void iconCasaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconCasaMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        BwStock.JanelaLogin();
+    }//GEN-LAST:event_iconCasaMouseClicked
 
     /**
      * @param args the command line arguments

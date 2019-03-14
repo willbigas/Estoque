@@ -37,9 +37,11 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         iconAtualizar = new javax.swing.JLabel();
         textoAtualizar = new javax.swing.JLabel();
         painelLogo = new javax.swing.JPanel();
+        textoTitulo = new javax.swing.JLabel();
+        painelHome = new javax.swing.JPanel();
+        iconCasa = new javax.swing.JLabel();
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
-        textoTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -181,6 +183,53 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
 
+        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        textoTitulo.setText("Busca de Usuarios");
+
+        painelHome.setPreferredSize(new java.awt.Dimension(133, 103));
+
+        iconCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/stock/img/home_48px.png"))); // NOI18N
+        iconCasa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconCasaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelHomeLayout = new javax.swing.GroupLayout(painelHome);
+        painelHome.setLayout(painelHomeLayout);
+        painelHomeLayout.setHorizontalGroup(
+            painelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconCasa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        painelHomeLayout.setVerticalGroup(
+            painelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelHomeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(iconCasa))
+        );
+
+        javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
+        painelLogo.setLayout(painelLogoLayout);
+        painelLogoLayout.setHorizontalGroup(
+            painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelLogoLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(painelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(textoTitulo)
+                .addGap(40, 40, 40))
+        );
+        painelLogoLayout.setVerticalGroup(
+            painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelLogoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(painelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoTitulo))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
         textoLogoEmpresa.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         textoLogoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         textoLogoEmpresa.setText("STOCK");
@@ -189,37 +238,6 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         textoDescricaoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         textoDescricaoEmpresa.setText("Gerenciador de Estoque");
 
-        textoTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        textoTitulo.setText("Busca de Usuarios");
-
-        javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
-        painelLogo.setLayout(painelLogoLayout);
-        painelLogoLayout.setHorizontalGroup(
-            painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(textoLogoEmpresa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(painelLogoLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(textoTitulo)
-                .addGap(40, 40, 40))
-        );
-        painelLogoLayout.setVerticalGroup(
-            painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelLogoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(textoLogoEmpresa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoDescricaoEmpresa)
-                    .addComponent(textoTitulo))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
@@ -227,12 +245,25 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
             .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                        .addComponent(textoLogoEmpresa)
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(textoLogoEmpresa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoDescricaoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFundoInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -275,6 +306,12 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
         this.setVisible(false);
         USUARIO_CONTROL.editarUsuarioAction();
     }//GEN-LAST:event_buttonEditarActionPerformed
+
+    private void iconCasaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconCasaMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        BwStock.JanelaPrincipal();
+    }//GEN-LAST:event_iconCasaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -351,9 +388,11 @@ public class PainelUsuarioBusca extends javax.swing.JFrame {
     private javax.swing.JPanel formBrancoInferior;
     private javax.swing.JPanel formMenu;
     private javax.swing.JLabel iconAtualizar;
+    private javax.swing.JLabel iconCasa;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
+    private javax.swing.JPanel painelHome;
     private javax.swing.JPanel painelLogo;
     public static final javax.swing.JTable tabelaUsuario = new javax.swing.JTable();
     private javax.swing.JLabel textoAtualizar;
