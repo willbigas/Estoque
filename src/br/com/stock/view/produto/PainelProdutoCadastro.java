@@ -16,11 +16,23 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
     CategoriaDao CATEGORIA_DAO = new CategoriaDaoImpl();
     private static Produto PRODUTO_ATUAL = new Produto();
+    private static Boolean FROM_TABLE;
 
     public PainelProdutoCadastro() {
         initComponents();
         PRODUTO_CONTROL = new ProdutoControl();
         pegandoCategoriaBanco();
+
+        /**
+         * Verificando se a inicializacao do Painel veio da Tabela, Se veio
+         * preciso atualizar o produto e não criar
+         */
+        if (campoSku.getText().isEmpty()) {
+            FROM_TABLE = false;
+        } else {
+            campoSku.setEditable(false);
+            FROM_TABLE = true;
+        }
 
     }
 
@@ -62,7 +74,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         PainelCadastroProduto.setLayout(new java.awt.GridBagLayout());
 
         textoSku.setForeground(new java.awt.Color(51, 51, 51));
-        textoSku.setText("SKU");
+        textoSku.setText("Codigo do Produto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -79,7 +91,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         PainelCadastroProduto.add(campoSku, gridBagConstraints);
 
         textoPrecoUnitario.setForeground(new java.awt.Color(51, 51, 51));
-        textoPrecoUnitario.setText("Preco Unitario");
+        textoPrecoUnitario.setText("Preco de Venda:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -128,7 +140,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         PainelCadastroProduto.add(textoVinculoCategoria, gridBagConstraints);
 
         textoNomeProduto.setForeground(new java.awt.Color(51, 51, 51));
-        textoNomeProduto.setText("NomeProduto");
+        textoNomeProduto.setText("Nome do Produto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -158,7 +170,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         PainelCadastroProduto.add(buttonGravar, gridBagConstraints);
 
         textoSenha3.setForeground(new java.awt.Color(51, 51, 51));
-        textoSenha3.setText("EAN13");
+        textoSenha3.setText("Codigo de Barras[EAN13]:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -178,17 +190,17 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         painelFundoInferior.setLayout(painelFundoInferiorLayout);
         painelFundoInferiorLayout.setHorizontalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoInferiorLayout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+            .addGroup(painelFundoInferiorLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         painelFundoInferiorLayout.setVerticalGroup(
             painelFundoInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoInferiorLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(PainelCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         painelLogo.setBackground(new java.awt.Color(45, 118, 232));
@@ -267,7 +279,7 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 450, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -276,12 +288,23 @@ public class PainelProdutoCadastro extends javax.swing.JFrame {
 
     private void buttonGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGravarActionPerformed
         // TODO add your handling code here:
-        if(PRODUTO_CONTROL.adicionar()) {
-            limpandoCampos();
+        if (FROM_TABLE) {
+            if (PRODUTO_CONTROL.editarAction()) {
+                  limpandoCampos();
+                  JOptionPane.showMessageDialog(this, "Atualizado com Sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Não consegui atualizar");
+            }
+          
             
-            JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
         } else {
-            JOptionPane.showMessageDialog(this, "Não consegui gravar!");
+            if (PRODUTO_CONTROL.adicionarAction()) {
+                limpandoCampos();
+
+                JOptionPane.showMessageDialog(this, "Gravado com Sucesso");
+            } else {
+                JOptionPane.showMessageDialog(this, "Não consegui gravar!");
+            }
         }
 
 
