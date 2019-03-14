@@ -38,6 +38,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         textoLogoEmpresa = new javax.swing.JLabel();
         textoDescricaoEmpresa = new javax.swing.JLabel();
         textoTitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -143,6 +144,8 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
         textoTitulo.setForeground(new java.awt.Color(255, 255, 255));
         textoTitulo.setText("Cadastrar Usuario");
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout painelLogoLayout = new javax.swing.GroupLayout(painelLogo);
         painelLogo.setLayout(painelLogoLayout);
         painelLogoLayout.setHorizontalGroup(
@@ -153,13 +156,14 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
                 .addGap(88, 88, 88))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                        .addComponent(textoLogoEmpresa)
-                        .addGap(162, 162, 162))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
-                        .addComponent(textoDescricaoEmpresa)
-                        .addGap(154, 154, 154))))
+                .addComponent(textoLogoEmpresa)
+                .addGap(162, 162, 162))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLogoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoDescricaoEmpresa)
+                .addGap(154, 154, 154))
         );
         painelLogoLayout.setVerticalGroup(
             painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +171,9 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textoLogoEmpresa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textoDescricaoEmpresa)
+                .addGroup(painelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoDescricaoEmpresa)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textoTitulo))
         );
@@ -528,6 +534,7 @@ public class PainelUsuarioCadastro extends javax.swing.JFrame {
     public static final javax.swing.JTextField campoSenha = new javax.swing.JTextField();
     public static final javax.swing.JCheckBox checkAtivo = new javax.swing.JCheckBox();
     public static final javax.swing.JCheckBox checkTrocarSenha = new javax.swing.JCheckBox();
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel painelFundo;
     private javax.swing.JPanel painelFundoInferior;
     private javax.swing.JPanel painelLogo;
