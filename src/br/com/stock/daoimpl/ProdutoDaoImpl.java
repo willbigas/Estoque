@@ -100,6 +100,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 String nome = rs.getString("nome");
                 Integer ean13 = rs.getInt("ean13");
                 Integer qtdEstoque = rs.getInt("qtdEstoque");
+                Double precoUnitario = rs.getDouble("precoUnitario");
                 Integer estoqueMovimentoId = rs.getInt("id_EstoqueMovimento");
                 Boolean ativo = rs.getBoolean("ativo");
                 Date dataCadastro = rs.getDate("dataCadastro");
@@ -110,6 +111,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
                 p.setNome(nome);
                 p.setEan13(ean13);
                 p.setQtdEstoque(qtdEstoque);
+                p.setPrecoUnitario(precoUnitario);
                 EstoqueMovimento em = (EstoqueMovimento) ESTOQUE_MOVIMENTO_DAO.pesquisar(estoqueMovimentoId);
                 p.setMovEstoque(em);
                 p.setDataCadastro(dataCadastro);

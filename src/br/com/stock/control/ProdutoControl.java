@@ -150,12 +150,8 @@ public class ProdutoControl {
                 PainelProdutoCadastro.campoSku.setText(p.getSku());
                 PainelProdutoCadastro.campoNomeProduto.setText(p.getNome());
                 PainelProdutoCadastro.campoEan13.setText(String.valueOf(p.getEan13()));
-                if (PainelProdutoCadastro.campoPrecoUnitario.getText() == null) {
-                    PainelProdutoCadastro.campoPrecoUnitario.setText("0");
-                } else {
-                    PainelProdutoCadastro.campoPrecoUnitario.setText(UtilFormat.decimalFormat(p.getPrecoUnitario()));
-                }
-
+                PainelProdutoCadastro.campoPrecoUnitario.setText(UtilFormat.decimalFormat(p.getPrecoUnitario()));
+                PainelProdutoCadastro.checkAtivo.setSelected(p.getAtivo());
             } catch (Exception exception) {
             }
             BwStock.JanelaProdutoEdicao();
@@ -209,7 +205,7 @@ public class ProdutoControl {
      * @param produtos
      */
     public void atualizaDadosTabelaAction(List<Produto> produtos) {
-        String[] colunas = {"SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
+        String[] colunas = {"ID","SKU", "Nome", "Estoque", "PrecoUN", "EAN13", "Ativo"};
         String[][] dados = new String[produtos.size()][colunas.length];
         for (int i = 0; i < produtos.size(); i++) {
             Produto p = produtos.get(i);
